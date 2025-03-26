@@ -31,28 +31,6 @@ body {
     filter: brightness(0.6); /* Slightly darken the video for better text contrast */
 }
 
-/* Pause video button */
-.pause-video-btn {
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    padding: 8px 16px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
-    text-transform: uppercase;
-    background-color: #ffc107; /* Construction yellow */
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 3;
-    transition: background-color 0.3s ease;
-}
-
-.pause-video-btn:hover {
-    background-color: #e0a800;
-}
-
 /* Add a construction tape effect */
 body::before {
     content: '';
@@ -83,6 +61,11 @@ body::before {
     width: 90%;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Ensure content takes up enough vertical space to be centered */
 }
 
 /* Logo styling */
@@ -222,7 +205,7 @@ p {
     text-decoration: underline;
 }
 
-/* Mobile optimization: Adjust video and layout for smaller screens */
+/* Mobile optimization: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     .background-video {
         display: block; /* Keep video on mobile, but optimize */
@@ -236,11 +219,13 @@ p {
     }
     .container {
         padding: 20px;
+        min-height: 70vh; /* Adjust for smaller screens */
     }
-    .pause-video-btn {
-        top: 40px;
-        right: 10px;
-        padding: 6px 12px;
-        font-size: 0.9rem;
+}
+
+/* Tablet and smaller desktop screens */
+@media (max-width: 1024px) {
+    .container {
+        min-height: 60vh;
     }
 }
