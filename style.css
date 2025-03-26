@@ -8,8 +8,7 @@
 /* Body with construction theme */
 body {
     font-family: 'Roboto', sans-serif;
-    background: url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #f0f0f0; /* Light gray background as fallback */
     color: #333;
     display: flex;
     justify-content: center;
@@ -17,6 +16,19 @@ body {
     min-height: 100vh;
     margin: 0;
     position: relative;
+    overflow: hidden; /* Prevent scrollbars from video */
+}
+
+/* Background video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the entire background */
+    z-index: 0;
+    filter: brightness(0.6); /* Slightly darken the video for better text contrast */
 }
 
 /* Add a construction tape effect */
@@ -34,7 +46,7 @@ body::before {
         #000 20px,
         #000 40px
     );
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -48,7 +60,7 @@ body::before {
     max-width: 600px;
     width: 90%;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* Logo styling */
@@ -186,4 +198,21 @@ p {
 
 .contact-info a:hover {
     text-decoration: underline;
+}
+
+/* Mobile optimization: Adjust video and layout for smaller screens */
+@media (max-width: 768px) {
+    .background-video {
+        display: block; /* Keep video on mobile, but optimize */
+        object-fit: cover;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .container {
+        padding: 20px;
+    }
 }
