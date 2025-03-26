@@ -1,112 +1,189 @@
-body {
-    font-family: 'Montserrat', sans-serif;
+/* Reset default styles */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with construction theme */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('construction_bg.jpg') no-repeat center center fixed; /* Replace with your image */
-    background-size: cover;
-    color: #333;
-}
-
-.body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay */
-    z-index: -1;
-}
-
-.container {
-    text-align: center;
-    padding: 20px;
-    max-width: 600px;
-}
-
-.logo img {
-    max-width: 300px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    color: #006699;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 1.1em;
-    line-height: 1.6;
-}
-
-.login-button button {
-    background-color: #006699;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 20px;
-}
-
-.login-modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.login-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
+    margin: 0;
     position: relative;
 }
 
+/* Add a construction tape effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffc107,
+        #ffc107 20px,
+        #000 20px,
+        #000 40px
+    );
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Container for content */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo styling */
+.logo img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+/* Header styling */
+.header {
+    margin: 20px 0;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Login button */
+.login-button {
+    margin: 20px 0;
+}
+
+#loginBtn {
+    padding: 12px 30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: #ffc107; /* Construction yellow */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#loginBtn:hover {
+    background-color: #e0a800;
+}
+
+/* Login modal */
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.login-content {
+    background: #fff;
+    width: 90%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 .close {
-    color: #aaa;
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 1.5rem;
     cursor: pointer;
+    color: #555;
+}
+
+.login-content h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000;
 }
 
 .login-content form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
-.login-content input, .login-content button {
-    margin-bottom: 10px;
+.login-content input {
     padding: 10px;
-    font-size: 1em;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }
 
+.login-content button {
+    padding: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-content button:hover {
+    background-color: #e0a800;
+}
+
+/* Contact info */
 .contact-info {
-    margin-top: 30px;
-    font-size: 0.9em;
+    margin-top: 20px;
+    font-size: 0.9rem;
 }
 
 .contact-info a {
-    color: #006699;
+    color: #ffc107;
     text-decoration: none;
 }
 
-@media (max-width: 600px) {
-    .logo img {
-        max-width: 80%;
-    }
+.contact-info a:hover {
+    text-decoration: underline;
 }

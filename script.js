@@ -1,27 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const loginBtn = document.getElementById('loginBtn');
-    const loginModal = document.getElementById('loginModal');
-    const closeBtn = document.querySelector('.close');
+// Get elements
+const loginBtn = document.getElementById('loginBtn');
+const loginModal = document.getElementById('loginModal');
+const closeBtn = document.querySelector('.close');
+const loginForm = document.getElementById('loginForm');
 
-    loginBtn.onclick = function() {
-        loginModal.style.display = "block";
+// Open login modal
+loginBtn.addEventListener('click', () => {
+    loginModal.style.display = 'block';
+});
+
+// Close login modal
+closeBtn.addEventListener('click', () => {
+    loginModal.style.display = 'none';
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === loginModal) {
+        loginModal.style.display = 'none';
     }
+});
 
-    closeBtn.onclick = function() {
-        loginModal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == loginModal) {
-            loginModal.style.display = "none";
-        }
-    }
-
-    // Basic Form Handling (Add your actual login logic here)
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Add your authentication logic here
-        alert('Login functionality to be implemented.');
-        loginModal.style.display = "none";
-    });
+// Handle form submission (for demo purposes, just logs to console)
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = loginForm.querySelector('input[type="text"]').value;
+    const password = loginForm.querySelector('input[type="password"]').value;
+    console.log('Login attempt:', { username, password });
+    alert('Login submitted! (This is a demo)');
+    loginModal.style.display = 'none';
 });
