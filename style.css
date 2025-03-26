@@ -65,6 +65,109 @@ body::before {
     height: auto;
 }
 
+/* Animation container */
+.animation-container {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Skyline */
+.skyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 100%); /* Sky gradient */
+}
+
+/* Buildings */
+.building {
+    position: absolute;
+    bottom: 0;
+    background: #555; /* Dark gray for buildings */
+    border: 2px solid #333;
+}
+
+/* Static building 1 */
+.building-1 {
+    left: 10%;
+    width: 50px;
+    height: 80px;
+}
+
+/* Growing building 2 (animated) */
+.building-2 {
+    left: 40%;
+    width: 60px;
+    height: 0; /* Start at 0 height */
+    animation: growBuilding 4s infinite ease-in-out;
+}
+
+/* Static building 3 */
+.building-3 {
+    right: 10%;
+    width: 40px;
+    height: 100px;
+}
+
+/* Crane */
+.crane {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+}
+
+.crane-arm {
+    width: 100%;
+    height: 5px;
+    background: #ffc107; /* Construction yellow */
+    position: relative;
+    animation: swingCrane 3s infinite ease-in-out;
+}
+
+.crane-arm::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -10px;
+    width: 5px;
+    height: 20px;
+    background: #000; /* Hook */
+}
+
+/* Animation keyframes */
+@keyframes growBuilding {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 120px;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+@keyframes swingCrane {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 /* Header styling */
 .header {
     margin: 20px 0;
@@ -193,7 +296,7 @@ p {
     text-decoration: underline;
 }
 
-/* Mobile optimization: Adjust layout for smaller screens */
+/* Mobile optimization: Adjust layout and animation for smaller screens */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -205,11 +308,33 @@ p {
         padding: 20px;
         min-height: 70vh; /* Adjust for smaller screens */
     }
+    .animation-container {
+        max-width: 300px;
+        height: 120px;
+    }
+    .building-1 {
+        width: 40px;
+        height: 60px;
+    }
+    .building-2 {
+        width: 50px;
+    }
+    .building-3 {
+        width: 30px;
+        height: 80px;
+    }
+    .crane {
+        width: 80px;
+    }
 }
 
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
         min-height: 60vh;
+    }
+    .animation-container {
+        max-width: 350px;
+        height: 130px;
     }
 }
