@@ -1,8 +1,12 @@
-// Get elements
+// Get elements for login modal
 const loginBtn = document.getElementById('loginBtn');
 const loginModal = document.getElementById('loginModal');
 const closeBtn = document.querySelector('.close');
 const loginForm = document.getElementById('loginForm');
+
+// Get elements for video control
+const video = document.querySelector('.background-video');
+const pauseVideoBtn = document.getElementById('pauseVideoBtn');
 
 // Open login modal
 loginBtn.addEventListener('click', () => {
@@ -29,4 +33,15 @@ loginForm.addEventListener('submit', (e) => {
     console.log('Login attempt:', { username, password });
     alert('Login submitted! (This is a demo)');
     loginModal.style.display = 'none';
+});
+
+// Pause/play background video
+pauseVideoBtn.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        pauseVideoBtn.textContent = 'Pause Video';
+    } else {
+        video.pause();
+        pauseVideoBtn.textContent = 'Play Video';
+    }
 });

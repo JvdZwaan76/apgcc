@@ -31,6 +31,28 @@ body {
     filter: brightness(0.6); /* Slightly darken the video for better text contrast */
 }
 
+/* Pause video button */
+.pause-video-btn {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    padding: 8px 16px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: #ffc107; /* Construction yellow */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+}
+
+.pause-video-btn:hover {
+    background-color: #e0a800;
+}
+
 /* Add a construction tape effect */
 body::before {
     content: '';
@@ -214,5 +236,11 @@ p {
     }
     .container {
         padding: 20px;
+    }
+    .pause-video-btn {
+        top: 40px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
     }
 }
