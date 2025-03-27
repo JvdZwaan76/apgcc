@@ -75,8 +75,8 @@ body::before {
     overflow: hidden;
 }
 
-/* Skyline */
-.skyline {
+/* Construction site */
+.construction-site {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -85,10 +85,38 @@ body::before {
     background: linear-gradient(to bottom, #4A90E2 0%, #B3D4FF 100%); /* Professional sky gradient */
 }
 
+/* Ground */
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #8B5A2B; /* Brown ground */
+    border-top: 2px solid #5A3E1B;
+}
+
+/* Material stacks (e.g., bricks) */
+.material-stack {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    width: 30px;
+    height: 10px;
+    background: #D2691E; /* Brick color */
+    border: 1px solid #A0522D;
+}
+
+.material-stack-2 {
+    left: 50px;
+    width: 20px;
+    height: 15px;
+}
+
 /* Ground shadow */
 .ground-shadow {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 0;
     width: 100%;
     height: 10px;
@@ -96,107 +124,91 @@ body::before {
     filter: blur(5px);
 }
 
-/* Buildings */
-.building {
+/* House under construction */
+.house {
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+    width: 80px;
+    height: 0;
+    animation: buildHouse 6s infinite ease-in-out;
+}
+
+/* House frame */
+.house-frame {
     position: absolute;
     bottom: 0;
-    background: #2E3A59; /* Dark blue-gray for a modern look */
-    border: 1px solid #1A2338;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #4A4A4A; /* Dark gray frame */
+    border: 2px solid #333;
+    border-top: none;
 }
 
-/* Windows */
-.window {
+/* House roof */
+.house-roof {
     position: absolute;
-    background: #FFD700; /* Gold for window lights */
-    width: 8px;
-    height: 8px;
-    border: 1px solid #1A2338;
+    top: 0;
+    left: -10px;
+    width: 100px;
+    height: 0;
+    background: #8B0000; /* Dark red roof */
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    animation: addRoof 6s infinite ease-in-out;
 }
 
-/* Static building 1 */
-.building-1 {
-    left: 10%;
-    width: 50px;
-    height: 80px;
+/* Scaffolding */
+.scaffolding {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 10px;
+    height: 0;
+    background: #A9A9A9; /* Gray scaffolding */
+    animation: raiseScaffolding 6s infinite ease-in-out;
 }
 
-.building-1 .window:nth-child(1) {
-    top: 10px;
-    left: 10px;
+.scaffolding-bar {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #A9A9A9;
 }
 
-.building-1 .window:nth-child(2) {
-    top: 30px;
-    left: 30px;
-}
-
-.building-1 .window:nth-child(3) {
-    top: 50px;
-    left: 10px;
-}
-
-/* Growing building 2 (animated) */
-.building-2 {
-    left: 40%;
-    width: 60px;
-    height: 0; /* Start at 0 height */
-    animation: growBuilding 5s infinite cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
-}
-
-.building-2 .window:nth-child(1) {
-    top: 10px;
-    left: 10px;
-}
-
-.building-2 .window:nth-child(2) {
-    top: 30px;
-    left: 40px;
-}
-
-.building-2 .window:nth-child(3) {
-    top: 50px;
-    left: 20px;
-}
-
-/* Static building 3 */
-.building-3 {
-    right: 10%;
-    width: 40px;
-    height: 100px;
-}
-
-.building-3 .window:nth-child(1) {
+.scaffolding-bar:nth-child(1) {
     top: 20px;
-    left: 10px;
 }
 
-.building-3 .window:nth-child(2) {
+.scaffolding-bar:nth-child(2) {
     top: 40px;
-    left: 25px;
-}
-
-.building-3 .window:nth-child(3) {
-    top: 60px;
-    left: 10px;
 }
 
 /* Crane */
 .crane {
     position: absolute;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
+    right: 10px;
+    width: 100px;
     height: 20px;
 }
 
+.crane-base {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 30px;
+    background: #1A2338;
+}
+
 .crane-arm {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 5px;
     background: #1A2338; /* Darker color for professionalism */
-    position: relative;
     animation: swingCrane 4s infinite ease-in-out;
 }
 
@@ -220,28 +232,77 @@ body::before {
     border-radius: 50%;
 }
 
+.material-lift {
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+    width: 10px;
+    height: 5px;
+    background: #D2691E; /* Brick color */
+    border: 1px solid #A0522D;
+}
+
+/* Worker silhouette */
+.worker {
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    width: 20px;
+    height: 40px;
+    background: #333;
+    clip-path: polygon(40% 0, 60% 0, 60% 20%, 80% 20%, 80% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 20% 60%, 20% 20%, 40% 20%);
+    animation: moveWorker 2s infinite ease-in-out;
+}
+
 /* Animation keyframes */
-@keyframes growBuilding {
+@keyframes buildHouse {
     0% {
         height: 0;
     }
-    70% {
-        height: 120px;
+    50% {
+        height: 60px;
     }
     100% {
-        height: 120px;
+        height: 60px;
+    }
+}
+
+@keyframes addRoof {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    70% {
+        height: 20px;
+    }
+    100% {
+        height: 20px;
+    }
+}
+
+@keyframes raiseScaffolding {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 60px;
+    }
+    100% {
+        height: 60px;
     }
 }
 
 @keyframes swingCrane {
     0% {
-        transform: rotate(-20deg);
+        transform: rotate(-15deg);
     }
     50% {
-        transform: rotate(20deg);
+        transform: rotate(15deg);
     }
     100% {
-        transform: rotate(-20deg);
+        transform: rotate(-15deg);
     }
 }
 
@@ -254,6 +315,18 @@ body::before {
     }
     100% {
         height: 0;
+    }
+}
+
+@keyframes moveWorker {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -401,23 +474,34 @@ p {
         max-width: 300px;
         height: 120px;
     }
-    .building-1 {
-        width: 40px;
-        height: 60px;
+    .house {
+        width: 60px;
+        left: 35%;
     }
-    .building-2 {
-        width: 50px;
+    .house-roof {
+        width: 80px;
+        left: -10px;
     }
-    .building-3 {
-        width: 30px;
-        height: 80px;
+    .scaffolding {
+        width: 8px;
+        left: -8px;
     }
     .crane {
         width: 80px;
+        right: 5px;
     }
-    .window {
-        width: 6px;
-        height: 6px;
+    .worker {
+        width: 15px;
+        height: 30px;
+        left: 15%;
+    }
+    .material-stack {
+        width: 20px;
+        height: 8px;
+    }
+    .material-stack-2 {
+        width: 15px;
+        height: 10px;
     }
 }
 
