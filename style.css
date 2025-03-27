@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 40px); /* Account for padding */
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -79,8 +79,7 @@ body::after {
     justify-content: center;
     align-items: center;
     margin: 0; /* Remove margin to allow true centering */
-    max-height: calc(100vh - 40px); /* Constrain height to viewport minus body padding */
-    overflow: hidden; /* Prevent internal overflow */
+    height: fit-content; /* Let content determine height */
 }
 
 /* Logo styling */
@@ -663,13 +662,13 @@ p {
 /* Mobile optimization: Adjust layout and animation for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.1rem;
+        font-size: 1rem; /* Further reduced to fit */
     }
     p {
-        font-size: 0.7rem;
+        font-size: 0.65rem; /* Further reduced to fit */
     }
     .container {
-        padding: 5px;
+        padding: 3px; /* Further reduced to fit */
         margin: 0; /* Remove margin to allow true centering */
         /* Ensure content fits within viewport */
         display: flex;
@@ -678,131 +677,131 @@ p {
         align-items: center;
     }
     .logo img {
-        max-width: 180px;
+        max-width: 150px; /* Further reduced to fit */
     }
     .animation-container {
-        max-width: 180px;
-        height: 54px;
-        margin: 3px 0;
+        max-width: 150px; /* Further reduced to fit */
+        height: 45px; /* Further reduced to fit, maintaining aspect ratio (150/45 = 10/3) */
+        margin: 2px 0; /* Further reduced to fit */
     }
     .crane {
-        width: 36px;
-        height: 45px;
+        width: 30px; /* Scaled down proportionally */
+        height: 38px; /* Scaled down proportionally */
     }
     .crane-tower {
-        width: 5px;
-        height: 36px;
+        width: 4px;
+        height: 30px;
     }
     .crane-base {
-        width: 18px;
-        height: 5px;
+        width: 15px;
+        height: 4px;
     }
     .crane-arm {
-        width: 22px;
+        width: 18px;
         height: 2px;
     }
     .crane-cable {
         right: -1px;
     }
     .load-shadow {
-        width: 10px;
+        width: 8px;
         height: 2px;
     }
     .cloud-1 {
-        width: 36px;
-        height: 10px;
+        width: 30px;
+        height: 8px;
         top: 2px;
     }
     .cloud-1 .cloud-part-1 {
-        width: 18px;
-        height: 10px;
+        width: 15px;
+        height: 8px;
     }
     .cloud-1 .cloud-part-2 {
-        width: 25px;
-        height: 14px;
+        width: 21px;
+        height: 12px;
     }
     .cloud-1 .cloud-part-3 {
-        width: 14px;
-        height: 7px;
+        width: 12px;
+        height: 6px;
     }
     .cloud-2 {
-        width: 50px;
-        height: 16px;
-        top: 16px;
+        width: 42px;
+        height: 14px;
+        top: 14px;
     }
     .cloud-2 .cloud-part-1 {
-        width: 25px;
-        height: 16px;
+        width: 21px;
+        height: 14px;
     }
     .cloud-2 .cloud-part-2 {
-        width: 32px;
-        height: 20px;
+        width: 27px;
+        height: 17px;
     }
     .cloud-2 .cloud-part-3 {
-        width: 18px;
-        height: 10px;
+        width: 15px;
+        height: 8px;
     }
     .cloud-3 {
-        width: 27px;
-        height: 7px;
-        top: 32px;
+        width: 23px;
+        height: 6px;
+        top: 27px;
     }
     .cloud-3 .cloud-part-1 {
-        width: 14px;
-        height: 7px;
+        width: 12px;
+        height: 6px;
     }
     .cloud-3 .cloud-part-2 {
-        width: 20px;
-        height: 10px;
+        width: 17px;
+        height: 8px;
     }
     .cloud-3 .cloud-part-3 {
-        width: 10px;
-        height: 5px;
+        width: 8px;
+        height: 4px;
     }
     .skyscraper-1 {
         left: 5%;
-        width: 10px;
-        height: 36px;
+        width: 8px;
+        height: 30px;
     }
     .skyscraper-2 {
         left: 20%;
-        width: 7px;
-        height: 54px;
+        width: 6px;
+        height: 45px;
     }
     .skyscraper-3 {
         right: 5%;
-        width: 14px;
-        height: 27px;
+        width: 12px;
+        height: 23px;
     }
     .tree-1 {
         left: 0%;
-        height: 22px;
+        height: 18px;
     }
     .tree-2 {
         left: 30%;
-        height: 18px;
+        height: 15px;
     }
     .tree-3 {
         right: 0%;
-        height: 27px;
+        height: 23px;
     }
     #loginBtn {
-        padding: 5px 15px 5px 25px;
-        font-size: 0.8rem;
+        padding: 4px 12px 4px 20px; /* Further reduced to fit */
+        font-size: 0.7rem; /* Further reduced to fit */
     }
     #loginBtn::before {
-        font-size: 0.8rem;
-        left: 7px;
+        font-size: 0.7rem;
+        left: 6px;
     }
     .header {
-        margin: 3px 0;
+        margin: 2px 0; /* Further reduced to fit */
     }
     .login-button {
-        margin: 3px 0;
+        margin: 2px 0; /* Further reduced to fit */
     }
     .contact-info {
-        margin-top: 3px;
-        font-size: 0.65rem;
+        margin-top: 2px; /* Further reduced to fit */
+        font-size: 0.6rem; /* Further reduced to fit */
     }
     /* Adjust parallax delays for smoother flow on mobile */
     .logo.animate {
@@ -825,7 +824,7 @@ p {
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 20px;
+        padding: 15px; /* Reduced to fit */
         margin: 0;
         max-width: 600px;
     }
@@ -837,12 +836,12 @@ p {
         max-width: 300px;
     }
     .header {
-        margin: 15px 0;
+        margin: 10px 0; /* Reduced to fit */
     }
     .login-button {
-        margin: 15px 0;
+        margin: 10px 0; /* Reduced to fit */
     }
     .contact-info {
-        margin-top: 15px;
+        margin-top: 10px; /* Reduced to fit */
     }
 }
