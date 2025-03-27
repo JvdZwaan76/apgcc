@@ -62,9 +62,9 @@ body::after {
 .container {
     text-align: center;
     background: #FFFFFF; /* Solid white background */
-    padding: 30px; /* Increased padding for more space */
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     max-width: 600px;
     width: 90%;
     position: relative;
@@ -83,13 +83,13 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 200px;
+    max-width: 250px; /* Increased size for prominence */
     height: auto;
 }
 
 /* Animation container */
 .animation-container {
-    margin: 15px 0; /* Increased margin for better spacing */
+    margin: 15px 0;
     width: 100%;
     max-width: 300px;
     height: 100px;
@@ -113,36 +113,92 @@ body::after {
 /* Clouds */
 .cloud {
     position: absolute;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
     animation: driftCloud linear infinite;
 }
 
+.cloud-part {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
 .cloud-1 {
-    width: 40px;
+    width: 60px;
     height: 20px;
     top: 10px;
-    left: -50px;
+    left: -70px;
     animation-duration: 15s;
 }
 
+.cloud-1 .cloud-part-1 {
+    width: 30px;
+    height: 20px;
+}
+
+.cloud-1 .cloud-part-2 {
+    width: 40px;
+    height: 25px;
+    margin-left: -10px;
+}
+
+.cloud-1 .cloud-part-3 {
+    width: 25px;
+    height: 15px;
+    margin-left: -10px;
+}
+
 .cloud-2 {
-    width: 60px;
+    width: 80px;
     height: 30px;
     top: 30px;
-    left: -70px;
+    left: -90px;
     animation-duration: 20s;
     animation-delay: 5s;
 }
 
-.cloud-3 {
+.cloud-2 .cloud-part-1 {
+    width: 40px;
+    height: 30px;
+}
+
+.cloud-2 .cloud-part-2 {
+    width: 50px;
+    height: 35px;
+    margin-left: -15px;
+}
+
+.cloud-2 .cloud-part-3 {
     width: 30px;
+    height: 20px;
+    margin-left: -10px;
+}
+
+.cloud-3 {
+    width: 50px;
     height: 15px;
     top: 50px;
-    left: -40px;
+    left: -60px;
     animation-duration: 18s;
     animation-delay: 10s;
+}
+
+.cloud-3 .cloud-part-1 {
+    width: 25px;
+    height: 15px;
+}
+
+.cloud-3 .cloud-part-2 {
+    width: 35px;
+    height: 20px;
+    margin-left: -10px;
+}
+
+.cloud-3 .cloud-part-3 {
+    width: 20px;
+    height: 10px;
+    margin-left: -8px;
 }
 
 /* Skyscrapers */
@@ -216,7 +272,18 @@ body::after {
     background: #455A64;
     border: 1px solid #37474F;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-    animation: swingCrane 3s infinite ease-in-out;
+    animation: swingCrane 3s infinite cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+}
+
+/* Crane counterweight */
+.crane-counterweight {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 10px;
+    height: 5px;
+    background: #37474F;
+    border: 1px solid #2A3A4A;
 }
 
 /* Crane cable */
@@ -224,10 +291,10 @@ body::after {
     position: absolute;
     right: 0;
     top: 5px;
-    width: 1px;
+    width: 2px; /* Thicker cable for realism */
     height: 0;
     background: #37474F;
-    animation: extendCable 3s infinite ease-in-out;
+    animation: extendCable 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Crane hook */
@@ -239,6 +306,7 @@ body::after {
     height: 6px;
     background: #37474F;
     border-radius: 50%;
+    border: 1px solid #2A3A4A;
 }
 
 /* Material load (e.g., steel beam) */
@@ -264,7 +332,7 @@ body::after {
     background: rgba(0, 0, 0, 0.15);
     border-radius: 50%;
     filter: blur(3px);
-    animation: swingShadow 3s infinite ease-in-out;
+    animation: swingShadow 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Animation keyframes */
@@ -318,7 +386,7 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 15px 0; /* Increased margin for better spacing */
+    margin: 15px 0;
 }
 
 h1 {
@@ -327,39 +395,40 @@ h1 {
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 8px; /* Increased margin for better spacing */
+    margin-bottom: 8px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
     font-size: 1rem;
     color: #555;
-    line-height: 1.6; /* Increased line height for readability */
+    line-height: 1.6;
 }
 
 /* Login button */
 .login-button {
-    margin: 15px 0; /* Increased margin for better spacing */
+    margin: 15px 0;
 }
 
 #loginBtn {
     position: relative; /* For positioning the lock icon */
-    padding: 12px 30px 12px 40px; /* Increased padding for larger button */
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.1rem; /* Increased font size */
-    text-transform: uppercase;
+    padding: 12px 30px 12px 40px;
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 1.1rem;
+    text-transform: none; /* Remove uppercase for elegance */
     background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient */
     color: #000;
-    border: none;
+    border: 1px solid #DAA520; /* Subtle border for cleanliness */
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow for prominence */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #loginBtn:hover {
-    background: linear-gradient(to bottom, #DAA520, #FFD700); /* Reverse gradient on hover */
-    transform: scale(1.05); /* Subtle scale effect on hover */
+    background: linear-gradient(to bottom, #DAA520, #FFD700);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 /* Lock icon for login button */
@@ -390,7 +459,7 @@ p {
     width: 90%;
     max-width: 400px;
     margin: 100px auto;
-    padding: 20px; /* Increased padding for better spacing */
+    padding: 20px;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -415,23 +484,23 @@ p {
 .login-content form {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Increased gap for better spacing */
+    gap: 12px;
 }
 
 .login-content input {
-    padding: 10px; /* Increased padding for better usability */
-    font-size: 1rem; /* Increased font size for readability */
+    padding: 10px;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
 }
 
 .login-content button {
-    padding: 10px; /* Increased padding */
-    font-family: 'Oswald', sans-serif;
-    font-size: 1rem; /* Increased font size */
-    text-transform: uppercase;
-    background: linear-gradient(to bottom, #FFD700, #DAA520); /* Match button style */
+    padding: 10px;
+    font-family: 'Playfair Display', serif; /* Match button font */
+    font-size: 1rem;
+    text-transform: none;
+    background: linear-gradient(to bottom, #FFD700, #DAA520);
     color: #000;
     border: none;
     border-radius: 5px;
@@ -445,8 +514,8 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 15px; /* Increased margin for better spacing */
-    font-size: 0.9rem; /* Slightly increased font size */
+    margin-top: 15px;
+    font-size: 0.9rem;
 }
 
 .contact-info a {
@@ -467,9 +536,12 @@ p {
         font-size: 0.9rem;
     }
     .container {
-        padding: 20px; /* Slightly increased padding for mobile */
+        padding: 20px;
         min-height: auto;
         max-height: calc(100vh - 40px); /* Account for top and bottom bars */
+    }
+    .logo img {
+        max-width: 180px; /* Slightly smaller for mobile */
     }
     .animation-container {
         max-width: 250px;
@@ -499,19 +571,55 @@ p {
         height: 4px;
     }
     .cloud-1 {
-        width: 30px;
+        width: 50px;
         height: 15px;
         top: 5px;
     }
+    .cloud-1 .cloud-part-1 {
+        width: 25px;
+        height: 15px;
+    }
+    .cloud-1 .cloud-part-2 {
+        width: 35px;
+        height: 20px;
+    }
+    .cloud-1 .cloud-part-3 {
+        width: 20px;
+        height: 10px;
+    }
     .cloud-2 {
-        width: 50px;
+        width: 70px;
         height: 25px;
         top: 25px;
     }
+    .cloud-2 .cloud-part-1 {
+        width: 35px;
+        height: 25px;
+    }
+    .cloud-2 .cloud-part-2 {
+        width: 45px;
+        height: 30px;
+    }
+    .cloud-2 .cloud-part-3 {
+        width: 25px;
+        height: 15px;
+    }
     .cloud-3 {
-        width: 20px;
+        width: 40px;
         height: 10px;
         top: 45px;
+    }
+    .cloud-3 .cloud-part-1 {
+        width: 20px;
+        height: 10px;
+    }
+    .cloud-3 .cloud-part-2 {
+        width: 30px;
+        height: 15px;
+    }
+    .cloud-3 .cloud-part-3 {
+        width: 15px;
+        height: 8px;
     }
     .skyscraper-1 {
         left: 5%;
@@ -529,7 +637,7 @@ p {
         height: 40px;
     }
     #loginBtn {
-        padding: 10px 25px 10px 35px; /* Slightly smaller padding for mobile */
+        padding: 10px 25px 10px 35px;
         font-size: 1rem;
     }
     #loginBtn::before {
