@@ -8,8 +8,8 @@
 /* Body with construction theme */
 body {
     font-family: 'Roboto', sans-serif;
-    background: url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat;
-    background-color: #f0f0f0; /* Light gray background */
+    background: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png') repeat;
+    background-color: #d3d3d3; /* Light gray background as fallback */
     color: #333;
     display: flex;
     justify-content: center;
@@ -20,14 +20,14 @@ body {
     overflow: hidden; /* Prevent scrolling */
 }
 
-/* Add a construction tape effect */
+/* Add a construction tape effect at the top */
 body::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 20px; /* Reduced height */
+    height: 20px;
     background: repeating-linear-gradient(
         45deg,
         #ffc107,
@@ -39,11 +39,30 @@ body::before {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Add a construction tape effect at the bottom */
+body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffc107,
+        #ffc107 20px,
+        #000 20px,
+        #000 40px
+    );
+    z-index: 2;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
 /* Container for content */
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
-    padding: 20px; /* Reduced padding */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 600px;
@@ -54,8 +73,8 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: auto; /* Adjusted to fit content */
-    max-height: 100vh; /* Ensure it fits within viewport */
+    min-height: auto;
+    max-height: calc(100vh - 40px); /* Account for top and bottom bars */
     overflow: hidden; /* Prevent internal scrolling */
 }
 
@@ -64,21 +83,21 @@ body::before {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 200px; /* Reduced size */
+    max-width: 200px;
     height: auto;
 }
 
 /* Animation container */
 .animation-container {
-    margin: 10px 0; /* Reduced margin */
+    margin: 10px 0;
     width: 100%;
-    max-width: 300px; /* Reduced width */
-    height: 100px; /* Reduced height */
+    max-width: 300px;
+    height: 100px;
     position: relative;
     overflow: hidden;
 }
 
-/* Construction site (now just a background for the hammer) */
+/* Construction site (background for the crane) */
 .construction-site {
     position: absolute;
     bottom: 0;
@@ -91,163 +110,171 @@ body::before {
     align-items: center;
 }
 
-/* Hammer */
-.hammer {
+/* Crane */
+.crane {
     position: relative;
-    width: 40px;
-    height: 120px;
-    transform-origin: bottom center; /* Changed to bottom for hammering motion */
-    transform: rotate(45deg); /* Rotated 45 degrees */
-    animation: hammerNail 1.5s infinite ease-in-out;
+    width: 100px;
+    height: 80px;
 }
 
-/* Hammer handle */
-.hammer-handle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 90px;
-    background: #000000; /* Black shaft */
-    border-radius: 2px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Hammer grip (yellow part) */
-.hammer-handle::after {
-    content: '';
+/* Crane tower */
+.crane-tower {
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: #FFC107; /* DeWalt yellow */
-    border-radius: 2px;
-    border: 1px solid #000000;
-    background-image: linear-gradient(
-        45deg,
-        transparent 45%,
-        rgba(0, 0, 0, 0.1) 45%,
-        rgba(0, 0, 0, 0.1) 55%,
-        transparent 55%
-    ); /* Subtle texture for grip */
-    background-size: 4px 4px;
-}
-
-/* Hammer head */
-.hammer-head {
-    position: absolute;
-    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 20px;
-    background: #1C2526; /* Dark gray-black head */
-    border: 1px solid #000000;
-    border-radius: 2px;
+    width: 10px;
+    height: 60px;
+    background: #455A64; /* Dark gray tower */
+    border: 1px solid #37474F;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Claw (curved part) */
-.hammer-head::before {
-    content: '';
+/* Crane base */
+.crane-base {
     position: absolute;
-    right: -10px;
-    top: -5px;
-    width: 10px;
-    height: 25px;
-    background: #1C2526;
-    border: 1px solid #000000;
-    border-radius: 0 5px 5px 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 10px;
+    background: #FFC107; /* Construction yellow */
+    border: 1px solid #37474F;
+    border-radius: 2px;
 }
 
-/* Striking face */
-.hammer-head::after {
-    content: '';
+/* Crane arm */
+.crane-arm {
     position: absolute;
-    left: -10px;
     top: 0;
-    width: 10px;
-    height: 20px;
-    background: #1C2526;
-    border: 1px solid #000000;
-    border-radius: 2px 0 0 2px;
+    left: 50%;
+    transform-origin: left center;
+    width: 60px;
+    height: 5px;
+    background: #455A64;
+    border: 1px solid #37474F;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    animation: swingCrane 3s infinite ease-in-out;
 }
 
-/* Hammer shadow */
-.hammer-shadow {
+/* Crane cable */
+.crane-cable {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 1px;
+    height: 0;
+    background: #37474F;
+    animation: extendCable 3s infinite ease-in-out;
+}
+
+/* Crane hook */
+.crane-hook {
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    width: 6px;
+    height: 6px;
+    background: #37474F;
+    border-radius: 50%;
+}
+
+/* Material load (e.g., steel beam) */
+.material-load {
+    position: absolute;
+    bottom: -8px;
+    left: -5px;
+    width: 10px;
+    height: 4px;
+    background: #B0BEC5; /* Steel beam */
+    border: 1px solid #78909C;
+    border-radius: 1px;
+}
+
+/* Load shadow */
+.load-shadow {
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 10px;
+    width: 20px;
+    height: 5px;
     background: rgba(0, 0, 0, 0.15);
     border-radius: 50%;
     filter: blur(3px);
-    animation: hammerShadow 1.5s infinite ease-in-out;
+    animation: swingShadow 3s infinite ease-in-out;
 }
 
 /* Animation keyframes */
-@keyframes hammerNail {
+@keyframes swingCrane {
     0% {
-        transform: rotate(45deg);
+        transform: rotate(-15deg);
     }
     50% {
-        transform: rotate(30deg); /* Downward strike */
+        transform: rotate(15deg);
     }
     100% {
-        transform: rotate(45deg);
+        transform: rotate(-15deg);
     }
 }
 
-@keyframes hammerShadow {
+@keyframes extendCable {
     0% {
-        transform: translateX(-50%) scale(0.8);
+        height: 0;
+    }
+    50% {
+        height: 20px;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+@keyframes swingShadow {
+    0% {
+        transform: translateX(-40%) scale(0.8);
         opacity: 0.15;
     }
     50% {
-        transform: translateX(-50%) scale(1);
+        transform: translateX(-60%) scale(1);
         opacity: 0.25;
     }
     100% {
-        transform: translateX(-50%) scale(0.8);
+        transform: translateX(-40%) scale(0.8);
         opacity: 0.15;
     }
 }
 
 /* Header styling */
 .header {
-    margin: 10px 0; /* Reduced margin */
+    margin: 10px 0;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem; /* Reduced font size */
+    font-size: 2rem;
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 5px; /* Reduced margin */
+    margin-bottom: 5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
-    font-size: 1rem; /* Reduced font size */
+    font-size: 1rem;
     color: #555;
-    line-height: 1.4; /* Tightened line height */
+    line-height: 1.4;
 }
 
 /* Login button */
 .login-button {
-    margin: 10px 0; /* Reduced margin */
+    margin: 10px 0;
 }
 
 #loginBtn {
-    padding: 8px 20px; /* Reduced padding */
+    padding: 8px 20px;
     font-family: 'Oswald', sans-serif;
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem;
     text-transform: uppercase;
     background-color: #ffc107; /* Construction yellow */
     color: #000;
@@ -278,7 +305,7 @@ p {
     width: 90%;
     max-width: 400px;
     margin: 100px auto;
-    padding: 15px; /* Reduced padding */
+    padding: 15px;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -295,7 +322,7 @@ p {
 
 .login-content h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem; /* Reduced font size */
+    font-size: 1.5rem;
     margin-bottom: 15px;
     color: #000;
 }
@@ -303,21 +330,21 @@ p {
 .login-content form {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Reduced gap */
+    gap: 10px;
 }
 
 .login-content input {
-    padding: 8px; /* Reduced padding */
-    font-size: 0.9rem; /* Reduced font size */
+    padding: 8px;
+    font-size: 0.9rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
 }
 
 .login-content button {
-    padding: 8px; /* Reduced padding */
+    padding: 8px;
     font-family: 'Oswald', sans-serif;
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem;
     text-transform: uppercase;
     background-color: #ffc107;
     color: #000;
@@ -333,8 +360,8 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 10px; /* Reduced margin */
-    font-size: 0.8rem; /* Reduced font size */
+    margin-top: 10px;
+    font-size: 0.8rem;
 }
 
 .contact-info a {
@@ -349,7 +376,7 @@ p {
 /* Mobile optimization: Adjust layout and animation for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.5rem; /* Further reduced for mobile */
+        font-size: 1.5rem;
     }
     p {
         font-size: 0.9rem;
@@ -357,40 +384,34 @@ p {
     .container {
         padding: 15px;
         min-height: auto;
-        max-height: 100vh;
+        max-height: calc(100vh - 40px); /* Account for top and bottom bars */
     }
     .animation-container {
         max-width: 250px;
-        height: 80px; /* Further reduced height */
+        height: 80px;
     }
-    .hammer {
-        width: 30px;
-        height: 90px;
-    }
-    .hammer-handle {
-        width: 10px;
+    .crane {
+        width: 80px;
         height: 60px;
     }
-    .hammer-handle::after {
-        height: 30px;
-    }
-    .hammer-head {
-        width: 30px;
-        height: 15px;
-    }
-    .hammer-head::before {
-        right: -8px;
+    .crane-tower {
         width: 8px;
-        height: 20px;
+        height: 50px;
     }
-    .hammer-head::after {
-        left: -8px;
-        width: 8px;
-        height: 15px;
-    }
-    .hammer-shadow {
-        width: 40px;
+    .crane-base {
+        width: 24px;
         height: 8px;
+    }
+    .crane-arm {
+        width: 50px;
+        height: 4px;
+    }
+    .crane-cable {
+        right: -1px;
+    }
+    .load-shadow {
+        width: 15px;
+        height: 4px;
     }
 }
 
@@ -398,7 +419,7 @@ p {
 @media (max-width: 1024px) {
     .container {
         min-height: auto;
-        max-height: 100vh;
+        max-height: calc(100vh - 40px); /* Account for top and bottom bars */
     }
     .animation-container {
         max-width: 300px;
