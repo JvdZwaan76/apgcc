@@ -18,7 +18,7 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    /* Removed overflow-y: hidden to allow natural rendering */
+    padding: 20px 0; /* Offset for top and bottom tapes */
 }
 
 /* Add a construction tape effect at the top */
@@ -692,34 +692,31 @@ p {
 /* Mobile optimization: Adjust layout and animation for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.1rem; /* Further reduced to fit */
+        font-size: 1.1rem;
     }
     p {
-        font-size: 0.7rem; /* Further reduced to fit */
+        font-size: 0.7rem;
     }
     .container {
-        padding: 5px; /* Further reduced to fit */
-        margin: 20px 0; /* Further reduced to fit within viewport */
-        /* Remove fixed height, let content determine size */
-        min-height: 0;
-        max-height: none;
+        padding: 5px;
+        margin: 0; /* Remove margin to allow true centering */
         /* Ensure content fits within viewport */
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center; /* Center content vertically */
         align-items: center;
     }
     .logo img {
-        max-width: 180px; /* Further reduced to fit */
+        max-width: 180px;
     }
     .animation-container {
-        max-width: 180px; /* Further reduced to fit */
-        height: 54px; /* Further reduced to fit, maintaining aspect ratio (180/54 = 10/3) */
-        margin: 3px 0; /* Further reduced to fit */
+        max-width: 180px;
+        height: 54px;
+        margin: 3px 0;
     }
     .crane {
-        width: 36px; /* Scaled down proportionally */
-        height: 45px; /* Scaled down proportionally */
+        width: 36px;
+        height: 45px;
     }
     .crane-tower {
         width: 5px;
@@ -819,22 +816,22 @@ p {
         height: 27px;
     }
     #loginBtn {
-        padding: 5px 15px 5px 25px; /* Further reduced to fit */
-        font-size: 0.8rem; /* Further reduced to fit */
+        padding: 5px 15px 5px 25px;
+        font-size: 0.8rem;
     }
     #loginBtn::before {
         font-size: 0.8rem;
         left: 7px;
     }
     .header {
-        margin: 3px 0; /* Further reduced to fit */
+        margin: 3px 0;
     }
     .login-button {
-        margin: 3px 0; /* Further reduced to fit */
+        margin: 3px 0;
     }
     .contact-info {
-        margin-top: 3px; /* Further reduced to fit */
-        font-size: 0.65rem; /* Further reduced to fit */
+        margin-top: 3px;
+        font-size: 0.65rem;
     }
     /* Adjust parallax delays for smoother flow on mobile */
     .logo.animate {
