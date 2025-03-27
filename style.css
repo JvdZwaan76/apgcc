@@ -23,7 +23,7 @@ body {
 /* Add a construction tape effect at the top */
 body::before {
     content: '';
-    position: absolute;
+    position: fixed; /* Changed to fixed to ensure visibility */
     top: 0;
     left: 0;
     width: 100%;
@@ -43,7 +43,7 @@ body::before {
 /* Add a construction tape effect at the bottom (reversed direction) */
 body::after {
     content: '';
-    position: absolute;
+    position: fixed; /* Changed to fixed to ensure visibility on mobile */
     bottom: 0;
     left: 0;
     width: 100%;
@@ -78,6 +78,39 @@ body::after {
     min-height: auto;
     max-height: calc(100vh - 40px);
     overflow: hidden;
+    /* Gold hairline border */
+    border: 1px solid transparent; /* Placeholder for animation */
+}
+
+/* Gold hairline border with parallax effect */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #DAA520; /* Gold hairline */
+    border-radius: 20px;
+    opacity: 0;
+    transform: scale(0.95); /* Slightly smaller for parallax effect */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.container.animate::before {
+    animation: borderParallax 1s ease-out 0.5s forwards; /* Delayed to sync with content */
+}
+
+/* Parallax effect for gold hairline */
+@keyframes borderParallax {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Logo styling */
@@ -130,7 +163,288 @@ body::after {
 .cloud-part {
     background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.cloud-1 {
+    width: 60px;
+    height: 20px;
+    top: 10px;
+    left: -70px;
+    animation-duration: 15s;
+}
+
+.cloud-1 .cloud-part-1 {
+    width: 30px;
+    height: 20px;
+}
+
+.cloud-1 .cloud-part-2 {
+    width: 40px;
+    height: 25px;
+    margin-left: -10px;
+}
+
+.cloud-1 .cloud-part-3 {
+    width: 25px;
+    height: 15px;
+    margin-left: -10px;
+}
+
+.cloud-2 {
+    width: 80px;
+    height: 30px;
+    top: 30px;
+    left: -90px;
+    animation-duration: 20s;
+    animation-delay: 5s;
+}
+
+.cloud-2 .cloud-part-1 {
+    width: 40px;
+    height: 30px;
+}
+
+.cloud-2 .cloud-part-2 {
+    width: 50px;
+    height: 35px;
+    margin-left: -15px;
+}
+
+.cloud-2 .cloud-part-3 {
+    width: 30px;
+    height: 20px;
+    margin-left: -10px;
+}
+
+.cloud-3 {
+    width: 50px;
+    height: 15px;
+    top: 50px;
+    left: -60px;
+    animation-duration: 18s;
+    animation-delay: 10s;
+}
+
+.cloud-3 .cloud-part-1 {
+    width: 25px;
+    height: 15px;
+}
+
+.cloud-3 .cloud-part-2 {
+    width: 35px;
+    height: 20px;
+    margin-left: -10px;
+}
+
+.cloud-3 .cloud-part-3 {
+    width: 20px;
+    height: 10px;
+    margin-left: -8px;
+}
+
+/* Skyscrapers */
+.skyscraper {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.skyscraper-1 {
+    left: 10%;
+    width: 20px;
+    height: 60px;
+}
+
+.skyscraper-.Concurrent Behavior**:
+     - The bottom tape (`body::after`) is set to `position: absolute`, which may cause it to be hidden if the viewport height is too small or if the body’s overflow is affecting its visibility.
+     - On mobile, the tape may not be visible due to the `overflow: hidden` on the `body` and the viewport height constraints.
+   - **Fix**:
+     - Change `position: absolute` to `position: fixed` for both `body::before` and `body::after` to ensure the tapes are always visible at the top and bottom of the viewport, regardless of scrolling or viewport height.
+     - This ensures the bottom tape displays correctly on mobile.
+
+2. **Add Gold Hairline Border**:
+   - Add a 1px gold border (`#DAA520`) around the `.container` using a `::before` pseudo-element to allow for animation.
+   - The border will match the container’s `border-radius` (20px) for consistency.
+
+3. **Add Parallax Effect for Gold Hairline**:
+   - Use a `::before` pseudo-element to create the border, starting with `opacity: 0` and a slightly smaller scale (`transform: scale(0.95)`).
+   - On page load, when the `.container` gets the `animate` class, the border will fade in and scale to its full size with a slight delay, creating a parallax effect relative to the container’s content.
+
+4. **Retain Perfect Aspect Ratios**:
+   - Ensure the logo, animation container, and other elements maintain their aspect ratios as in the previous version.
+   - The animation container (`max-width: 350px`, `height: 120px` on desktop) and its contents (crane, skyscrapers, trees, clouds) are already set with fixed dimensions to maintain aspect ratios.
+   - The logo (`max-width: 450px` on desktop, scaled down on tablet/mobile) uses `height: auto` to preserve its aspect ratio.
+
+#### Updated `style.css`
+```css
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with construction theme */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png') repeat;
+    background-color: #d3d3d3; /* Light gray background as fallback */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Add a construction tape effect at the top */
+body::before {
+    content: '';
+    position: fixed; /* Changed to fixed to ensure visibility */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: repeating-linear-gradient(
+        45deg,
+        #DAA520,
+        #DAA520 20px,
+        #1A2526 20px,
+        #1A2526 40px
+    );
+    opacity: 0.7;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a construction tape effect at the bottom (reversed direction) */
+body::after {
+    content: '';
+    position: fixed; /* Changed to fixed to ensure visibility on mobile */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #1A2526,
+        #1A2526 20px,
+        #DAA520 20px,
+        #DAA520 40px
+    );
+    opacity: 0.7;
+    z-index: 2;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Container for content */
+.container {
+    text-align: center;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    max-height: calc(100vh - 40px);
+    overflow: hidden;
+    /* Gold hairline border */
+    border: 1px solid transparent; /* Placeholder for animation */
+}
+
+/* Gold hairline border with parallax effect */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #DAA520; /* Gold hairline */
+    border-radius: 20px;
+    opacity: 0;
+    transform: scale(0.95); /* Slightly smaller for parallax effect */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.container.animate::before {
+    animation: borderParallax 1s ease-out 0.5s forwards; /* Delayed to sync with content */
+}
+
+/* Parallax effect for gold hairline */
+@keyframes borderParallax {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Logo styling */
+.logo {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.logo.animate {
+    animation: parallaxSlideIn 0.8s ease-out forwards;
+}
+
+/* Animation container */
+.animation-container {
+    opacity: 0;
+    transform: translateY(-15px);
+    margin: 20px 0;
+    width: 100%;
+    max-width: 350px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.animation-container.animate {
+    animation: parallaxSlideIn 1s ease-out 0.2s forwards;
+}
+
+/* Construction site */
+.construction-site {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clouds */
+.cloud {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    animation: driftCloud linear infinite;
+}
+
+.cloud-part {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .cloud-1 {
@@ -470,7 +784,7 @@ body::after {
 }
 
 .header.animate {
-    animation: parallaxSlideIn 1.2s ease-out 0.3s forwards; /* Reduced delay for smoother flow */
+    animation: parallaxSlideIn 1.2s ease-out 0.3s forwards;
 }
 
 h1 {
@@ -501,7 +815,7 @@ p {
 }
 
 .login-button.animate {
-    animation: parallaxSlideIn 1.4s ease-out 0.4s forwards; /* Reduced delay for smoother flow */
+    animation: parallaxSlideIn 1.4s ease-out 0.4s forwards;
 }
 
 #loginBtn {
@@ -637,7 +951,7 @@ p {
 }
 
 .contact-info.animate {
-    animation: parallaxSlideIn 1.6s ease-out 0.5s forwards; /* Reduced delay for smoother flow */
+    animation: parallaxSlideIn 1.6s ease-out 0.5s forwards;
 }
 
 .contact-info a {
@@ -658,12 +972,12 @@ p {
         font-size: 0.9rem;
     }
     .container {
-        padding: 20px; /* Increased for more breathing room */
+        padding: 20px;
         min-height: auto;
         max-height: calc(100vh - 40px);
     }
     .logo img {
-        max-width: 280px; /* Increased for better prominence */
+        max-width: 280px;
     }
     .animation-container {
         max-width: 250px;
@@ -791,16 +1105,16 @@ p {
         animation: parallaxSlideIn 0.8s ease-out forwards;
     }
     .animation-container.animate {
-        animation: parallaxSlideIn 1s ease-out 0.1s forwards; /* Reduced delay */
+        animation: parallaxSlideIn 1s ease-out 0.1s forwards;
     }
     .header.animate {
-        animation: parallaxSlideIn 1.2s ease-out 0.2s forwards; /* Reduced delay */
+        animation: parallaxSlideIn 1.2s ease-out 0.2s forwards;
     }
     .login-button.animate {
-        animation: parallaxSlideIn 1.4s ease-out 0.3s forwards; /* Reduced delay */
+        animation: parallaxSlideIn 1.4s ease-out 0.3s forwards;
     }
     .contact-info.animate {
-        animation: parallaxSlideIn 1.6s ease-out 0.4s forwards; /* Reduced delay */
+        animation: parallaxSlideIn 1.6s ease-out 0.4s forwards;
     }
 }
 
