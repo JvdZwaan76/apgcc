@@ -18,7 +18,7 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical scrolling */
+    /* Removed overflow-y: hidden to allow natural rendering */
 }
 
 /* Add a construction tape effect at the top */
@@ -692,14 +692,14 @@ p {
 /* Mobile optimization: Adjust layout and animation for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.2rem; /* Further reduced to fit */
+        font-size: 1.1rem; /* Further reduced to fit */
     }
     p {
-        font-size: 0.75rem; /* Further reduced to fit */
+        font-size: 0.7rem; /* Further reduced to fit */
     }
     .container {
-        padding: 8px; /* Further reduced to fit */
-        margin: 25px 0; /* Further reduced to fit within viewport */
+        padding: 5px; /* Further reduced to fit */
+        margin: 20px 0; /* Further reduced to fit within viewport */
         /* Remove fixed height, let content determine size */
         min-height: 0;
         max-height: none;
@@ -710,131 +710,131 @@ p {
         align-items: center;
     }
     .logo img {
-        max-width: 200px; /* Further reduced to fit */
+        max-width: 180px; /* Further reduced to fit */
     }
     .animation-container {
-        max-width: 200px; /* Further reduced to fit */
-        height: 60px; /* Further reduced to fit */
-        margin: 5px 0; /* Further reduced to fit */
+        max-width: 180px; /* Further reduced to fit */
+        height: 54px; /* Further reduced to fit, maintaining aspect ratio (180/54 = 10/3) */
+        margin: 3px 0; /* Further reduced to fit */
     }
     .crane {
-        width: 40px; /* Scaled down */
-        height: 50px; /* Scaled down */
+        width: 36px; /* Scaled down proportionally */
+        height: 45px; /* Scaled down proportionally */
     }
     .crane-tower {
-        width: 6px;
-        height: 40px;
+        width: 5px;
+        height: 36px;
     }
     .crane-base {
-        width: 20px;
-        height: 6px;
+        width: 18px;
+        height: 5px;
     }
     .crane-arm {
-        width: 25px;
-        height: 3px;
+        width: 22px;
+        height: 2px;
     }
     .crane-cable {
         right: -1px;
     }
     .load-shadow {
-        width: 12px;
-        height: 3px;
+        width: 10px;
+        height: 2px;
     }
     .cloud-1 {
-        width: 40px;
-        height: 12px;
-        top: 3px;
+        width: 36px;
+        height: 10px;
+        top: 2px;
     }
     .cloud-1 .cloud-part-1 {
-        width: 20px;
-        height: 12px;
+        width: 18px;
+        height: 10px;
     }
     .cloud-1 .cloud-part-2 {
-        width: 28px;
-        height: 16px;
+        width: 25px;
+        height: 14px;
     }
     .cloud-1 .cloud-part-3 {
-        width: 16px;
-        height: 8px;
+        width: 14px;
+        height: 7px;
     }
     .cloud-2 {
-        width: 55px;
-        height: 18px;
-        top: 18px;
+        width: 50px;
+        height: 16px;
+        top: 16px;
     }
     .cloud-2 .cloud-part-1 {
-        width: 28px;
-        height: 18px;
+        width: 25px;
+        height: 16px;
     }
     .cloud-2 .cloud-part-2 {
-        width: 35px;
-        height: 22px;
+        width: 32px;
+        height: 20px;
     }
     .cloud-2 .cloud-part-3 {
-        width: 20px;
-        height: 12px;
+        width: 18px;
+        height: 10px;
     }
     .cloud-3 {
-        width: 30px;
-        height: 8px;
-        top: 35px;
+        width: 27px;
+        height: 7px;
+        top: 32px;
     }
     .cloud-3 .cloud-part-1 {
-        width: 16px;
-        height: 8px;
+        width: 14px;
+        height: 7px;
     }
     .cloud-3 .cloud-part-2 {
-        width: 22px;
-        height: 12px;
+        width: 20px;
+        height: 10px;
     }
     .cloud-3 .cloud-part-3 {
-        width: 12px;
-        height: 6px;
+        width: 10px;
+        height: 5px;
     }
     .skyscraper-1 {
         left: 5%;
-        width: 12px;
-        height: 40px;
+        width: 10px;
+        height: 36px;
     }
     .skyscraper-2 {
         left: 20%;
-        width: 8px;
-        height: 60px;
+        width: 7px;
+        height: 54px;
     }
     .skyscraper-3 {
         right: 5%;
-        width: 16px;
-        height: 30px;
+        width: 14px;
+        height: 27px;
     }
     .tree-1 {
         left: 0%;
-        height: 25px;
+        height: 22px;
     }
     .tree-2 {
         left: 30%;
-        height: 20px;
+        height: 18px;
     }
     .tree-3 {
         right: 0%;
-        height: 30px;
+        height: 27px;
     }
     #loginBtn {
-        padding: 6px 18px 6px 28px; /* Further reduced to fit */
-        font-size: 0.85rem; /* Further reduced to fit */
+        padding: 5px 15px 5px 25px; /* Further reduced to fit */
+        font-size: 0.8rem; /* Further reduced to fit */
     }
     #loginBtn::before {
-        font-size: 0.85rem;
-        left: 8px;
+        font-size: 0.8rem;
+        left: 7px;
     }
     .header {
-        margin: 5px 0; /* Further reduced to fit */
+        margin: 3px 0; /* Further reduced to fit */
     }
     .login-button {
-        margin: 5px 0; /* Further reduced to fit */
+        margin: 3px 0; /* Further reduced to fit */
     }
     .contact-info {
-        margin-top: 5px; /* Further reduced to fit */
-        font-size: 0.7rem; /* Further reduced to fit */
+        margin-top: 3px; /* Further reduced to fit */
+        font-size: 0.65rem; /* Further reduced to fit */
     }
     /* Adjust parallax delays for smoother flow on mobile */
     .logo.animate {
