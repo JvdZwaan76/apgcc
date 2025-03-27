@@ -82,15 +82,37 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 100%); /* Sky gradient */
+    background: linear-gradient(to bottom, #4A90E2 0%, #B3D4FF 100%); /* Professional sky gradient */
+}
+
+/* Ground shadow */
+.ground-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    filter: blur(5px);
 }
 
 /* Buildings */
 .building {
     position: absolute;
     bottom: 0;
-    background: #555; /* Dark gray for buildings */
-    border: 2px solid #333;
+    background: #2E3A59; /* Dark blue-gray for a modern look */
+    border: 1px solid #1A2338;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Windows */
+.window {
+    position: absolute;
+    background: #FFD700; /* Gold for window lights */
+    width: 8px;
+    height: 8px;
+    border: 1px solid #1A2338;
 }
 
 /* Static building 1 */
@@ -100,12 +122,42 @@ body::before {
     height: 80px;
 }
 
+.building-1 .window:nth-child(1) {
+    top: 10px;
+    left: 10px;
+}
+
+.building-1 .window:nth-child(2) {
+    top: 30px;
+    left: 30px;
+}
+
+.building-1 .window:nth-child(3) {
+    top: 50px;
+    left: 10px;
+}
+
 /* Growing building 2 (animated) */
 .building-2 {
     left: 40%;
     width: 60px;
     height: 0; /* Start at 0 height */
-    animation: growBuilding 4s infinite ease-in-out;
+    animation: growBuilding 5s infinite cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+}
+
+.building-2 .window:nth-child(1) {
+    top: 10px;
+    left: 10px;
+}
+
+.building-2 .window:nth-child(2) {
+    top: 30px;
+    left: 40px;
+}
+
+.building-2 .window:nth-child(3) {
+    top: 50px;
+    left: 20px;
 }
 
 /* Static building 3 */
@@ -115,32 +167,57 @@ body::before {
     height: 100px;
 }
 
+.building-3 .window:nth-child(1) {
+    top: 20px;
+    left: 10px;
+}
+
+.building-3 .window:nth-child(2) {
+    top: 40px;
+    left: 25px;
+}
+
+.building-3 .window:nth-child(3) {
+    top: 60px;
+    left: 10px;
+}
+
 /* Crane */
 .crane {
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 120px;
     height: 20px;
 }
 
 .crane-arm {
     width: 100%;
     height: 5px;
-    background: #ffc107; /* Construction yellow */
+    background: #1A2338; /* Darker color for professionalism */
     position: relative;
-    animation: swingCrane 3s infinite ease-in-out;
+    animation: swingCrane 4s infinite ease-in-out;
 }
 
-.crane-arm::after {
-    content: '';
+.crane-cable {
     position: absolute;
     right: 0;
-    top: -10px;
-    width: 5px;
-    height: 20px;
-    background: #000; /* Hook */
+    top: 5px;
+    width: 1px;
+    height: 0;
+    background: #333;
+    animation: extendCable 4s infinite ease-in-out;
+}
+
+.crane-hook {
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    width: 7px;
+    height: 7px;
+    background: #333;
+    border-radius: 50%;
 }
 
 /* Animation keyframes */
@@ -148,23 +225,35 @@ body::before {
     0% {
         height: 0;
     }
-    50% {
+    70% {
         height: 120px;
     }
     100% {
-        height: 0;
+        height: 120px;
     }
 }
 
 @keyframes swingCrane {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(-20deg);
     }
     50% {
-        transform: rotate(30deg);
+        transform: rotate(20deg);
     }
     100% {
-        transform: rotate(0deg);
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes extendCable {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 30px;
+    }
+    100% {
+        height: 0;
     }
 }
 
@@ -325,6 +414,10 @@ p {
     }
     .crane {
         width: 80px;
+    }
+    .window {
+        width: 6px;
+        height: 6px;
     }
 }
 
