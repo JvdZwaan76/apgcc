@@ -3,6 +3,7 @@ const loginBtn = document.getElementById('loginBtn');
 const loginModal = document.getElementById('loginModal');
 const closeBtn = document.querySelector('.close');
 const loginForm = document.getElementById('loginForm');
+const usernameInput = loginForm.querySelector('input[type="text"]');
 
 // Get elements for parallax animation
 const logo = document.querySelector('.logo');
@@ -23,17 +24,32 @@ window.addEventListener('load', () => {
 // Open login modal
 loginBtn.addEventListener('click', () => {
     loginModal.style.display = 'block';
+    loginModal.setAttribute('aria-hidden', 'false');
+    usernameInput.focus(); // Focus on the first input for accessibility
 });
 
 // Close login modal
 closeBtn.addEventListener('click', () => {
     loginModal.style.display = 'none';
+    loginModal.setAttribute('aria-hidden', 'true');
+    loginBtn.focus(); // Return focus to the button
 });
 
 // Close modal when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target === loginModal) {
         loginModal.style.display = 'none';
+        loginModal.setAttribute('aria-hidden', 'true');
+        loginBtn.focus();
+    }
+});
+
+// Close modal with Escape key
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && loginModal.style.display === 'block') {
+        loginModal.style.display = 'none';
+        loginModal.setAttribute('aria-hidden', 'true');
+        loginBtn.focus();
     }
 });
 
@@ -45,4 +61,6 @@ loginForm.addEventListener('submit', (e) => {
     console.log('Login attempt:', { username, password });
     alert('Login submitted! (This is a demo)');
     loginModal.style.display = 'none';
+    loginModal.setAttribute('aria-hidden', 'true');
+    loginBtn.focus();
 });

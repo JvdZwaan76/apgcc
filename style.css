@@ -65,7 +65,7 @@ body::after {
     text-align: center;
     background: #FFFFFF;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 20px; /* Increased for a softer, modern look */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-width: 800px;
     width: 90%;
@@ -82,8 +82,8 @@ body::after {
 
 /* Logo styling */
 .logo {
-    opacity: 0; /* Start hidden for animation */
-    transform: translateY(-20px); /* Start slightly above */
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 .logo.animate {
@@ -100,78 +100,29 @@ body::after {
     animation: parallaxSlideIn 1s ease-out 0.2s forwards;
 }
 
-/* Header styling */
-.header {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-.header.animate {
-    animation: parallaxSlideIn 1.2s ease-out 0.4s forwards;
-}
-
-/* Login button */
-.login-button {
-    opacity: 0;
-    transform: translateY(-5px);
-}
-
-.login-button.animate {
-    animation: parallaxSlideIn 1.4s ease-out 0.6s forwards;
-}
-
-/* Contact info */
-.contact-info {
-    opacity: 0;
-    transform: translateY(0);
-}
-
-.contact-info.animate {
-    animation: parallaxSlideIn 1.6s ease-out 0.8s forwards;
-}
-
-/* Parallax slide-in animation */
-@keyframes parallaxSlideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(var(--startY, 0));
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Logo styling */
-.logo img {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-}
-
-/* Animation container */
-.animation-container {
-    margin: 20px 0;
-    width: 100%;
-    max-width: 350px;
-    height: 120px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Construction site (background for the crane with clouds, skyscrapers, and trees) */
+/* Construction site (Southern California scene) */
 .construction-site {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%);
+    background: linear-gradient(to bottom, #87CEEB 0%, #FFDAB9 100%); /* Sky blue to warm peach for SoCal vibe */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Ground element for Southern California scene */
+.construction-site::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #D2B48C; /* Sandy beige ground */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Clouds */
@@ -268,7 +219,7 @@ body::after {
 /* Skyscrapers */
 .skyscraper {
     position: absolute;
-    bottom: 0;
+    bottom: 10px; /* Adjusted for ground */
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.6);
 }
@@ -291,58 +242,60 @@ body::after {
     height: 50px;
 }
 
-/* Trees */
-.tree {
+/* Palm Trees */
+.palm-tree {
     position: absolute;
-    bottom: 0;
+    bottom: 10px; /* Adjusted for ground */
     z-index: 0; /* Behind the crane */
 }
 
-.tree::before {
+.palm-tree::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 4px;
-    height: 20px;
-    background: #3A2E1F; /* Brown trunk */
+    height: 30px; /* Taller trunk for palm tree */
+    background: #8B5A2B; /* Light brown trunk */
+    border-radius: 2px;
 }
 
-.tree::after {
+.palm-tree::after {
     content: '';
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
+    width: 30px;
     height: 20px;
-    background: #2E5A3A; /* Dark green foliage */
-    border-radius: 50%;
+    background: #2E8B57; /* Brighter green for palm fronds */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape for fronds */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.tree-1 {
+.palm-tree-1 {
     left: 5%;
-    height: 40px;
+    height: 50px;
 }
 
-.tree-2 {
+.palm-tree-2 {
     left: 35%;
-    height: 35px;
+    height: 45px;
 }
 
-.tree-3 {
+.palm-tree-3 {
     right: 5%;
-    height: 45px;
+    height: 55px;
 }
 
 /* Crane */
 .crane {
     position: absolute;
+    bottom: 10px; /* Adjusted for ground */
     width: 60px;
     height: 80px;
-    z-index: 1; /* Ensure crane is above skyscrapers and trees */
+    z-index: 1; /* Ensure crane is above skyscrapers and palm trees */
 }
 
 /* Crane tower */
@@ -491,6 +444,18 @@ body::after {
     100% {
         transform: translateX(-40%) scale(0.8);
         opacity: 0.15;
+    }
+}
+
+/* Parallax slide-in animation */
+@keyframes parallaxSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(var(--startY, 0));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -684,7 +649,7 @@ p {
     .container {
         padding: 20px;
         min-height: auto;
-        max-height: calc(100vh - 40px); /* Account for top and bottom bars */
+        max-height: calc(100vh - 40px);
     }
     .logo img {
         max-width: 280px;
@@ -782,17 +747,17 @@ p {
         width: 20px;
         height: 40px;
     }
-    .tree-1 {
+    .palm-tree-1 {
         left: 0%;
-        height: 35px;
+        height: 45px;
     }
-    .tree-2 {
+    .palm-tree-2 {
         left: 30%;
-        height: 30px;
-    }
-    .tree-3 {
-        right: 0%;
         height: 40px;
+    }
+    .palm-tree-3 {
+        right: 0%;
+        height: 50px;
     }
     #loginBtn {
         padding: 10px 25px 10px 35px;
@@ -807,7 +772,7 @@ p {
 @media (max-width: 1024px) {
     .container {
         min-height: auto;
-        max-height: calc(100vh - 40px); /* Account for top and bottom bars */
+        max-height: calc(100vh - 40px);
         max-width: 600px;
     }
     .animation-container {

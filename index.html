@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APGCC Construction | Coming Soon</title>
     <meta name="description" content="APGCC Construction Corp is a leading general construction company in Thousand Oaks, Southern California. We specialize in residential and commercial construction, remodeling, and renovations. Our new website is coming soon!">
     <meta name="keywords" content="general contractor, construction company, thousand oaks, southern california, remodeling, building, renovation, construction services">
     <meta name="robots" content="index, follow">
@@ -19,6 +18,8 @@
     <meta name="twitter:title" content="APGCC Construction | Coming Soon">
     <meta name="twitter:description" content="APGCC Construction Corp is a leading general construction company in Thousand Oaks, Southern California. Our new website is coming soon!">
     <meta name="twitter:image" content="https://apgcc.net/images/apgcc_logo.png">
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#FFFFFF">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W94WD56X3"></script>
     <script>
@@ -31,13 +32,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>APGCC Construction | Coming Soon</title>
 </head>
 <body>
-    <div class="container">
+    <main class="container" role="main" aria-label="Coming Soon Page">
         <div class="logo">
             <img src="/images/apgcc_logo.png" alt="APGCC Construction Logo">
         </div>
-        <div class="animation-container">
+        <section class="animation-container" aria-label="Construction Animation">
             <div class="construction-site">
                 <div class="cloud cloud-1">
                     <div class="cloud-part cloud-part-1"></div>
@@ -57,9 +59,9 @@
                 <div class="skyscraper skyscraper-1"></div>
                 <div class="skyscraper skyscraper-2"></div>
                 <div class="skyscraper skyscraper-3"></div>
-                <div class="tree tree-1"></div>
-                <div class="tree tree-2"></div>
-                <div class="tree tree-3"></div>
+                <div class="palm-tree palm-tree-1"></div>
+                <div class="palm-tree palm-tree-2"></div>
+                <div class="palm-tree palm-tree-3"></div>
                 <div class="crane">
                     <div class="crane-tower">
                         <div class="crane-base"></div>
@@ -75,29 +77,29 @@
                 </div>
                 <div class="load-shadow"></div>
             </div>
-        </div>
-        <div class="header">
+        </section>
+        <section class="header">
             <h1>Under Construction!</h1>
             <p>Our new website is being built. Stay tuned for updates.</p>
-        </div>
+        </section>
         <div class="login-button">
-            <button id="loginBtn">Client Login</button>
+            <button id="loginBtn" aria-label="Open Client Login Modal">Client Login</button>
         </div>
-        <div class="login-modal" id="loginModal">
+        <div class="login-modal" id="loginModal" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
             <div class="login-content">
-                <span class="close">×</span>
-                <h2>Client Login</h2>
+                <span class="close" role="button" aria-label="Close Modal" tabindex="0">×</span>
+                <h2 id="loginModalTitle">Client Login</h2>
                 <form id="loginForm">
-                    <input type="text" placeholder="Username" required>
-                    <input type="password" placeholder="Password" required>
+                    <input type="text" placeholder="Username" required aria-required="true">
+                    <input type="password" placeholder="Password" required aria-required="true">
                     <button type="submit">Login</button>
                 </form>
             </div>
         </div>
-        <div class="contact-info">
-            <p><strong>Contact Webmaster:</strong> <a href="mailto:jaspervdz@me.com">jaspervdz@me.com</a></p>
-        </div>
-    </div>
+        <footer class="contact-info">
+            <p><strong>Contact Webmaster:</strong> <a href="mailto:jaspervdz@me.com" aria-label="Email the Webmaster">jaspervdz@me.com</a></p>
+        </footer>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
