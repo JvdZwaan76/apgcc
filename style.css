@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 40px); /* Account for padding */
+    height: 100vh; /* Full viewport height */
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -79,7 +79,9 @@ body::after {
     justify-content: center;
     align-items: center;
     margin: 0; /* Remove margin to allow true centering */
+    max-height: calc(100vh - 40px); /* Constrain height to viewport minus body padding */
     height: fit-content; /* Let content determine height */
+    overflow: hidden; /* Prevent internal overflow */
 }
 
 /* Logo styling */
@@ -662,13 +664,13 @@ p {
 /* Mobile optimization: Adjust layout and animation for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1rem; /* Further reduced to fit */
+        font-size: 1rem;
     }
     p {
-        font-size: 0.65rem; /* Further reduced to fit */
+        font-size: 0.65rem;
     }
     .container {
-        padding: 3px; /* Further reduced to fit */
+        padding: 3px;
         margin: 0; /* Remove margin to allow true centering */
         /* Ensure content fits within viewport */
         display: flex;
@@ -677,16 +679,16 @@ p {
         align-items: center;
     }
     .logo img {
-        max-width: 150px; /* Further reduced to fit */
+        max-width: 150px;
     }
     .animation-container {
-        max-width: 150px; /* Further reduced to fit */
-        height: 45px; /* Further reduced to fit, maintaining aspect ratio (150/45 = 10/3) */
-        margin: 2px 0; /* Further reduced to fit */
+        max-width: 150px;
+        height: 45px;
+        margin: 2px 0;
     }
     .crane {
-        width: 30px; /* Scaled down proportionally */
-        height: 38px; /* Scaled down proportionally */
+        width: 30px;
+        height: 38px;
     }
     .crane-tower {
         width: 4px;
@@ -786,22 +788,22 @@ p {
         height: 23px;
     }
     #loginBtn {
-        padding: 4px 12px 4px 20px; /* Further reduced to fit */
-        font-size: 0.7rem; /* Further reduced to fit */
+        padding: 4px 12px 4px 20px;
+        font-size: 0.7rem;
     }
     #loginBtn::before {
         font-size: 0.7rem;
         left: 6px;
     }
     .header {
-        margin: 2px 0; /* Further reduced to fit */
+        margin: 2px 0;
     }
     .login-button {
-        margin: 2px 0; /* Further reduced to fit */
+        margin: 2px 0;
     }
     .contact-info {
-        margin-top: 2px; /* Further reduced to fit */
-        font-size: 0.6rem; /* Further reduced to fit */
+        margin-top: 2px;
+        font-size: 0.6rem;
     }
     /* Adjust parallax delays for smoother flow on mobile */
     .logo.animate {
@@ -824,7 +826,7 @@ p {
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 15px; /* Reduced to fit */
+        padding: 15px;
         margin: 0;
         max-width: 600px;
     }
@@ -836,12 +838,12 @@ p {
         max-width: 300px;
     }
     .header {
-        margin: 10px 0; /* Reduced to fit */
+        margin: 10px 0;
     }
     .login-button {
-        margin: 10px 0; /* Reduced to fit */
+        margin: 10px 0;
     }
     .contact-info {
-        margin-top: 10px; /* Reduced to fit */
+        margin-top: 10px;
     }
 }
