@@ -7,7 +7,7 @@
 
 /* Body with construction theme */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Cinzel', serif; /* Default font for consistency */
     background: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png') repeat;
     background-color: #d3d3d3; /* Light gray background as fallback */
     color: #333;
@@ -30,9 +30,9 @@ body::before {
     height: 20px;
     background: repeating-linear-gradient(
         45deg,
-        #DAA520, /* Deeper gold */
+        #DAA520,
         #DAA520 20px,
-        #1A2526 20px, /* Darker gray-black */
+        #1A2526 20px,
         #1A2526 40px
     );
     z-index: 2;
@@ -62,10 +62,10 @@ body::after {
 .container {
     text-align: center;
     background: #FFFFFF; /* Crisp white background */
-    padding: 40px; /* Increased padding for luxury */
-    border-radius: 12px; /* Slightly larger border radius */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for elegance */
-    max-width: 800px; /* Increased for desktop */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
     width: 90%;
     position: relative;
     z-index: 1;
@@ -83,16 +83,16 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 350px; /* Much larger for prominence */
+    max-width: 450px;
     height: auto;
 }
 
 /* Animation container */
 .animation-container {
-    margin: 20px 0; /* Increased margin for better spacing */
+    margin: 20px 0;
     width: 100%;
-    max-width: 350px; /* Slightly larger for desktop */
-    height: 120px; /* Slightly taller for better presentation */
+    max-width: 350px;
+    height: 120px;
     position: relative;
     overflow: hidden;
 }
@@ -104,7 +104,7 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%); /* Darker blue gradient for luxury */
+    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,7 +205,7 @@ body::after {
 .skyscraper {
     position: absolute;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Slightly darker for luxury */
+    background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
@@ -243,7 +243,7 @@ body::after {
     transform: translateX(-50%);
     width: 10px;
     height: 60px;
-    background: #2A3A4A; /* Darker gray for luxury */
+    background: #2A3A4A;
     border: 1px solid #1A2526;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -256,7 +256,7 @@ body::after {
     transform: translateX(-50%);
     width: 30px;
     height: 10px;
-    background: #DAA520; /* Deeper gold */
+    background: #DAA520;
     border: 1px solid #1A2526;
     border-radius: 2px;
 }
@@ -384,51 +384,84 @@ body::after {
     }
 }
 
+/* Background slide-in effect for button hover */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /* Header styling */
 .header {
-    margin: 20px 0; /* Increased for better spacing */
+    margin: 20px 0;
 }
 
 h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.2rem; /* Slightly larger for prominence */
+    font-family: 'Cinzel', serif; /* Match CTA font */
+    font-size: 2.2rem;
+    font-weight: 700; /* Bold for prominence */
     color: #000;
-    text-transform: uppercase;
-    letter-spacing: 3px; /* Increased for elegance */
-    margin-bottom: 10px; /* Increased for better spacing */
+    text-transform: none; /* Remove uppercase for elegance */
+    letter-spacing: 2px; /* Reduced for Cinzel */
+    margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
-    font-size: 1.1rem; /* Slightly larger for readability */
-    color: #444; /* Darker gray for sophistication */
+    font-family: 'Cinzel', serif; /* Match CTA font */
+    font-size: 1.1rem;
+    font-weight: 400; /* Regular weight for readability */
+    color: #444;
     line-height: 1.6;
 }
 
 /* Login button */
 .login-button {
-    margin: 20px 0; /* Increased for better spacing */
+    margin: 20px 0;
+    position: relative; /* For background slide effect */
 }
 
 #loginBtn {
     position: relative; /* For positioning the lock icon */
-    padding: 14px 35px 14px 45px; /* Larger padding for prominence */
-    font-family: 'Cinzel', serif; /* Refined, exclusive font */
-    font-size: 1.2rem; /* Larger font size */
-    text-transform: none; /* Remove uppercase for elegance */
-    background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient */
+    padding: 14px 35px 14px 45px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 700; /* Bolded text */
+    text-transform: none;
+    background: linear-gradient(to bottom, #FFD700, #DAA520);
     color: #000;
-    border: 1px solid #DAA520; /* Subtle border for cleanliness */
+    border: 1px solid #DAA520;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* For background slide effect */
+}
+
+#loginBtn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #DAA520, #FFD700);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1; /* Behind the button content */
+}
+
+#loginBtn:hover::after {
+    transform: translateX(0);
+    animation: slideIn 0.3s ease forwards;
 }
 
 #loginBtn:hover {
-    background: linear-gradient(to bottom, #DAA520, #FFD700);
     transform: scale(1.05);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Lock icon for login button */
@@ -475,8 +508,9 @@ p {
 }
 
 .login-content h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Cinzel', serif; /* Match CTA font */
     font-size: 1.5rem;
+    font-weight: 700; /* Bold for prominence */
     margin-bottom: 15px;
     color: #000;
 }
@@ -489,6 +523,7 @@ p {
 
 .login-content input {
     padding: 10px;
+    font-family: 'Cinzel', serif; /* Match CTA font */
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -497,7 +532,7 @@ p {
 
 .login-content button {
     padding: 10px;
-    font-family: 'Cinzel', serif; /* Match button font */
+    font-family: 'Cinzel', serif;
     font-size: 1rem;
     text-transform: none;
     background: linear-gradient(to bottom, #FFD700, #DAA520);
@@ -515,11 +550,12 @@ p {
 /* Contact info */
 .contact-info {
     margin-top: 15px;
+    font-family: 'Cinzel', serif; /* Match CTA font */
     font-size: 0.9rem;
 }
 
 .contact-info a {
-    color: #5DADE2; /* Match the blue gradient background */
+    color: #5DADE2;
     text-decoration: none;
 }
 
@@ -541,7 +577,7 @@ p {
         max-height: calc(100vh - 40px); /* Account for top and bottom bars */
     }
     .logo img {
-        max-width: 220px; /* Adjusted for mobile */
+        max-width: 280px;
     }
     .animation-container {
         max-width: 250px;
@@ -650,13 +686,13 @@ p {
     .container {
         min-height: auto;
         max-height: calc(100vh - 40px); /* Account for top and bottom bars */
-        max-width: 600px; /* Smaller for tablet */
+        max-width: 600px;
     }
     .animation-container {
         max-width: 300px;
         height: 90px;
     }
     .logo img {
-        max-width: 300px; /* Slightly smaller for tablet */
+        max-width: 300px;
     }
 }
