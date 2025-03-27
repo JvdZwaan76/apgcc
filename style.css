@@ -78,28 +78,8 @@ body::after {
     justify-content: center;
     align-items: center;
     margin: 0; /* Remove margin to allow true centering */
-    /* Initial state for parallax intro effect */
-    opacity: 0;
-    transform: translateY(-20px) scale(0.9);
     /* Gold hairline border */
     border: 1px solid transparent; /* Placeholder for animation */
-}
-
-/* Apply parallax intro effect */
-.container.animate {
-    animation: containerParallaxIntro 1.2s ease-out forwards;
-}
-
-/* Parallax intro effect for container */
-@keyframes containerParallaxIntro {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
 }
 
 /* Gold hairline border with parallax effect */
@@ -721,8 +701,10 @@ p {
     .container {
         padding: 5px;
         margin: 0; /* Remove margin to allow true centering */
-        max-height: calc(100vh - 40px); /* Account for body padding (20px top + 20px bottom) */
-        overflow: hidden; /* Prevent internal overflow */
+        /* Remove max-height and overflow to allow natural rendering */
+        min-height: 0;
+        max-height: none;
+        overflow: visible;
         /* Ensure content fits within viewport */
         display: flex;
         flex-direction: column;
