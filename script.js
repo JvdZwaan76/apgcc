@@ -25,14 +25,14 @@ window.addEventListener('load', () => {
 loginBtn.addEventListener('click', () => {
     loginModal.style.display = 'block';
     loginModal.setAttribute('aria-hidden', 'false');
-    usernameInput.focus(); // Focus on the first input for accessibility
+    usernameInput.focus();
 });
 
 // Close login modal
 closeBtn.addEventListener('click', () => {
     loginModal.style.display = 'none';
     loginModal.setAttribute('aria-hidden', 'true');
-    loginBtn.focus(); // Return focus to the button
+    loginBtn.focus();
 });
 
 // Close modal when clicking outside

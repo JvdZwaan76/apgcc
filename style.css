@@ -65,7 +65,7 @@ body::after {
     text-align: center;
     background: #FFFFFF;
     padding: 40px;
-    border-radius: 20px; /* Increased for a softer, modern look */
+    border-radius: 20px; /* Kept from last update for modern look */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-width: 800px;
     width: 90%;
@@ -94,35 +94,29 @@ body::after {
 .animation-container {
     opacity: 0;
     transform: translateY(-15px);
+    margin: 20px 0;
+    width: 100%;
+    max-width: 350px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
 }
 
 .animation-container.animate {
     animation: parallaxSlideIn 1s ease-out 0.2s forwards;
 }
 
-/* Construction site (Southern California scene) */
+/* Construction site (reverted to original scene) */
 .construction-site {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #87CEEB 0%, #FFDAB9 100%); /* Sky blue to warm peach for SoCal vibe */
+    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%); /* Reverted to original gradient */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Ground element for Southern California scene */
-.construction-site::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background: #D2B48C; /* Sandy beige ground */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Clouds */
@@ -219,7 +213,7 @@ body::after {
 /* Skyscrapers */
 .skyscraper {
     position: absolute;
-    bottom: 10px; /* Adjusted for ground */
+    bottom: 0; /* Reverted to original position */
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.6);
 }
@@ -242,60 +236,59 @@ body::after {
     height: 50px;
 }
 
-/* Palm Trees */
-.palm-tree {
+/* Trees (reverted to original generic trees) */
+.tree {
     position: absolute;
-    bottom: 10px; /* Adjusted for ground */
+    bottom: 0; /* Reverted to original position */
     z-index: 0; /* Behind the crane */
 }
 
-.palm-tree::before {
+.tree::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 4px;
-    height: 30px; /* Taller trunk for palm tree */
-    background: #8B5A2B; /* Light brown trunk */
-    border-radius: 2px;
+    height: 20px;
+    background: #3A2E1F; /* Brown trunk */
 }
 
-.palm-tree::after {
+.tree::after {
     content: '';
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 30px;
+    width: 20px;
     height: 20px;
-    background: #2E8B57; /* Brighter green for palm fronds */
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape for fronds */
+    background: #2E5A3A; /* Dark green foliage */
+    border-radius: 50%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.palm-tree-1 {
+.tree-1 {
     left: 5%;
-    height: 50px;
+    height: 40px;
 }
 
-.palm-tree-2 {
+.tree-2 {
     left: 35%;
-    height: 45px;
+    height: 35px;
 }
 
-.palm-tree-3 {
+.tree-3 {
     right: 5%;
-    height: 55px;
+    height: 45px;
 }
 
 /* Crane */
 .crane {
     position: absolute;
-    bottom: 10px; /* Adjusted for ground */
+    bottom: 0; /* Reverted to original position */
     width: 60px;
     height: 80px;
-    z-index: 1; /* Ensure crane is above skyscrapers and palm trees */
+    z-index: 1; /* Ensure crane is above skyscrapers and trees */
 }
 
 /* Crane tower */
@@ -471,23 +464,29 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 20px 0;
+    margin: 15px 0; /* Adjusted for better spacing */
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.header.animate {
+    animation: parallaxSlideIn 1.2s ease-out 0.4s forwards;
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2rem; /* Slightly reduced for better balance */
     font-weight: 700;
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Adjusted for better spacing */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Slightly reduced for better balance */
     font-weight: 400;
     color: #444;
     line-height: 1.6;
@@ -495,15 +494,21 @@ p {
 
 /* Login button */
 .login-button {
-    margin: 20px 0;
-    position: relative; /* For background slide effect */
+    margin: 15px 0; /* Adjusted for better spacing */
+    position: relative;
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.login-button.animate {
+    animation: parallaxSlideIn 1.4s ease-out 0.6s forwards;
 }
 
 #loginBtn {
-    position: relative; /* For positioning the lock icon */
-    padding: 14px 35px 14px 45px;
+    position: relative;
+    padding: 12px 30px 12px 40px; /* Adjusted for better balance */
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Slightly reduced for better balance */
     font-weight: 700;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520);
@@ -513,7 +518,7 @@ p {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    overflow: hidden; /* For background slide effect */
+    overflow: hidden;
 }
 
 #loginBtn::after {
@@ -526,7 +531,7 @@ p {
     background: linear-gradient(to bottom, #DAA520, #FFD700);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: -1; /* Behind the button content */
+    z-index: -1;
 }
 
 #loginBtn:hover::after {
@@ -541,13 +546,13 @@ p {
 
 /* Lock icon for login button */
 #loginBtn::before {
-    content: '🔒'; /* Unicode padlock character */
+    content: '🔒';
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem; /* Match button font size */
-    color: #000; /* Match button text color */
+    font-size: 1.1rem; /* Match button font size */
+    color: #000;
 }
 
 /* Login modal */
@@ -627,6 +632,12 @@ p {
     margin-top: 15px;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.contact-info.animate {
+    animation: parallaxSlideIn 1.6s ease-out 0.8s forwards;
 }
 
 .contact-info a {
@@ -647,12 +658,12 @@ p {
         font-size: 0.9rem;
     }
     .container {
-        padding: 20px;
+        padding: 15px; /* Reduced for better fit */
         min-height: auto;
         max-height: calc(100vh - 40px);
     }
     .logo img {
-        max-width: 280px;
+        max-width: 250px; /* Adjusted for mobile */
     }
     .animation-container {
         max-width: 250px;
@@ -747,17 +758,17 @@ p {
         width: 20px;
         height: 40px;
     }
-    .palm-tree-1 {
+    .tree-1 {
         left: 0%;
-        height: 45px;
+        height: 35px;
     }
-    .palm-tree-2 {
+    .tree-2 {
         left: 30%;
-        height: 40px;
+        height: 30px;
     }
-    .palm-tree-3 {
+    .tree-3 {
         right: 0%;
-        height: 50px;
+        height: 40px;
     }
     #loginBtn {
         padding: 10px 25px 10px 35px;
@@ -765,6 +776,15 @@ p {
     }
     #loginBtn::before {
         font-size: 1rem;
+    }
+    .header {
+        margin: 10px 0; /* Adjusted for mobile */
+    }
+    .login-button {
+        margin: 10px 0; /* Adjusted for mobile */
+    }
+    .contact-info {
+        margin-top: 10px; /* Adjusted for mobile */
     }
 }
 
@@ -781,5 +801,14 @@ p {
     }
     .logo img {
         max-width: 300px;
+    }
+    .header {
+        margin: 15px 0; /* Adjusted for tablet */
+    }
+    .login-button {
+        margin: 15px 0; /* Adjusted for tablet */
+    }
+    .contact-info {
+        margin-top: 15px; /* Adjusted for tablet */
     }
 }
