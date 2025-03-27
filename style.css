@@ -91,8 +91,8 @@ body::before {
 /* Hammer */
 .hammer {
     position: relative;
-    width: 30px;
-    height: 100px;
+    width: 40px;
+    height: 120px;
     transform-origin: top center;
     animation: swingHammer 2s infinite ease-in-out;
 }
@@ -103,25 +103,73 @@ body::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
-    height: 70px;
-    background: linear-gradient(to bottom, #8D6E63 0%, #6D4C41 100%); /* Wood-like gradient */
+    width: 12px;
+    height: 90px;
+    background: #000000; /* Black shaft */
     border-radius: 2px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Hammer grip (yellow part) */
+.hammer-handle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #FFC107; /* DeWalt yellow */
+    border-radius: 2px;
+    border: 1px solid #000000;
+    background-image: linear-gradient(
+        45deg,
+        transparent 45%,
+        rgba(0, 0, 0, 0.1) 45%,
+        rgba(0, 0, 0, 0.1) 55%,
+        transparent 55%
+    ); /* Subtle texture for grip */
+    background-size: 4px 4px;
 }
 
 /* Hammer head */
 .hammer-head {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(to bottom, #B0BEC5 0%, #78909C 100%); /* Steel gradient */
-    border: 1px solid #455A64;
-    border-radius: 3px;
+    width: 40px;
+    height: 20px;
+    background: #1C2526; /* Dark gray-black head */
+    border: 1px solid #000000;
+    border-radius: 2px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Claw (curved part) */
+.hammer-head::before {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    width: 10px;
+    height: 25px;
+    background: #1C2526;
+    border: 1px solid #000000;
+    border-radius: 0 5px 5px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+}
+
+/* Striking face */
+.hammer-head::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 10px;
+    height: 20px;
+    background: #1C2526;
+    border: 1px solid #000000;
+    border-radius: 2px 0 0 2px;
 }
 
 /* Hammer shadow */
@@ -130,7 +178,7 @@ body::before {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
+    width: 50px;
     height: 10px;
     background: rgba(0, 0, 0, 0.15);
     border-radius: 50%;
@@ -311,19 +359,32 @@ p {
         height: 120px;
     }
     .hammer {
-        width: 24px;
-        height: 80px;
+        width: 30px;
+        height: 90px;
     }
     .hammer-handle {
-        width: 8px;
-        height: 50px;
+        width: 10px;
+        height: 60px;
+    }
+    .hammer-handle::after {
+        height: 30px;
     }
     .hammer-head {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 15px;
+    }
+    .hammer-head::before {
+        right: -8px;
+        width: 8px;
+        height: 20px;
+    }
+    .hammer-head::after {
+        left: -8px;
+        width: 8px;
+        height: 15px;
     }
     .hammer-shadow {
-        width: 30px;
+        width: 40px;
         height: 8px;
     }
 }
