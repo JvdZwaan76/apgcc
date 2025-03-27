@@ -62,9 +62,9 @@ body::after {
 .container {
     text-align: center;
     background: #FFFFFF; /* Solid white background */
-    padding: 20px;
+    padding: 30px; /* Increased padding for more space */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
     max-width: 600px;
     width: 90%;
     position: relative;
@@ -89,7 +89,7 @@ body::after {
 
 /* Animation container */
 .animation-container {
-    margin: 10px 0;
+    margin: 15px 0; /* Increased margin for better spacing */
     width: 100%;
     max-width: 300px;
     height: 100px;
@@ -174,7 +174,7 @@ body::after {
 /* Crane */
 .crane {
     position: absolute;
-    width: 60px; /* Adjusted to center within container */
+    width: 60px;
     height: 80px;
     z-index: 1; /* Ensure crane is above skyscrapers */
 }
@@ -211,7 +211,7 @@ body::after {
     top: 0;
     left: 50%;
     transform-origin: left center;
-    width: 30px; /* Reduced to keep within bounds */
+    width: 30px;
     height: 5px;
     background: #455A64;
     border: 1px solid #37474F;
@@ -318,7 +318,7 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 10px 0;
+    margin: 15px 0; /* Increased margin for better spacing */
 }
 
 h1 {
@@ -327,37 +327,38 @@ h1 {
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 8px; /* Increased margin for better spacing */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
     font-size: 1rem;
     color: #555;
-    line-height: 1.4;
+    line-height: 1.6; /* Increased line height for readability */
 }
 
 /* Login button */
 .login-button {
-    margin: 10px 0;
+    margin: 15px 0; /* Increased margin for better spacing */
 }
 
 #loginBtn {
     position: relative; /* For positioning the lock icon */
-    padding: 10px 25px 10px 35px; /* Increased padding for larger button */
+    padding: 12px 30px 12px 40px; /* Increased padding for larger button */
     font-family: 'Oswald', sans-serif;
-    font-size: 1rem; /* Increased font size */
+    font-size: 1.1rem; /* Increased font size */
     text-transform: uppercase;
-    background-color: #ffc107; /* Construction yellow */
+    background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient */
     color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow for prominence */
 }
 
 #loginBtn:hover {
-    background-color: #e0a800;
+    background: linear-gradient(to bottom, #DAA520, #FFD700); /* Reverse gradient on hover */
     transform: scale(1.05); /* Subtle scale effect on hover */
 }
 
@@ -368,7 +369,7 @@ p {
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1rem; /* Match button font size */
+    font-size: 1.1rem; /* Match button font size */
     color: #000; /* Match button text color */
 }
 
@@ -389,7 +390,7 @@ p {
     width: 90%;
     max-width: 400px;
     margin: 100px auto;
-    padding: 15px;
+    padding: 20px; /* Increased padding for better spacing */
     border-radius: 10px;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -414,38 +415,38 @@ p {
 .login-content form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px; /* Increased gap for better spacing */
 }
 
 .login-content input {
-    padding: 8px;
-    font-size: 0.9rem;
+    padding: 10px; /* Increased padding for better usability */
+    font-size: 1rem; /* Increased font size for readability */
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
 }
 
 .login-content button {
-    padding: 8px;
+    padding: 10px; /* Increased padding */
     font-family: 'Oswald', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased font size */
     text-transform: uppercase;
-    background-color: #ffc107;
+    background: linear-gradient(to bottom, #FFD700, #DAA520); /* Match button style */
     color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .login-content button:hover {
-    background-color: #e0a800;
+    background: linear-gradient(to bottom, #DAA520, #FFD700);
 }
 
 /* Contact info */
 .contact-info {
-    margin-top: 10px;
-    font-size: 0.8rem;
+    margin-top: 15px; /* Increased margin for better spacing */
+    font-size: 0.9rem; /* Slightly increased font size */
 }
 
 .contact-info a {
@@ -466,7 +467,7 @@ p {
         font-size: 0.9rem;
     }
     .container {
-        padding: 15px;
+        padding: 20px; /* Slightly increased padding for mobile */
         min-height: auto;
         max-height: calc(100vh - 40px); /* Account for top and bottom bars */
     }
@@ -475,7 +476,7 @@ p {
         height: 80px;
     }
     .crane {
-        width: 50px; /* Further reduced for mobile */
+        width: 50px;
         height: 60px;
     }
     .crane-tower {
@@ -487,7 +488,7 @@ p {
         height: 8px;
     }
     .crane-arm {
-        width: 30px; /* Further reduced for mobile */
+        width: 30px;
         height: 4px;
     }
     .crane-cable {
@@ -526,6 +527,13 @@ p {
         right: 5%;
         width: 20px;
         height: 40px;
+    }
+    #loginBtn {
+        padding: 10px 25px 10px 35px; /* Slightly smaller padding for mobile */
+        font-size: 1rem;
+    }
+    #loginBtn::before {
+        font-size: 1rem;
     }
 }
 
