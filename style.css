@@ -75,235 +75,94 @@ body::before {
     overflow: hidden;
 }
 
-/* Construction site */
+/* Construction site (now just a background for the hammer) */
 .construction-site {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #5DADE2 0%, #D6EAF8 100%); /* Sleek sky gradient */
+    background: linear-gradient(to bottom, #5DADE2 0%, #D6EAF8 100%); /* Gradient blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Ground */
-.ground {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background: linear-gradient(to bottom, #6D4C41 0%, #8D6E63 100%); /* Refined ground gradient */
+/* Hammer */
+.hammer {
+    position: relative;
+    width: 30px;
+    height: 100px;
+    transform-origin: top center;
+    animation: swingHammer 2s infinite ease-in-out;
 }
 
-/* Material stack (e.g., a beam) */
-.material-stack {
+/* Hammer handle */
+.hammer-handle {
     position: absolute;
-    bottom: 15px;
-    left: 20px;
-    width: 40px;
-    height: 5px;
-    background: #B0BEC5; /* Steel beam color */
-    border: 1px solid #78909C;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 70px;
+    background: linear-gradient(to bottom, #8D6E63 0%, #6D4C41 100%); /* Wood-like gradient */
     border-radius: 2px;
-}
-
-/* Ground shadow */
-.ground-shadow {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: rgba(0, 0, 0, 0.15);
-    filter: blur(3px);
-}
-
-/* House under construction */
-.house {
-    position: absolute;
-    bottom: 15px;
-    left: 40%;
-    width: 80px;
-    height: 0;
-    animation: buildHouse 5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth elastic easing */
-}
-
-/* House frame */
-.house-frame {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #455A64 0%, #607D8B 100%); /* Modern gray gradient */
-    border: 1px solid #37474F;
-    border-top: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Windows */
-.window {
-    position: absolute;
-    background: #FFCA28; /* Amber window lights */
-    width: 10px;
-    height: 10px;
-    border: 1px solid #37474F;
-    border-radius: 2px;
-    opacity: 0;
-    animation: showWindow 5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.window:nth-child(1) {
-    top: 10px;
-    left: 15px;
-}
-
-.window-2 {
-    top: 30px;
-    left: 55px;
-}
-
-/* House roof */
-.house-roof {
-    position: absolute;
-    top: 0;
-    left: -100px; /* Start off-screen */
-    width: 100px;
-    height: 0;
-    background: linear-gradient(to bottom, #D32F2F 0%, #B71C1C 100%); /* Sleek red roof gradient */
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    animation: slideRoof 5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-/* Crane */
-.crane {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 100px;
-    height: 20px;
-}
-
-.crane-base {
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 25px;
-    background: #263238; /* Darker base */
-    border: 1px solid #1A1A1A;
-}
-
-.crane-arm {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: #263238;
-    animation: swingCrane 3s infinite ease-in-out;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-}
-
-.crane-cable {
-    position: absolute;
-    right: 0;
-    top: 4px;
-    width: 1px;
-    height: 0;
-    background: #1A1A1A;
-    animation: extendCable 3s infinite ease-in-out;
-}
-
-.crane-hook {
+/* Hammer head */
+.hammer-head {
     position: absolute;
     bottom: 0;
-    left: -3px;
-    width: 6px;
-    height: 6px;
-    background: #1A1A1A;
-    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, #B0BEC5 0%, #78909C 100%); /* Steel gradient */
+    border: 1px solid #455A64;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.material-lift {
+/* Hammer shadow */
+.hammer-shadow {
     position: absolute;
-    bottom: -8px;
-    left: -5px;
-    width: 10px;
-    height: 4px;
-    background: #B0BEC5; /* Steel beam */
-    border: 1px solid #78909C;
-    border-radius: 1px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    filter: blur(3px);
+    animation: swingShadow 2s infinite ease-in-out;
 }
 
 /* Animation keyframes */
-@keyframes buildHouse {
+@keyframes swingHammer {
     0% {
-        height: 0;
+        transform: rotate(-20deg);
     }
     50% {
-        height: 60px;
+        transform: rotate(20deg);
     }
     100% {
-        height: 60px;
+        transform: rotate(-20deg);
     }
 }
 
-@keyframes showWindow {
+@keyframes swingShadow {
     0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.15;
     }
     50% {
-        opacity: 1;
+        transform: translateX(-60%) scale(1);
+        opacity: 0.25;
     }
     100% {
-        opacity: 1;
-    }
-}
-
-@keyframes slideRoof {
-    0% {
-        left: -100px;
-        height: 0;
-    }
-    50% {
-        left: -100px;
-        height: 0;
-    }
-    70% {
-        left: -10px;
-        height: 20px;
-    }
-    100% {
-        left: -10px;
-        height: 20px;
-    }
-}
-
-@keyframes swingCrane {
-    0% {
-        transform: rotate(-10deg);
-    }
-    50% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
-}
-
-@keyframes extendCable {
-    0% {
-        height: 0;
-    }
-    50% {
-        height: 25px;
-    }
-    100% {
-        height: 0;
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.15;
     }
 }
 
@@ -451,24 +310,20 @@ p {
         max-width: 300px;
         height: 120px;
     }
-    .house {
-        width: 60px;
-        left: 35%;
+    .hammer {
+        width: 24px;
+        height: 80px;
     }
-    .house-roof {
-        width: 80px;
-        left: -80px; /* Adjust for smaller width */
-    }
-    .crane {
-        width: 80px;
-        right: 5px;
-    }
-    .material-stack {
-        width: 30px;
-        height: 4px;
-    }
-    .window {
+    .hammer-handle {
         width: 8px;
+        height: 50px;
+    }
+    .hammer-head {
+        width: 24px;
+        height: 24px;
+    }
+    .hammer-shadow {
+        width: 30px;
         height: 8px;
     }
 }
