@@ -69,6 +69,7 @@ body::after {
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid #DAA520; /* Add gold border */
     max-width: 800px;
     width: 90%;
     position: relative;
@@ -78,39 +79,6 @@ body::after {
     justify-content: center;
     align-items: center;
     margin: 0; /* Remove margin to allow true centering */
-    /* Gold hairline border */
-    border: 1px solid transparent; /* Placeholder for animation */
-}
-
-/* Gold hairline border with parallax effect */
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #DAA520; /* Gold hairline */
-    border-radius: 20px;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.container.animate::before {
-    animation: borderParallax 1s ease-out 0.5s forwards;
-}
-
-/* Parallax effect for gold hairline */
-@keyframes borderParallax {
-    0% {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 /* Logo styling */
@@ -701,10 +669,6 @@ p {
     .container {
         padding: 5px;
         margin: 0; /* Remove margin to allow true centering */
-        /* Remove max-height and overflow to allow natural rendering */
-        min-height: 0;
-        max-height: none;
-        overflow: visible;
         /* Ensure content fits within viewport */
         display: flex;
         flex-direction: column;
