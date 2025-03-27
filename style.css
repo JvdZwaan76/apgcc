@@ -30,10 +30,10 @@ body::before {
     height: 20px;
     background: repeating-linear-gradient(
         45deg,
-        #ffc107,
-        #ffc107 20px,
-        #000 20px,
-        #000 40px
+        #DAA520, /* Deeper gold */
+        #DAA520 20px,
+        #1A2526 20px, /* Darker gray-black */
+        #1A2526 40px
     );
     z-index: 2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -49,10 +49,10 @@ body::after {
     height: 20px;
     background: repeating-linear-gradient(
         45deg,
-        #ffc107,
-        #ffc107 20px,
-        #000 20px,
-        #000 40px
+        #DAA520,
+        #DAA520 20px,
+        #1A2526 20px,
+        #1A2526 40px
     );
     z-index: 2;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
@@ -61,11 +61,11 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: #FFFFFF; /* Solid white background */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    max-width: 600px;
+    background: #FFFFFF; /* Crisp white background */
+    padding: 40px; /* Increased padding for luxury */
+    border-radius: 12px; /* Slightly larger border radius */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for elegance */
+    max-width: 800px; /* Increased for desktop */
     width: 90%;
     position: relative;
     z-index: 1;
@@ -83,16 +83,16 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 250px; /* Increased size for prominence */
+    max-width: 350px; /* Much larger for prominence */
     height: auto;
 }
 
 /* Animation container */
 .animation-container {
-    margin: 15px 0;
+    margin: 20px 0; /* Increased margin for better spacing */
     width: 100%;
-    max-width: 300px;
-    height: 100px;
+    max-width: 350px; /* Slightly larger for desktop */
+    height: 120px; /* Slightly taller for better presentation */
     position: relative;
     overflow: hidden;
 }
@@ -104,7 +104,7 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #5DADE2 0%, #D6EAF8 100%); /* Gradient blue background */
+    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%); /* Darker blue gradient for luxury */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,8 +205,8 @@ body::after {
 .skyscraper {
     position: absolute;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black silhouette */
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4); /* Slightly darker for luxury */
+    border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
 .skyscraper-1 {
@@ -243,8 +243,8 @@ body::after {
     transform: translateX(-50%);
     width: 10px;
     height: 60px;
-    background: #455A64; /* Dark gray tower */
-    border: 1px solid #37474F;
+    background: #2A3A4A; /* Darker gray for luxury */
+    border: 1px solid #1A2526;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -256,8 +256,8 @@ body::after {
     transform: translateX(-50%);
     width: 30px;
     height: 10px;
-    background: #FFC107; /* Construction yellow */
-    border: 1px solid #37474F;
+    background: #DAA520; /* Deeper gold */
+    border: 1px solid #1A2526;
     border-radius: 2px;
 }
 
@@ -269,10 +269,10 @@ body::after {
     transform-origin: left center;
     width: 30px;
     height: 5px;
-    background: #455A64;
-    border: 1px solid #37474F;
+    background: #2A3A4A;
+    border: 1px solid #1A2526;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-    animation: swingCrane 3s infinite cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+    animation: swingCrane 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Crane counterweight */
@@ -282,8 +282,8 @@ body::after {
     top: 0;
     width: 10px;
     height: 5px;
-    background: #37474F;
-    border: 1px solid #2A3A4A;
+    background: #1A2526;
+    border: 1px solid #0F1A20;
 }
 
 /* Crane cable */
@@ -291,9 +291,9 @@ body::after {
     position: absolute;
     right: 0;
     top: 5px;
-    width: 2px; /* Thicker cable for realism */
+    width: 2px;
     height: 0;
-    background: #37474F;
+    background: #1A2526;
     animation: extendCable 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -304,9 +304,9 @@ body::after {
     left: -3px;
     width: 6px;
     height: 6px;
-    background: #37474F;
+    background: #1A2526;
     border-radius: 50%;
-    border: 1px solid #2A3A4A;
+    border: 1px solid #0F1A20;
 }
 
 /* Material load (e.g., steel beam) */
@@ -316,7 +316,7 @@ body::after {
     left: -5px;
     width: 10px;
     height: 4px;
-    background: #B0BEC5; /* Steel beam */
+    background: #B0BEC5;
     border: 1px solid #78909C;
     border-radius: 1px;
 }
@@ -341,7 +341,7 @@ body::after {
         transform: translateX(-50px);
     }
     100% {
-        transform: translateX(350px); /* Move across the container */
+        transform: translateX(400px); /* Adjusted for larger container */
     }
 }
 
@@ -386,35 +386,35 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 15px 0;
+    margin: 20px 0; /* Increased for better spacing */
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem; /* Slightly larger for prominence */
     color: #000;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+    letter-spacing: 3px; /* Increased for elegance */
+    margin-bottom: 10px; /* Increased for better spacing */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.1rem; /* Slightly larger for readability */
+    color: #444; /* Darker gray for sophistication */
     line-height: 1.6;
 }
 
 /* Login button */
 .login-button {
-    margin: 15px 0;
+    margin: 20px 0; /* Increased for better spacing */
 }
 
 #loginBtn {
     position: relative; /* For positioning the lock icon */
-    padding: 12px 30px 12px 40px;
-    font-family: 'Playfair Display', serif; /* Elegant font */
-    font-size: 1.1rem;
+    padding: 14px 35px 14px 45px; /* Larger padding for prominence */
+    font-family: 'Cinzel', serif; /* Refined, exclusive font */
+    font-size: 1.2rem; /* Larger font size */
     text-transform: none; /* Remove uppercase for elegance */
     background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient */
     color: #000;
@@ -422,13 +422,13 @@ p {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
 }
 
 #loginBtn:hover {
     background: linear-gradient(to bottom, #DAA520, #FFD700);
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 /* Lock icon for login button */
@@ -438,7 +438,7 @@ p {
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.1rem; /* Match button font size */
+    font-size: 1.2rem; /* Match button font size */
     color: #000; /* Match button text color */
 }
 
@@ -497,7 +497,7 @@ p {
 
 .login-content button {
     padding: 10px;
-    font-family: 'Playfair Display', serif; /* Match button font */
+    font-family: 'Cinzel', serif; /* Match button font */
     font-size: 1rem;
     text-transform: none;
     background: linear-gradient(to bottom, #FFD700, #DAA520);
@@ -541,7 +541,7 @@ p {
         max-height: calc(100vh - 40px); /* Account for top and bottom bars */
     }
     .logo img {
-        max-width: 180px; /* Slightly smaller for mobile */
+        max-width: 220px; /* Adjusted for mobile */
     }
     .animation-container {
         max-width: 250px;
@@ -650,9 +650,13 @@ p {
     .container {
         min-height: auto;
         max-height: calc(100vh - 40px); /* Account for top and bottom bars */
+        max-width: 600px; /* Smaller for tablet */
     }
     .animation-container {
         max-width: 300px;
         height: 90px;
+    }
+    .logo img {
+        max-width: 300px; /* Slightly smaller for tablet */
     }
 }
