@@ -7,7 +7,7 @@
 
 /* Body with construction theme */
 body {
-    font-family: 'Cinzel', serif; /* Default font for consistency */
+    font-family: 'Open Sans', sans-serif;
     background: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png') repeat;
     background-color: #d3d3d3; /* Light gray background as fallback */
     color: #333;
@@ -35,11 +35,12 @@ body::before {
         #1A2526 20px,
         #1A2526 40px
     );
+    opacity: 0.7; /* Reduced opacity to make content pop */
     z-index: 2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Add a construction tape effect at the bottom */
+/* Add a construction tape effect at the bottom (reversed) */
 body::after {
     content: '';
     position: absolute;
@@ -49,11 +50,12 @@ body::after {
     height: 20px;
     background: repeating-linear-gradient(
         45deg,
-        #DAA520,
-        #DAA520 20px,
+        #1A2526, /* Reversed order */
         #1A2526 20px,
-        #1A2526 40px
+        #DAA520 20px,
+        #DAA520 40px
     );
+    opacity: 0.7; /* Reduced opacity to make content pop */
     z-index: 2;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -97,7 +99,7 @@ body::after {
     overflow: hidden;
 }
 
-/* Construction site (background for the crane with clouds and skyscrapers) */
+/* Construction site (background for the crane with clouds, skyscrapers, and trees) */
 .construction-site {
     position: absolute;
     bottom: 0;
@@ -227,12 +229,58 @@ body::after {
     height: 50px;
 }
 
+/* Trees */
+.tree {
+    position: absolute;
+    bottom: 0;
+    z-index: 0; /* Behind the crane */
+}
+
+.tree::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 20px;
+    background: #3A2E1F; /* Brown trunk */
+}
+
+.tree::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #2E5A3A; /* Dark green foliage */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.tree-1 {
+    left: 5%;
+    height: 40px;
+}
+
+.tree-2 {
+    left: 35%;
+    height: 35px;
+}
+
+.tree-3 {
+    right: 5%;
+    height: 45px;
+}
+
 /* Crane */
 .crane {
     position: absolute;
     width: 60px;
     height: 80px;
-    z-index: 1; /* Ensure crane is above skyscrapers */
+    z-index: 1; /* Ensure crane is above skyscrapers and trees */
 }
 
 /* Crane tower */
@@ -400,20 +448,20 @@ body::after {
 }
 
 h1 {
-    font-family: 'Cinzel', serif; /* Match CTA font */
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.2rem;
-    font-weight: 700; /* Bold for prominence */
+    font-weight: 700;
     color: #000;
-    text-transform: none; /* Remove uppercase for elegance */
-    letter-spacing: 2px; /* Reduced for Cinzel */
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
-    font-family: 'Cinzel', serif; /* Match CTA font */
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.1rem;
-    font-weight: 400; /* Regular weight for readability */
+    font-weight: 400;
     color: #444;
     line-height: 1.6;
 }
@@ -427,10 +475,10 @@ p {
 #loginBtn {
     position: relative; /* For positioning the lock icon */
     padding: 14px 35px 14px 45px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
-    font-weight: 700; /* Bolded text */
-    text-transform: none;
+    font-weight: 700;
+    text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520);
     color: #000;
     border: 1px solid #DAA520;
@@ -508,9 +556,9 @@ p {
 }
 
 .login-content h2 {
-    font-family: 'Cinzel', serif; /* Match CTA font */
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    font-weight: 700; /* Bold for prominence */
+    font-weight: 700;
     margin-bottom: 15px;
     color: #000;
 }
@@ -523,7 +571,7 @@ p {
 
 .login-content input {
     padding: 10px;
-    font-family: 'Cinzel', serif; /* Match CTA font */
+    font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -532,9 +580,9 @@ p {
 
 .login-content button {
     padding: 10px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    text-transform: none;
+    text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520);
     color: #000;
     border: none;
@@ -550,7 +598,7 @@ p {
 /* Contact info */
 .contact-info {
     margin-top: 15px;
-    font-family: 'Cinzel', serif; /* Match CTA font */
+    font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
 
@@ -670,6 +718,18 @@ p {
     .skyscraper-3 {
         right: 5%;
         width: 20px;
+        height: 40px;
+    }
+    .tree-1 {
+        left: 0%;
+        height: 35px;
+    }
+    .tree-2 {
+        left: 30%;
+        height: 30px;
+    }
+    .tree-3 {
+        right: 0%;
         height: 40px;
     }
     #loginBtn {
