@@ -17,6 +17,7 @@ body {
     min-height: 100vh;
     margin: 0;
     position: relative;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 /* Add a construction tape effect */
@@ -26,7 +27,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 30px;
+    height: 20px; /* Reduced height */
     background: repeating-linear-gradient(
         45deg,
         #ffc107,
@@ -42,7 +43,7 @@ body::before {
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
+    padding: 20px; /* Reduced padding */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 600px;
@@ -53,7 +54,9 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 50vh; /* Ensure content takes up enough vertical space to be centered */
+    min-height: auto; /* Adjusted to fit content */
+    max-height: 100vh; /* Ensure it fits within viewport */
+    overflow: hidden; /* Prevent internal scrolling */
 }
 
 /* Logo styling */
@@ -61,16 +64,16 @@ body::before {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 250px;
+    max-width: 200px; /* Reduced size */
     height: auto;
 }
 
 /* Animation container */
 .animation-container {
-    margin: 20px 0;
+    margin: 10px 0; /* Reduced margin */
     width: 100%;
-    max-width: 400px;
-    height: 150px;
+    max-width: 300px; /* Reduced width */
+    height: 100px; /* Reduced height */
     position: relative;
     overflow: hidden;
 }
@@ -93,8 +96,9 @@ body::before {
     position: relative;
     width: 40px;
     height: 120px;
-    transform-origin: top center;
-    animation: swingHammer 2s infinite ease-in-out;
+    transform-origin: bottom center; /* Changed to bottom for hammering motion */
+    transform: rotate(45deg); /* Rotated 45 degrees */
+    animation: hammerNail 1.5s infinite ease-in-out;
 }
 
 /* Hammer handle */
@@ -183,67 +187,67 @@ body::before {
     background: rgba(0, 0, 0, 0.15);
     border-radius: 50%;
     filter: blur(3px);
-    animation: swingShadow 2s infinite ease-in-out;
+    animation: hammerShadow 1.5s infinite ease-in-out;
 }
 
 /* Animation keyframes */
-@keyframes swingHammer {
+@keyframes hammerNail {
     0% {
-        transform: rotate(-20deg);
+        transform: rotate(45deg);
     }
     50% {
-        transform: rotate(20deg);
+        transform: rotate(30deg); /* Downward strike */
     }
     100% {
-        transform: rotate(-20deg);
+        transform: rotate(45deg);
     }
 }
 
-@keyframes swingShadow {
+@keyframes hammerShadow {
     0% {
-        transform: translateX(-40%) scale(0.8);
+        transform: translateX(-50%) scale(0.8);
         opacity: 0.15;
     }
     50% {
-        transform: translateX(-60%) scale(1);
+        transform: translateX(-50%) scale(1);
         opacity: 0.25;
     }
     100% {
-        transform: translateX(-40%) scale(0.8);
+        transform: translateX(-50%) scale(0.8);
         opacity: 0.15;
     }
 }
 
 /* Header styling */
 .header {
-    margin: 20px 0;
+    margin: 10px 0; /* Reduced margin */
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced font size */
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduced margin */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Reduced font size */
     color: #555;
-    line-height: 1.6;
+    line-height: 1.4; /* Tightened line height */
 }
 
 /* Login button */
 .login-button {
-    margin: 20px 0;
+    margin: 10px 0; /* Reduced margin */
 }
 
 #loginBtn {
-    padding: 12px 30px;
+    padding: 8px 20px; /* Reduced padding */
     font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduced font size */
     text-transform: uppercase;
     background-color: #ffc107; /* Construction yellow */
     color: #000;
@@ -274,7 +278,7 @@ p {
     width: 90%;
     max-width: 400px;
     margin: 100px auto;
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     border-radius: 10px;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -291,29 +295,29 @@ p {
 
 .login-content h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem; /* Reduced font size */
+    margin-bottom: 15px;
     color: #000;
 }
 
 .login-content form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px; /* Reduced gap */
 }
 
 .login-content input {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 8px; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced font size */
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
 }
 
 .login-content button {
-    padding: 10px;
+    padding: 8px; /* Reduced padding */
     font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduced font size */
     text-transform: uppercase;
     background-color: #ffc107;
     color: #000;
@@ -329,8 +333,8 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 20px;
-    font-size: 0.9rem;
+    margin-top: 10px; /* Reduced margin */
+    font-size: 0.8rem; /* Reduced font size */
 }
 
 .contact-info a {
@@ -345,18 +349,19 @@ p {
 /* Mobile optimization: Adjust layout and animation for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem; /* Further reduced for mobile */
     }
     p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .container {
-        padding: 20px;
-        min-height: 70vh; /* Adjust for smaller screens */
+        padding: 15px;
+        min-height: auto;
+        max-height: 100vh;
     }
     .animation-container {
-        max-width: 300px;
-        height: 120px;
+        max-width: 250px;
+        height: 80px; /* Further reduced height */
     }
     .hammer {
         width: 30px;
@@ -392,10 +397,11 @@ p {
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        min-height: 60vh;
+        min-height: auto;
+        max-height: 100vh;
     }
     .animation-container {
-        max-width: 350px;
-        height: 130px;
+        max-width: 300px;
+        height: 90px;
     }
 }
