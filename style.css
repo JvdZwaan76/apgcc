@@ -82,7 +82,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #4A90E2 0%, #B3D4FF 100%); /* Professional sky gradient */
+    background: linear-gradient(to bottom, #5DADE2 0%, #D6EAF8 100%); /* Sleek sky gradient */
 }
 
 /* Ground */
@@ -91,47 +91,41 @@ body::before {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20px;
-    background: #8B5A2B; /* Brown ground */
-    border-top: 2px solid #5A3E1B;
+    height: 15px;
+    background: linear-gradient(to bottom, #6D4C41 0%, #8D6E63 100%); /* Refined ground gradient */
 }
 
-/* Material stacks (e.g., bricks) */
+/* Material stack (e.g., a beam) */
 .material-stack {
     position: absolute;
-    bottom: 20px;
-    left: 10px;
-    width: 30px;
-    height: 10px;
-    background: #D2691E; /* Brick color */
-    border: 1px solid #A0522D;
-}
-
-.material-stack-2 {
-    left: 50px;
-    width: 20px;
-    height: 15px;
+    bottom: 15px;
+    left: 20px;
+    width: 40px;
+    height: 5px;
+    background: #B0BEC5; /* Steel beam color */
+    border: 1px solid #78909C;
+    border-radius: 2px;
 }
 
 /* Ground shadow */
 .ground-shadow {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 0;
     width: 100%;
-    height: 10px;
-    background: rgba(0, 0, 0, 0.2);
-    filter: blur(5px);
+    height: 5px;
+    background: rgba(0, 0, 0, 0.15);
+    filter: blur(3px);
 }
 
 /* House under construction */
 .house {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 40%;
     width: 80px;
     height: 0;
-    animation: buildHouse 6s infinite ease-in-out;
+    animation: buildHouse 5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth elastic easing */
 }
 
 /* House frame */
@@ -140,47 +134,44 @@ body::before {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: #4A4A4A; /* Dark gray frame */
-    border: 2px solid #333;
+    background: linear-gradient(to bottom, #455A64 0%, #607D8B 100%); /* Modern gray gradient */
+    border: 1px solid #37474F;
     border-top: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Windows */
+.window {
+    position: absolute;
+    background: #FFCA28; /* Amber window lights */
+    width: 10px;
+    height: 10px;
+    border: 1px solid #37474F;
+    border-radius: 2px;
+    opacity: 0;
+    animation: showWindow 5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.window:nth-child(1) {
+    top: 10px;
+    left: 15px;
+}
+
+.window-2 {
+    top: 30px;
+    left: 55px;
 }
 
 /* House roof */
 .house-roof {
     position: absolute;
     top: 0;
-    left: -10px;
+    left: -100px; /* Start off-screen */
     width: 100px;
     height: 0;
-    background: #8B0000; /* Dark red roof */
+    background: linear-gradient(to bottom, #D32F2F 0%, #B71C1C 100%); /* Sleek red roof gradient */
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    animation: addRoof 6s infinite ease-in-out;
-}
-
-/* Scaffolding */
-.scaffolding {
-    position: absolute;
-    bottom: 0;
-    left: -10px;
-    width: 10px;
-    height: 0;
-    background: #A9A9A9; /* Gray scaffolding */
-    animation: raiseScaffolding 6s infinite ease-in-out;
-}
-
-.scaffolding-bar {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #A9A9A9;
-}
-
-.scaffolding-bar:nth-child(1) {
-    top: 20px;
-}
-
-.scaffolding-bar:nth-child(2) {
-    top: 40px;
+    animation: slideRoof 5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 /* Crane */
@@ -194,12 +185,13 @@ body::before {
 
 .crane-base {
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
-    height: 30px;
-    background: #1A2338;
+    width: 8px;
+    height: 25px;
+    background: #263238; /* Darker base */
+    border: 1px solid #1A1A1A;
 }
 
 .crane-arm {
@@ -207,51 +199,41 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5px;
-    background: #1A2338; /* Darker color for professionalism */
-    animation: swingCrane 4s infinite ease-in-out;
+    height: 4px;
+    background: #263238;
+    animation: swingCrane 3s infinite ease-in-out;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .crane-cable {
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 4px;
     width: 1px;
     height: 0;
-    background: #333;
-    animation: extendCable 4s infinite ease-in-out;
+    background: #1A1A1A;
+    animation: extendCable 3s infinite ease-in-out;
 }
 
 .crane-hook {
     position: absolute;
     bottom: 0;
     left: -3px;
-    width: 7px;
-    height: 7px;
-    background: #333;
+    width: 6px;
+    height: 6px;
+    background: #1A1A1A;
     border-radius: 50%;
 }
 
 .material-lift {
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: -5px;
     width: 10px;
-    height: 5px;
-    background: #D2691E; /* Brick color */
-    border: 1px solid #A0522D;
-}
-
-/* Worker silhouette */
-.worker {
-    position: absolute;
-    bottom: 20px;
-    left: 20%;
-    width: 20px;
-    height: 40px;
-    background: #333;
-    clip-path: polygon(40% 0, 60% 0, 60% 20%, 80% 20%, 80% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 20% 60%, 20% 20%, 40% 20%);
-    animation: moveWorker 2s infinite ease-in-out;
+    height: 4px;
+    background: #B0BEC5; /* Steel beam */
+    border: 1px solid #78909C;
+    border-radius: 1px;
 }
 
 /* Animation keyframes */
@@ -267,42 +249,49 @@ body::before {
     }
 }
 
-@keyframes addRoof {
+@keyframes showWindow {
     0% {
-        height: 0;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
     }
     50% {
-        height: 0;
-    }
-    70% {
-        height: 20px;
+        opacity: 1;
     }
     100% {
-        height: 20px;
+        opacity: 1;
     }
 }
 
-@keyframes raiseScaffolding {
+@keyframes slideRoof {
     0% {
+        left: -100px;
         height: 0;
     }
     50% {
-        height: 60px;
+        left: -100px;
+        height: 0;
+    }
+    70% {
+        left: -10px;
+        height: 20px;
     }
     100% {
-        height: 60px;
+        left: -10px;
+        height: 20px;
     }
 }
 
 @keyframes swingCrane {
     0% {
-        transform: rotate(-15deg);
+        transform: rotate(-10deg);
     }
     50% {
-        transform: rotate(15deg);
+        transform: rotate(10deg);
     }
     100% {
-        transform: rotate(-15deg);
+        transform: rotate(-10deg);
     }
 }
 
@@ -311,22 +300,10 @@ body::before {
         height: 0;
     }
     50% {
-        height: 30px;
+        height: 25px;
     }
     100% {
         height: 0;
-    }
-}
-
-@keyframes moveWorker {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(10px);
-    }
-    100% {
-        transform: translateX(0);
     }
 }
 
@@ -480,28 +457,19 @@ p {
     }
     .house-roof {
         width: 80px;
-        left: -10px;
-    }
-    .scaffolding {
-        width: 8px;
-        left: -8px;
+        left: -80px; /* Adjust for smaller width */
     }
     .crane {
         width: 80px;
         right: 5px;
     }
-    .worker {
-        width: 15px;
-        height: 30px;
-        left: 15%;
-    }
     .material-stack {
-        width: 20px;
-        height: 8px;
+        width: 30px;
+        height: 4px;
     }
-    .material-stack-2 {
-        width: 15px;
-        height: 10px;
+    .window {
+        width: 8px;
+        height: 8px;
     }
 }
 
