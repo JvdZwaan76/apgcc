@@ -65,7 +65,7 @@ body::after {
     text-align: center;
     background: #FFFFFF;
     padding: 40px;
-    border-radius: 20px; /* Kept from last update for modern look */
+    border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-width: 800px;
     width: 90%;
@@ -106,14 +106,14 @@ body::after {
     animation: parallaxSlideIn 1s ease-out 0.2s forwards;
 }
 
-/* Construction site (reverted to original scene) */
+/* Construction site */
 .construction-site {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%); /* Reverted to original gradient */
+    background: linear-gradient(to bottom, #2A3A4A 0%, #5DADE2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +213,7 @@ body::after {
 /* Skyscrapers */
 .skyscraper {
     position: absolute;
-    bottom: 0; /* Reverted to original position */
+    bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.6);
 }
@@ -236,10 +236,10 @@ body::after {
     height: 50px;
 }
 
-/* Trees (reverted to original generic trees) */
+/* Trees */
 .tree {
     position: absolute;
-    bottom: 0; /* Reverted to original position */
+    bottom: 0;
     z-index: 0; /* Behind the crane */
 }
 
@@ -285,7 +285,7 @@ body::after {
 /* Crane */
 .crane {
     position: absolute;
-    bottom: 0; /* Reverted to original position */
+    bottom: 0;
     width: 60px;
     height: 80px;
     z-index: 1; /* Ensure crane is above skyscrapers and trees */
@@ -464,29 +464,29 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 15px 0; /* Adjusted for better spacing */
+    margin: 15px 0;
     opacity: 0;
     transform: translateY(-10px);
 }
 
 .header.animate {
-    animation: parallaxSlideIn 1.2s ease-out 0.4s forwards;
+    animation: parallaxSlideIn 1.2s ease-out 0.3s forwards; /* Reduced delay for smoother flow */
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem; /* Slightly reduced for better balance */
+    font-size: 2rem;
     font-weight: 700;
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 8px; /* Adjusted for better spacing */
+    margin-bottom: 8px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1rem; /* Slightly reduced for better balance */
+    font-size: 1rem;
     font-weight: 400;
     color: #444;
     line-height: 1.6;
@@ -494,21 +494,21 @@ p {
 
 /* Login button */
 .login-button {
-    margin: 15px 0; /* Adjusted for better spacing */
+    margin: 15px 0;
     position: relative;
     opacity: 0;
     transform: translateY(-5px);
 }
 
 .login-button.animate {
-    animation: parallaxSlideIn 1.4s ease-out 0.6s forwards;
+    animation: parallaxSlideIn 1.4s ease-out 0.4s forwards; /* Reduced delay for smoother flow */
 }
 
 #loginBtn {
     position: relative;
-    padding: 12px 30px 12px 40px; /* Adjusted for better balance */
+    padding: 12px 30px 12px 40px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem; /* Slightly reduced for better balance */
+    font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520);
@@ -551,7 +551,7 @@ p {
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.1rem; /* Match button font size */
+    font-size: 1.1rem;
     color: #000;
 }
 
@@ -637,7 +637,7 @@ p {
 }
 
 .contact-info.animate {
-    animation: parallaxSlideIn 1.6s ease-out 0.8s forwards;
+    animation: parallaxSlideIn 1.6s ease-out 0.5s forwards; /* Reduced delay for smoother flow */
 }
 
 .contact-info a {
@@ -658,12 +658,12 @@ p {
         font-size: 0.9rem;
     }
     .container {
-        padding: 15px; /* Reduced for better fit */
+        padding: 20px; /* Increased for more breathing room */
         min-height: auto;
         max-height: calc(100vh - 40px);
     }
     .logo img {
-        max-width: 250px; /* Adjusted for mobile */
+        max-width: 280px; /* Increased for better prominence */
     }
     .animation-container {
         max-width: 250px;
@@ -778,13 +778,29 @@ p {
         font-size: 1rem;
     }
     .header {
-        margin: 10px 0; /* Adjusted for mobile */
+        margin: 10px 0;
     }
     .login-button {
-        margin: 10px 0; /* Adjusted for mobile */
+        margin: 10px 0;
     }
     .contact-info {
-        margin-top: 10px; /* Adjusted for mobile */
+        margin-top: 10px;
+    }
+    /* Adjust parallax delays for smoother flow on mobile */
+    .logo.animate {
+        animation: parallaxSlideIn 0.8s ease-out forwards;
+    }
+    .animation-container.animate {
+        animation: parallaxSlideIn 1s ease-out 0.1s forwards; /* Reduced delay */
+    }
+    .header.animate {
+        animation: parallaxSlideIn 1.2s ease-out 0.2s forwards; /* Reduced delay */
+    }
+    .login-button.animate {
+        animation: parallaxSlideIn 1.4s ease-out 0.3s forwards; /* Reduced delay */
+    }
+    .contact-info.animate {
+        animation: parallaxSlideIn 1.6s ease-out 0.4s forwards; /* Reduced delay */
     }
 }
 
@@ -803,12 +819,12 @@ p {
         max-width: 300px;
     }
     .header {
-        margin: 15px 0; /* Adjusted for tablet */
+        margin: 15px 0;
     }
     .login-button {
-        margin: 15px 0; /* Adjusted for tablet */
+        margin: 15px 0;
     }
     .contact-info {
-        margin-top: 15px; /* Adjusted for tablet */
+        margin-top: 15px;
     }
 }
