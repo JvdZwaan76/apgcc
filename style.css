@@ -18,6 +18,7 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
     padding: 20px 0; /* Offset for top and bottom tapes */
 }
 
@@ -76,9 +77,29 @@ body::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 40px 0; /* Space for top and bottom tapes */
+    margin: 0; /* Remove margin to allow true centering */
+    /* Initial state for parallax intro effect */
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
     /* Gold hairline border */
     border: 1px solid transparent; /* Placeholder for animation */
+}
+
+/* Apply parallax intro effect */
+.container.animate {
+    animation: containerParallaxIntro 1.2s ease-out forwards;
+}
+
+/* Parallax intro effect for container */
+@keyframes containerParallaxIntro {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* Gold hairline border with parallax effect */
@@ -855,7 +876,7 @@ p {
 @media (max-width: 1024px) {
     .container {
         padding: 20px;
-        margin: 40px 0;
+        margin: 0;
         max-width: 600px;
     }
     .animation-container {
