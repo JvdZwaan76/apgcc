@@ -61,7 +61,7 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: #FFFFFF; /* Solid white background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -97,7 +97,7 @@ body::after {
     overflow: hidden;
 }
 
-/* Construction site (background for the crane) */
+/* Construction site (background for the crane with clouds) */
 .construction-site {
     position: absolute;
     bottom: 0;
@@ -110,10 +110,45 @@ body::after {
     align-items: center;
 }
 
+/* Clouds */
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: driftCloud linear infinite;
+}
+
+.cloud-1 {
+    width: 40px;
+    height: 20px;
+    top: 10px;
+    left: -50px;
+    animation-duration: 15s;
+}
+
+.cloud-2 {
+    width: 60px;
+    height: 30px;
+    top: 30px;
+    left: -70px;
+    animation-duration: 20s;
+    animation-delay: 5s;
+}
+
+.cloud-3 {
+    width: 30px;
+    height: 15px;
+    top: 50px;
+    left: -40px;
+    animation-duration: 18s;
+    animation-delay: 10s;
+}
+
 /* Crane */
 .crane {
     position: relative;
-    width: 100px;
+    width: 80px;
     height: 80px;
 }
 
@@ -149,7 +184,7 @@ body::after {
     top: 0;
     left: 50%;
     transform-origin: left center;
-    width: 60px;
+    width: 40px;
     height: 5px;
     background: #455A64;
     border: 1px solid #37474F;
@@ -206,15 +241,24 @@ body::after {
 }
 
 /* Animation keyframes */
-@keyframes swingCrane {
+@keyframes driftCloud {
     0% {
-        transform: rotate(-15deg);
-    }
-    50% {
-        transform: rotate(15deg);
+        transform: translateX(-50px);
     }
     100% {
-        transform: rotate(-15deg);
+        transform: translateX(350px); /* Move across the container */
+    }
+}
+
+@keyframes swingCrane {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
     }
 }
 
@@ -223,7 +267,7 @@ body::after {
         height: 0;
     }
     50% {
-        height: 20px;
+        height: 15px;
     }
     100% {
         height: 0;
@@ -272,7 +316,8 @@ p {
 }
 
 #loginBtn {
-    padding: 8px 20px;
+    position: relative; /* For positioning the lock icon */
+    padding: 8px 20px 8px 30px; /* Adjusted padding to make space for the lock icon */
     font-family: 'Oswald', sans-serif;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -286,6 +331,22 @@ p {
 
 #loginBtn:hover {
     background-color: #e0a800;
+}
+
+/* Lock icon for login button */
+#loginBtn::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 14px;
+    background: #000; /* Match button text color */
+    clip-path: polygon(
+        30% 100%, 70% 100%, 70% 50%, 80% 50%, 80% 40%, 60% 40%, 
+        60% 0, 40% 0, 40% 40%, 20% 40%, 20% 50%, 30% 50%
+    ); /* Simple padlock shape */
 }
 
 /* Login modal */
@@ -365,7 +426,7 @@ p {
 }
 
 .contact-info a {
-    color: #ffc107;
+    color: #5DADE2; /* Match the blue gradient background */
     text-decoration: none;
 }
 
@@ -391,7 +452,7 @@ p {
         height: 80px;
     }
     .crane {
-        width: 80px;
+        width: 60px;
         height: 60px;
     }
     .crane-tower {
@@ -403,7 +464,7 @@ p {
         height: 8px;
     }
     .crane-arm {
-        width: 50px;
+        width: 40px;
         height: 4px;
     }
     .crane-cable {
@@ -412,6 +473,21 @@ p {
     .load-shadow {
         width: 15px;
         height: 4px;
+    }
+    .cloud-1 {
+        width: 30px;
+        height: 15px;
+        top: 5px;
+    }
+    .cloud-2 {
+        width: 50px;
+        height: 25px;
+        top: 25px;
+    }
+    .cloud-3 {
+        width: 20px;
+        height: 10px;
+        top: 45px;
     }
 }
 
