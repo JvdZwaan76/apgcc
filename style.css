@@ -35,12 +35,12 @@ body::before {
         #1A2526 20px,
         #1A2526 40px
     );
-    opacity: 0.7; /* Reduced opacity to make content pop */
+    opacity: 0.7;
     z-index: 2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Add a construction tape effect at the bottom (reversed) */
+/* Add a construction tape effect at the bottom (reversed direction) */
 body::after {
     content: '';
     position: absolute;
@@ -49,13 +49,13 @@ body::after {
     width: 100%;
     height: 20px;
     background: repeating-linear-gradient(
-        45deg,
-        #1A2526, /* Reversed order */
+        -45deg,
+        #1A2526,
         #1A2526 20px,
         #DAA520 20px,
         #DAA520 40px
     );
-    opacity: 0.7; /* Reduced opacity to make content pop */
+    opacity: 0.7;
     z-index: 2;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -63,7 +63,7 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: #FFFFFF; /* Crisp white background */
+    background: #FFFFFF;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -76,8 +76,70 @@ body::after {
     justify-content: center;
     align-items: center;
     min-height: auto;
-    max-height: calc(100vh - 40px); /* Account for top and bottom bars */
-    overflow: hidden; /* Prevent internal scrolling */
+    max-height: calc(100vh - 40px);
+    overflow: hidden;
+}
+
+/* Logo styling */
+.logo {
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(-20px); /* Start slightly above */
+}
+
+.logo.animate {
+    animation: parallaxSlideIn 0.8s ease-out forwards;
+}
+
+/* Animation container */
+.animation-container {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+.animation-container.animate {
+    animation: parallaxSlideIn 1s ease-out 0.2s forwards;
+}
+
+/* Header styling */
+.header {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.header.animate {
+    animation: parallaxSlideIn 1.2s ease-out 0.4s forwards;
+}
+
+/* Login button */
+.login-button {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.login-button.animate {
+    animation: parallaxSlideIn 1.4s ease-out 0.6s forwards;
+}
+
+/* Contact info */
+.contact-info {
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.contact-info.animate {
+    animation: parallaxSlideIn 1.6s ease-out 0.8s forwards;
+}
+
+/* Parallax slide-in animation */
+@keyframes parallaxSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(var(--startY, 0));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Logo styling */
