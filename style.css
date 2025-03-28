@@ -73,7 +73,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: 700;
-    color: #000; /* Changed to black for readability */
+    color: #000;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -84,6 +84,10 @@ body {
     color: #7f8c8d;
     max-width: 600px;
     margin: 0 auto;
+}
+
+.header br {
+    display: none; /* Hidden on desktop */
 }
 
 /* Login button (webpage) */
@@ -250,6 +254,7 @@ body {
 /* Footer */
 .contact-info {
     margin: 15px 0;
+    padding-bottom: 20px; /* Added padding to prevent cutoff */
     font-size: 1rem;
     color: #666;
 }
@@ -279,11 +284,9 @@ body {
     }
     .header p {
         font-size: 1.2rem;
-        display: block; /* Ensure block behavior */
     }
-    .header p::before {
-        content: "\A"; /* Line break before "Stay tuned" */
-        white-space: pre; /* Preserve the line break */
+    .header br {
+        display: inline; /* Show line break on mobile */
     }
     #loginBtn {
         padding: 14px 30px 14px 45px;
@@ -318,11 +321,9 @@ body {
     }
     .header p {
         font-size: 1rem;
-        display: block;
     }
-    .header p::before {
-        content: "\A";
-        white-space: pre;
+    .header br {
+        display: inline; /* Show line break on mobile */
     }
     #loginBtn {
         padding: 12px 25px 12px 40px;
