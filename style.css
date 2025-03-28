@@ -87,16 +87,16 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 540px;
+    max-width: 486px; /* Match video container size */
     height: auto;
 }
 
 /* Animation container with video */
 .animation-container {
-    margin: 8px 0;
+    margin: 10px 0; /* Increased for balance */
     width: 100%;
-    max-width: 540px;
-    height: 162px; /* Maintain aspect ratio (540/162 = 10/3) */
+    max-width: 486px; /* Reduced by 10% from 540px */
+    height: 145.8px; /* Maintain aspect ratio (486/145.8 = 10/3) */
     position: relative;
     overflow: hidden;
     border-radius: 20px;
@@ -107,11 +107,12 @@ body::after {
     height: 100%;
     object-fit: contain;
     border-radius: 20px;
+    border: 2px solid #DAA520; /* Gold border for rounded corners */
 }
 
 /* Header styling */
 .header {
-    margin: 8px 0;
+    margin: 10px 0; /* Increased for balance */
 }
 
 h1 {
@@ -136,15 +137,15 @@ p {
 
 /* Login button */
 .login-button {
-    margin: 8px 0;
+    margin: 10px 0; /* Increased for balance */
     position: relative;
 }
 
 #loginBtn {
     position: relative;
-    padding: 14px 35px 14px 50px;
+    padding: 16px 38px 16px 55px; /* Increased by ~10% */
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Increased from 1.2rem */
     font-weight: 700;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient */
@@ -163,7 +164,7 @@ p {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Match font-size increase */
     color: #000;
 }
 
@@ -230,9 +231,9 @@ p {
 }
 
 .login-content button {
-    padding: 10px;
+    padding: 16px 38px 16px 55px; /* Match #loginBtn padding */
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+    font-size: 1.3rem; /* Match #loginBtn font-size */
     text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient */
     color: #000;
@@ -248,7 +249,7 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 8px;
+    margin-top: 10px; /* Increased for balance */
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
@@ -278,34 +279,38 @@ p {
     }
     .container {
         background: #FFFFFF !important; /* Force white background on mobile */
-        padding: 1px 1px 3px;
+        padding: 2px 2px 4px; /* Adjusted for balance */
         margin: 0;
     }
     .logo img {
-        max-width: 60px;
+        max-width: 54px; /* Match video container size */
     }
     .animation-container {
-        max-width: 60px;
-        height: 18px;
-        margin: 0.5px 0;
+        max-width: 54px; /* Reduced by 10% from 60px */
+        height: 16.2px; /* Maintain aspect ratio (54/16.2 = 10/3) */
+        margin: 0.8px 0; /* Adjusted for balance */
     }
     #loginBtn {
-        padding: 4px 10px 4px 18px;
-        font-size: 0.6rem;
+        padding: 5px 12px 5px 20px; /* Increased by ~10% */
+        font-size: 0.65rem; /* Increased from 0.6rem */
     }
     #loginBtn::before {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
         left: 5px;
     }
     .header {
-        margin: 0.5px 0;
+        margin: 0.8px 0; /* Adjusted for balance */
     }
     .login-button {
-        margin: 0.5px 0;
+        margin: 0.8px 0; /* Adjusted for balance */
     }
     .contact-info {
-        margin-top: 0.5px;
+        margin-top: 0.8px;
         font-size: 0.4rem;
+    }
+    .login-content button {
+        padding: 5px 12px 5px 20px; /* Match #loginBtn padding */
+        font-size: 0.65rem; /* Match #loginBtn font-size */
     }
 }
 
@@ -317,12 +322,12 @@ p {
         max-width: 600px;
     }
     .animation-container {
-        max-width: 360px;
-        height: 108px;
+        max-width: 324px; /* Reduced by 10% from 360px */
+        height: 97.2px; /* Maintain aspect ratio (324/97.2 = 10/3) */
         margin: 5px 0;
     }
     .logo img {
-        max-width: 360px;
+        max-width: 324px; /* Match video container size */
     }
     .header {
         margin: 5px 0;
