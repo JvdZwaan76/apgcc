@@ -66,13 +66,10 @@ body::after {
 .container {
     text-align: center;
     background: #FFFFFF;
-    padding: 20px 20px 30px; /* Adjusted padding for balance with larger video */
+    padding: 20px 20px 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 0 5px rgba(0, 0, 0, 0.2); /* Added inset shadow for depth */
-    border: 3px solid transparent; /* Placeholder for gradient border */
-    border-image: linear-gradient(to bottom, #FFD700, #DAA520) 1; /* Gradient border for real gold effect */
-    max-width: 800px;
-    width: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Simplified shadow */
+    border: 3px solid #DAA520; /* Solid gold border */
     position: relative;
     z-index: 1;
     display: flex;
@@ -80,8 +77,23 @@ body::after {
     justify-content: center;
     align-items: center;
     margin: 0;
+    width: 90%;
+    max-width: 800px;
     height: fit-content;
     max-height: calc(100vh - 40px); /* Ensure container fits within viewport height minus tapes */
+}
+
+/* Pseudo-element for gold border depth */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #FFD700, #DAA520);
+    z-index: -1;
 }
 
 /* Logo styling */
@@ -89,32 +101,31 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 600px; /* Match new video size */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 600px;
+    height: auto;
 }
 
 /* Animation container with video */
 .animation-container {
-    margin: 5px 0; /* Reduced margin to fit larger video */
+    margin: 5px 0;
     width: 100%;
-    max-width: 600px; /* Increased size */
+    max-width: 600px;
     height: 180px; /* Maintain aspect ratio (600/180 = 10/3) */
     position: relative;
-    overflow: hidden; /* Ensure rounded corners clip the video */
-    border-radius: 20px; /* Apply border-radius to container */
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .animation-container video {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensure video is not cropped, maintaining aspect ratio */
-    border-radius: 20px; /* Apply border-radius to video */
-    clip-path: inset(0 round 20px); /* Fallback for video border-radius */
+    object-fit: contain;
+    border-radius: 20px;
 }
 
 /* Header styling */
 .header {
-    margin: 10px 0; /* Reduced to fit larger video */
+    margin: 10px 0;
 }
 
 h1 {
@@ -139,7 +150,7 @@ p {
 
 /* Login button */
 .login-button {
-    margin: 10px 0; /* Reduced to fit larger video */
+    margin: 10px 0;
     position: relative;
 }
 
@@ -157,7 +168,6 @@ p {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
 }
 
 /* Lock icon for login button */
@@ -172,26 +182,10 @@ p {
 }
 
 /* Hover effect for login button */
-#loginBtn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #DAA520, #FFD700);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: -1;
-}
-
-#loginBtn:hover::after {
-    transform: translateX(0);
-}
-
 #loginBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to bottom, #DAA520, #FFD700); /* Simplified hover effect */
 }
 
 /* Login modal */
@@ -268,7 +262,7 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 10px; /* Reduced to fit larger video */
+    margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
@@ -285,72 +279,72 @@ p {
 /* Mobile optimization: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 0.8rem; /* Adjusted for larger video */
+        font-size: 0.7rem; /* Further reduced to fit */
     }
     p {
-        font-size: 0.6rem; /* Adjusted for larger video */
+        font-size: 0.55rem; /* Further reduced to fit */
         font-weight: 600;
         line-height: 1.2;
         white-space: nowrap;
     }
     .container {
-        padding: 2px 2px 8px; /* Adjusted for larger video */
+        padding: 2px 2px 5px; /* Reduced to fit */
         margin: 0;
     }
     .logo img {
-        max-width: 150px; /* Adjusted for larger video */
+        max-width: 100px; /* Further reduced to fit */
     }
     .animation-container {
-        max-width: 150px; /* Match logo size */
-        height: 45px; /* Maintain aspect ratio (150/45 = 10/3) */
+        max-width: 100px; /* Match logo size */
+        height: 30px; /* Maintain aspect ratio (100/30 = 10/3) */
         margin: 0.5px 0;
     }
     #loginBtn {
-        padding: 6px 16px 6px 28px;
-        font-size: 0.8rem;
+        padding: 5px 12px 5px 20px; /* Adjusted to fit */
+        font-size: 0.7rem; /* Adjusted to fit */
     }
     #loginBtn::before {
-        font-size: 0.8rem;
-        left: 8px;
+        font-size: 0.7rem;
+        left: 6px; /* Adjusted for smaller button */
     }
     .header {
-        margin: 0.5px 0; /* Adjusted for larger video */
+        margin: 0.5px 0;
     }
     .login-button {
-        margin: 0.5px 0; /* Adjusted for larger video */
+        margin: 0.5px 0;
     }
     .contact-info {
-        margin-top: 0.5px; /* Adjusted for larger video */
-        font-size: 0.5rem; /* Adjusted for larger video */
+        margin-top: 0.5px;
+        font-size: 0.45rem; /* Further reduced to fit */
     }
 }
 
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 8px 8px 15px; /* Adjusted for larger video */
+        padding: 5px 5px 10px; /* Adjusted to fit */
         margin: 0;
         max-width: 600px;
     }
     .animation-container {
-        max-width: 400px; /* Increased size */
-        height: 120px; /* Maintain aspect ratio (400/120 = 10/3) */
+        max-width: 400px;
+        height: 120px;
         margin: 5px 0;
     }
     .logo img {
-        max-width: 400px; /* Match new video size */
+        max-width: 400px;
     }
     .header {
-        margin: 5px 0; /* Adjusted for larger video */
+        margin: 5px 0;
     }
     .login-button {
-        margin: 5px 0; /* Adjusted for larger video */
+        margin: 5px 0;
     }
     .contact-info {
-        margin-top: 5px; /* Adjusted for larger video */
+        margin-top: 5px;
     }
     h1 {
-        font-size: 1.5rem; /* Adjusted for larger video */
+        font-size: 1.5rem;
     }
     p {
         font-size: 0.7rem;
