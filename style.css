@@ -27,7 +27,7 @@ body {
     max-width: 1400px;
     width: 100%;
     height: 100vh; /* Full viewport height */
-    padding: 40px 20px; /* Top/bottom padding for balance */
+    padding: 40px; /* Consistent padding across all viewports */
     text-align: center;
     background: #fff;
     border-radius: 12px;
@@ -41,7 +41,7 @@ body {
 
 /* Logo styling */
 .logo img {
-    max-width: 250px;
+    max-width: 300px; /* Desktop size, scaled down in media queries */
     height: auto;
     margin: 15px auto;
     display: block;
@@ -59,7 +59,7 @@ body {
 
 .animation-container video {
     width: 100%;
-    max-height: 250px; /* Fits with padding */
+    max-height: 300px; /* Desktop size, scaled down in media queries */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
@@ -71,7 +71,7 @@ body {
 
 .header h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Desktop size, scaled down in media queries */
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 8px;
@@ -80,7 +80,7 @@ body {
 }
 
 .header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Desktop size, scaled down in media queries */
     color: #7f8c8d;
     max-width: 600px;
     margin: 0 auto;
@@ -95,8 +95,8 @@ body {
     background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 14px 30px;
-    font-size: 1.1rem;
+    padding: 16px 35px; /* Desktop size */
+    font-size: 1.2rem; /* Desktop size */
     font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
@@ -222,62 +222,47 @@ body {
     text-decoration: underline;
 }
 
-/* Desktop adjustments (min-width: 1024px) */
-@media (min-width: 1024px) {
-    .container {
-        padding: 40px; /* Consistent padding */
-    }
-    .logo img {
-        max-width: 300px;
-    }
-    .animation-container video {
-        max-height: 300px;
-    }
-    .header h1 {
-        font-size: 3rem;
-    }
-    .header p {
-        font-size: 1.3rem;
-    }
-    #loginBtn {
-        padding: 16px 35px;
-        font-size: 1.2rem;
-    }
-}
-
 /* Smaller screens */
 @media (max-width: 768px) {
     .container {
-        padding: 30px 15px;
+        padding: 40px; /* Same padding as desktop */
     }
     .logo img {
-        max-width: 200px;
+        max-width: 250px; /* Slightly smaller than desktop */
     }
     .animation-container video {
-        max-height: 180px;
+        max-height: 250px; /* Slightly smaller than desktop */
     }
     .header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem; /* Slightly smaller than desktop */
     }
     .header p {
-        font-size: 1rem;
+        font-size: 1.2rem; /* Slightly smaller than desktop */
+    }
+    #loginBtn {
+        padding: 14px 30px; /* Slightly smaller than desktop */
+        font-size: 1.1rem; /* Slightly smaller than desktop */
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 20px 10px;
+        padding: 40px; /* Same padding as desktop */
     }
     .logo img {
-        max-width: 150px;
+        max-width: 200px; /* Further reduced */
     }
     .animation-container video {
-        max-height: 120px;
+        max-height: 200px; /* Further reduced */
     }
     .header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem; /* Further reduced */
     }
     .header p {
-        font-size: 0.9rem;
+        font-size: 1rem; /* Further reduced */
+    }
+    #loginBtn {
+        padding: 12px 25px; /* Further reduced */
+        font-size: 1rem; /* Further reduced */
     }
 }
