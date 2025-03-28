@@ -66,10 +66,11 @@ body::after {
 .container {
     text-align: center;
     background: #FFFFFF;
-    padding: 30px 30px 40px; /* Increased bottom padding for balance */
+    padding: 20px 20px 30px; /* Adjusted padding for balance with larger video */
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid #DAA520; /* Gold border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 0 5px rgba(0, 0, 0, 0.2); /* Added inset shadow for depth */
+    border: 3px solid transparent; /* Placeholder for gradient border */
+    border-image: linear-gradient(to bottom, #FFD700, #DAA520) 1; /* Gradient border for real gold effect */
     max-width: 800px;
     width: 90%;
     position: relative;
@@ -88,16 +89,16 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 450px;
+    max-width: 600px; /* Match new video size */
     height: auto; /* Maintain aspect ratio */
 }
 
 /* Animation container with video */
 .animation-container {
-    margin: 10px 0;
+    margin: 5px 0; /* Reduced margin to fit larger video */
     width: 100%;
-    max-width: 450px; /* Match logo size */
-    height: 135px; /* Maintain aspect ratio (450/135 = 10/3) */
+    max-width: 600px; /* Increased size */
+    height: 180px; /* Maintain aspect ratio (600/180 = 10/3) */
     position: relative;
     overflow: hidden; /* Ensure rounded corners clip the video */
     border-radius: 20px; /* Apply border-radius to container */
@@ -108,13 +109,12 @@ body::after {
     height: 100%;
     object-fit: contain; /* Ensure video is not cropped, maintaining aspect ratio */
     border-radius: 20px; /* Apply border-radius to video */
-    /* Fallback for browsers that don't respect border-radius on video */
-    clip-path: inset(0 round 20px);
+    clip-path: inset(0 round 20px); /* Fallback for video border-radius */
 }
 
 /* Header styling */
 .header {
-    margin: 15px 0;
+    margin: 10px 0; /* Reduced to fit larger video */
 }
 
 h1 {
@@ -130,16 +130,16 @@ h1 {
 
 p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.1rem; /* Increased for prominence */
-    font-weight: 600; /* Slight emphasis */
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #444;
-    line-height: 1.2; /* Adjusted to prevent wrapping */
-    white-space: nowrap; /* Keep text on the same line */
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 /* Login button */
 .login-button {
-    margin: 15px 0;
+    margin: 10px 0; /* Reduced to fit larger video */
     position: relative;
 }
 
@@ -268,7 +268,7 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 15px;
+    margin-top: 10px; /* Reduced to fit larger video */
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
@@ -285,24 +285,24 @@ p {
 /* Mobile optimization: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 0.9rem;
+        font-size: 0.8rem; /* Adjusted for larger video */
     }
     p {
-        font-size: 0.65rem;
+        font-size: 0.6rem; /* Adjusted for larger video */
         font-weight: 600;
         line-height: 1.2;
         white-space: nowrap;
     }
     .container {
-        padding: 2px 2px 10px; /* Increased bottom padding for balance */
+        padding: 2px 2px 8px; /* Adjusted for larger video */
         margin: 0;
     }
     .logo img {
-        max-width: 120px;
+        max-width: 150px; /* Adjusted for larger video */
     }
     .animation-container {
-        max-width: 120px; /* Match logo size */
-        height: 36px; /* Maintain aspect ratio (120/36 = 10/3) */
+        max-width: 150px; /* Match logo size */
+        height: 45px; /* Maintain aspect ratio (150/45 = 10/3) */
         margin: 0.5px 0;
     }
     #loginBtn {
@@ -314,40 +314,43 @@ p {
         left: 8px;
     }
     .header {
-        margin: 1px 0;
+        margin: 0.5px 0; /* Adjusted for larger video */
     }
     .login-button {
-        margin: 1px 0;
+        margin: 0.5px 0; /* Adjusted for larger video */
     }
     .contact-info {
-        margin-top: 1px;
-        font-size: 0.55rem;
+        margin-top: 0.5px; /* Adjusted for larger video */
+        font-size: 0.5rem; /* Adjusted for larger video */
     }
 }
 
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 10px 10px 20px; /* Increased bottom padding for balance */
+        padding: 8px 8px 15px; /* Adjusted for larger video */
         margin: 0;
         max-width: 600px;
     }
     .animation-container {
-        max-width: 300px; /* Match logo size */
-        height: 90px; /* Maintain aspect ratio (300/90 = 10/3) */
+        max-width: 400px; /* Increased size */
+        height: 120px; /* Maintain aspect ratio (400/120 = 10/3) */
         margin: 5px 0;
     }
     .logo img {
-        max-width: 300px;
+        max-width: 400px; /* Match new video size */
     }
     .header {
-        margin: 8px 0;
+        margin: 5px 0; /* Adjusted for larger video */
     }
     .login-button {
-        margin: 8px 0;
+        margin: 5px 0; /* Adjusted for larger video */
     }
     .contact-info {
-        margin-top: 8px;
+        margin-top: 5px; /* Adjusted for larger video */
+    }
+    h1 {
+        font-size: 1.5rem; /* Adjusted for larger video */
     }
     p {
         font-size: 0.7rem;
