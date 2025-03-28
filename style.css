@@ -314,7 +314,7 @@ p {
     }
 }
 
-/* Mobile optimization: Emulate desktop design with overflow fix, centered content, and non-scrollable */
+/* Mobile optimization: Ensure text fits inside container and page is non-scrollable */
 @media (max-width: 767px) {
     body {
         background: #FFFFFF; /* Ensure white background on mobile */
@@ -347,7 +347,7 @@ p {
         max-width: 100%; /* Prevent overflow */
         height: auto; /* Adjust height to maintain aspect ratio */
         aspect-ratio: 10 / 3; /* Maintain 10:3 aspect ratio */
-        margin: 6px 0; /* Reduced for mobile to fit content */
+        margin: 4px 0; /* Reduced for mobile to fit content */
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -361,10 +361,10 @@ p {
         border: 2px solid #5DADE2; /* Blue border to match theme */
     }
     .header {
-        margin: 6px 0; /* Reduced for mobile to fit content */
+        margin: 4px 0; /* Reduced for mobile to fit content */
     }
     h1 {
-        font-size: 1.5rem; /* Scaled down from 2rem to fit container */
+        font-size: 1.2rem; /* Scaled down further to fit container */
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         color: #000;
@@ -374,21 +374,21 @@ p {
         text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
     }
     p {
-        font-size: 0.9rem; /* Scaled down from 1.1rem to fit container */
+        font-size: 0.7rem; /* Scaled down further to fit container */
         font-family: 'Open Sans', sans-serif;
         font-weight: 600;
         color: #444;
         line-height: 1.2;
-        white-space: nowrap;
+        white-space: normal; /* Allow wrapping to fit container */
         text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
     }
     .login-button {
-        margin: 6px 0; /* Reduced for mobile to fit content */
+        margin: 4px 0; /* Reduced for mobile to fit content */
         position: relative;
     }
     #loginBtn {
-        padding: 10px 20px 10px 30px; /* Scaled down from 20px 45px 20px 65px to fit container */
-        font-size: 1rem; /* Scaled down from 1.4rem to fit container */
+        padding: 10px 20px 10px 30px; /* Same as tablet */
+        font-size: 1rem; /* Same as tablet */
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
@@ -416,9 +416,9 @@ p {
         background: linear-gradient(to bottom, #DAA520, #FFD700);
     }
     .contact-info {
-        margin-top: 6px; /* Reduced for mobile to fit content */
+        margin-top: 4px; /* Reduced for mobile to fit content */
         font-family: 'Open Sans', sans-serif;
-        font-size: 0.7rem; /* Scaled down from 0.9rem to fit container */
+        font-size: 0.7rem; /* Same as tablet */
     }
     .contact-info a {
         color: #5DADE2;
