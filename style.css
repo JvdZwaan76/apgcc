@@ -20,13 +20,13 @@ body {
 
 /* Main container */
 .container {
-    max-width: 1200px;
+    max-width: 1400px; /* Wider for desktop */
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px; /* More breathing room */
     text-align: center;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow-x: hidden;
 }
@@ -35,63 +35,62 @@ body {
 .container::before {
     content: "CAUTION - UNDER CONSTRUCTION - CAUTION - UNDER CONSTRUCTION";
     position: absolute;
-    top: -50px; /* Increased spacing */
+    top: -60px; /* Slightly further out for balance */
     left: 0;
     width: 200%;
-    height: 40px;
+    height: 50px; /* Taller for desktop */
     background: repeating-linear-gradient(
         45deg,
         #ffcc00,
-        #ffcc00 20px,
-        #000 20px,
-        #000 40px
+        #ffcc00 25px,
+        #000 25px,
+        #000 50px
     );
     color: #000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Larger for desktop */
     text-transform: uppercase;
-    line-height: 40px;
+    line-height: 50px;
     animation: slideTape 20s linear infinite;
     transform: translateX(-50%);
-    z-index: -1; /* Stay behind content */
-    will-change: transform; /* Performance optimization */
+    z-index: -1;
+    will-change: transform;
 }
 
 /* Construction tape effect at bottom (reversed) */
 .container::after {
     content: "CAUTION - UNDER CONSTRUCTION - CAUTION - UNDER CONSTRUCTION";
     position: absolute;
-    bottom: -50px; /* Increased spacing */
+    bottom: -60px;
     left: 0;
     width: 200%;
-    height: 40px;
+    height: 50px;
     background: repeating-linear-gradient(
         45deg,
         #ffcc00,
-        #ffcc00 20px,
-        #000 20px,
-        #000 40px
+        #ffcc00 25px,
+        #000 25px,
+        #000 50px
     );
     color: #000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
-    line-height: 40px;
+    line-height: 50px;
     animation: slideTapeReverse 20s linear infinite;
     transform: translateX(-50%);
-    z-index: -1; /* Stay behind content */
-    will-change: transform; /* Performance optimization */
+    z-index: -1;
+    will-change: transform;
 }
 
-/* Animation for top tape */
+/* Animations */
 @keyframes slideTape {
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0); }
 }
 
-/* Animation for bottom tape (reversed) */
 @keyframes slideTapeReverse {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -99,61 +98,66 @@ body {
 
 /* Logo styling */
 .logo img {
-    max-width: 200px;
+    max-width: 250px; /* Slightly larger for desktop */
     height: auto;
-    margin: 40px auto 20px;
+    margin: 60px auto 30px; /* More top spacing */
     display: block;
 }
 
 /* Animation container */
 .animation-container {
-    margin: 20px 0;
+    margin: 40px 0; /* Increased spacing */
+    max-width: 800px; /* Controlled width for balance */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .animation-container video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 400px; /* Cap height for desktop */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Header styling */
 .header {
-    margin: 30px 0;
+    margin: 40px 0; /* More spacing */
 }
 
 .header h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Larger for desktop */
     font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .header p {
-    font-size: 1.1rem;
+    font-size: 1.25rem; /* Slightly larger */
     color: #7f8c8d;
+    max-width: 600px; /* Constrain width for readability */
+    margin: 0 auto;
 }
 
 /* Login button */
 .login-button {
-    margin: 20px 0 40px;
+    margin: 40px 0 60px; /* Adjusted for balance */
 }
 
 #loginBtn {
     background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
+    padding: 15px 30px; /* Larger for desktop */
+    font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    padding-left: 40px;
+    padding-left: 45px;
 }
 
 #loginBtn::before {
@@ -162,13 +166,13 @@ body {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #loginBtn:hover {
     background-color: #c0392b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Login modal */
@@ -187,24 +191,24 @@ body {
 
 .login-content {
     background: #fff;
-    padding: 30px;
+    padding: 40px; /* More padding for desktop */
     border-radius: 8px;
     position: relative;
     width: 90%;
-    max-width: 400px;
+    max-width: 450px; /* Slightly wider */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-top: 4px solid #e74c3c;
 }
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
+    top: 15px;
+    right: 20px;
+    font-size: 28px; /* Larger for desktop */
     cursor: pointer;
     color: #666;
     transition: color 0.3s ease;
-    padding: 5px; /* Larger hit area */
+    padding: 5px;
 }
 
 .close:hover {
@@ -213,8 +217,8 @@ body {
 
 .login-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 2rem; /* Larger for desktop */
+    margin-bottom: 25px;
     color: #2c3e50;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -223,12 +227,12 @@ body {
 .login-content form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* More spacing */
 }
 
 .login-content input {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 12px; /* Larger inputs */
+    font-size: 1.1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     outline: none;
@@ -243,8 +247,8 @@ body {
     background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 12px;
-    font-size: 1rem;
+    padding: 14px;
+    font-size: 1.1rem;
     font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
@@ -259,8 +263,8 @@ body {
 
 /* Footer */
 .contact-info {
-    margin-top: 30px;
-    font-size: 0.9rem;
+    margin-top: 40px;
+    font-size: 1rem; /* Slightly larger */
     color: #666;
 }
 
@@ -273,8 +277,39 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive design */
+/* Desktop-specific adjustments (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 60px; /* Extra padding for desktop */
+    }
+    .logo img {
+        max-width: 300px; /* Even larger for big screens */
+    }
+    .animation-container {
+        max-width: 900px; /* Wider video */
+    }
+    .header h1 {
+        font-size: 3.5rem; /* More prominent */
+    }
+    .header p {
+        font-size: 1.4rem;
+    }
+    #loginBtn {
+        padding: 18px 35px; /* Bigger button */
+        font-size: 1.2rem;
+    }
+    .login-content {
+        max-width: 500px; /* Wider modal */
+        padding: 50px;
+    }
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 20px;
+    }
     .header h1 {
         font-size: 2rem;
     }
@@ -286,6 +321,7 @@ body {
     }
     .login-content {
         padding: 20px;
+        max-width: 400px;
     }
     .container::before,
     .container::after {
@@ -295,8 +331,11 @@ body {
         top: -30px;
         bottom: -30px;
     }
+    .animation-container {
+        max-width: 100%;
+    }
     .animation-container video {
-        max-height: 200px; /* Prevent cramped video */
+        max-height: 200px;
     }
 }
 
