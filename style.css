@@ -94,7 +94,7 @@ body::after {
 
 /* Animation container with video */
 .animation-container {
-    margin: 20px 0;
+    margin: 10px 0; /* Reduced top margin for better balance */
     width: 100%;
     max-width: 450px; /* Match logo size */
     height: 135px; /* Maintain aspect ratio (450/135 = 10/3) */
@@ -127,10 +127,11 @@ h1 {
 
 p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.1rem; /* Increased for prominence */
+    font-weight: 600; /* Slight emphasis */
     color: #444;
-    line-height: 1.6;
+    line-height: 1.2; /* Adjusted to prevent wrapping */
+    white-space: nowrap; /* Keep text on the same line */
 }
 
 /* Login button */
@@ -284,7 +285,10 @@ p {
         font-size: 0.9rem;
     }
     p {
-        font-size: 0.6rem;
+        font-size: 0.65rem; /* Adjusted for prominence */
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
     }
     .container {
         padding: 2px;
@@ -296,7 +300,7 @@ p {
     .animation-container {
         max-width: 120px; /* Match logo size */
         height: 36px; /* Maintain aspect ratio (120/36 = 10/3) */
-        margin: 1px 0;
+        margin: 0.5px 0; /* Reduced top margin for better balance */
     }
     #loginBtn {
         padding: 6px 16px 6px 28px;
@@ -328,6 +332,7 @@ p {
     .animation-container {
         max-width: 300px; /* Match logo size */
         height: 90px; /* Maintain aspect ratio (300/90 = 10/3) */
+        margin: 5px 0; /* Reduced top margin for better balance */
     }
     .logo img {
         max-width: 300px;
@@ -340,5 +345,11 @@ p {
     }
     .contact-info {
         margin-top: 8px;
+    }
+    p {
+        font-size: 0.7rem; /* Adjusted for prominence */
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
     }
 }
