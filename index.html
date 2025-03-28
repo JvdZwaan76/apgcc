@@ -20,6 +20,10 @@
     <meta name="twitter:image" content="https://apgcc.net/images/apgcc_logo.png">
     <!-- Accessibility -->
     <meta name="theme-color" content="#FFFFFF">
+    <!-- Cache-control meta tags to force cache refresh -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W94WD56X3"></script>
     <script>
@@ -28,7 +32,24 @@
         gtag('js', new Date());
         gtag('config', 'G-0W94WD56X3');
     </script>
-    <link rel="stylesheet" href="style.css">
+    <!-- Schema markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "APGCC Construction Corp",
+        "url": "https://apgcc.net",
+        "logo": "https://apgcc.net/images/apgcc_logo.png",
+        "description": "APGCC Construction Corp is a leading general construction company in Thousand Oaks, Southern California. We specialize in residential and commercial construction, remodeling, and renovations.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "jaspervdz@me.com",
+            "contactType": "Webmaster"
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -37,13 +58,19 @@
 <body>
     <main class="container" role="main" aria-label="Coming Soon Page">
         <div class="logo">
-            <img src="/images/apgcc_logo.png" alt="APGCC Construction Logo">
+            <picture>
+                <source srcset="/images/apgcc_logo.webp" type="image/webp">
+                <img src="/images/apgcc_logo.png" alt="APGCC Construction Logo" loading="lazy">
+            </picture>
         </div>
         <section class="animation-container" aria-label="Construction Animation">
-            <video autoplay muted loop playsinline>
-                <source src="/video/americanflag_apgcc.mp4" type="video/mp4">
-                <p>Your browser does not support the video tag. Please view this page on a modern browser to see the animation.</p>
-            </video>
+            <figure>
+                <video autoplay muted loop playsinline loading="lazy" poster="/images/video-poster.jpg">
+                    <source src="/video/optimized_americanflag_apgcc.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>American flag animation for APGCC Construction</figcaption>
+            </figure>
         </section>
         <section class="header">
             <h1>Under Construction!</h1>
