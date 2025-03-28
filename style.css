@@ -27,7 +27,7 @@ body {
     max-width: 1400px;
     width: 100%;
     height: 100vh; /* Full viewport height */
-    padding: 20px; /* Minimal padding, adjusted later */
+    padding: 40px 20px; /* Added top/bottom padding, kept left/right */
     text-align: center;
     background: #fff;
     border-radius: 12px;
@@ -108,7 +108,7 @@ body {
 .logo img {
     max-width: 250px;
     height: auto;
-    margin: 20px auto; /* Reduced for compact layout */
+    margin: 15px auto; /* Reduced to fit with padding */
     display: block;
 }
 
@@ -124,22 +124,22 @@ body {
 
 .animation-container video {
     width: 100%;
-    max-height: 300px; /* Reduced to fit viewport */
+    max-height: 250px; /* Reduced further to accommodate padding */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Header styling */
 .header {
-    margin: 20px 0; /* Reduced spacing */
+    margin: 15px 0; /* Reduced to fit */
 }
 
 .header h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem; /* Slightly smaller to fit */
+    font-size: 2.5rem;
     font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Slightly reduced */
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
@@ -153,7 +153,7 @@ body {
 
 /* Login button */
 .login-button {
-    margin: 20px 0; /* Reduced spacing */
+    margin: 15px 0; /* Reduced to fit */
 }
 
 #loginBtn {
@@ -196,7 +196,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Modal itself doesn’t scroll */
+    overflow: hidden;
 }
 
 .login-content {
@@ -273,7 +273,7 @@ body {
 
 /* Footer */
 .contact-info {
-    margin: 20px 0; /* Reduced spacing */
+    margin: 15px 0; /* Reduced to fit */
     font-size: 1rem;
     color: #666;
 }
@@ -290,13 +290,13 @@ body {
 /* Desktop adjustments (min-width: 1024px) */
 @media (min-width: 1024px) {
     .container {
-        padding: 40px; /* Slightly more padding */
+        padding: 40px; /* Consistent top/bottom padding */
     }
     .logo img {
         max-width: 300px;
     }
     .animation-container video {
-        max-height: 350px; /* Slightly larger but still fits */
+        max-height: 300px; /* Adjusted to fit with padding */
     }
     .header h1 {
         font-size: 3rem;
@@ -313,13 +313,13 @@ body {
 /* Smaller screens */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        padding: 30px 15px; /* Reduced padding for balance */
     }
     .logo img {
         max-width: 200px;
     }
     .animation-container video {
-        max-height: 200px;
+        max-height: 180px; /* Further reduced */
     }
     .header h1 {
         font-size: 2rem;
@@ -339,13 +339,13 @@ body {
 
 @media (max-width: 480px) {
     .container {
-        padding: 10px;
+        padding: 20px 10px; /* Minimal padding for small screens */
     }
     .logo img {
         max-width: 150px;
     }
     .animation-container video {
-        max-height: 150px;
+        max-height: 120px; /* Minimal height */
     }
     .header h1 {
         font-size: 1.5rem;
