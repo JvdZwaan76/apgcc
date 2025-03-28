@@ -101,15 +101,15 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 540px; /* Reduced by 10% from 600px */
+    max-width: 540px;
     height: auto;
 }
 
 /* Animation container with video */
 .animation-container {
-    margin: 8px 0; /* Adjusted for balance */
+    margin: 8px 0;
     width: 100%;
-    max-width: 540px; /* Match logo size */
+    max-width: 540px;
     height: 162px; /* Maintain aspect ratio (540/162 = 10/3) */
     position: relative;
     overflow: hidden;
@@ -125,7 +125,7 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 8px 0; /* Adjusted for balance */
+    margin: 8px 0;
 }
 
 h1 {
@@ -150,7 +150,7 @@ p {
 
 /* Login button */
 .login-button {
-    margin: 8px 0; /* Adjusted for balance */
+    margin: 8px 0;
     position: relative;
 }
 
@@ -262,7 +262,7 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 8px; /* Adjusted for balance */
+    margin-top: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
@@ -278,6 +278,9 @@ p {
 
 /* Mobile optimization: Adjust layout for smaller screens */
 @media (max-width: 768px) {
+    body {
+        background: #FFFFFF; /* Set body background to white on mobile */
+    }
     h1 {
         font-size: 0.6rem;
     }
@@ -292,11 +295,11 @@ p {
         margin: 0;
     }
     .logo img {
-        max-width: 72px; /* Reduced by 10% from 80px */
+        max-width: 72px;
     }
     .animation-container {
-        max-width: 72px; /* Match logo size */
-        height: 21.6px; /* Maintain aspect ratio (72/21.6 = 10/3) */
+        max-width: 72px;
+        height: 21.6px;
         margin: 0.5px 0;
     }
     #loginBtn {
@@ -327,12 +330,12 @@ p {
         max-width: 600px;
     }
     .animation-container {
-        max-width: 360px; /* Reduced by 10% from 400px */
-        height: 108px; /* Maintain aspect ratio (360/108 = 10/3) */
+        max-width: 360px;
+        height: 108px;
         margin: 5px 0;
     }
     .logo img {
-        max-width: 360px; /* Reduced by 10% from 400px */
+        max-width: 360px;
     }
     .header {
         margin: 5px 0;
