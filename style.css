@@ -17,7 +17,7 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical scrolling */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
     padding: 20px 0; /* Offset for top and bottom tapes */
 }
 
@@ -65,7 +65,7 @@ body::after {
 .container {
     text-align: center;
     background: #FFFFFF; /* Force white background */
-    padding: 30px 30px 50px;
+    padding: 40px; /* Balanced padding on all sides */
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 3px solid #5DADE2; /* Blue border to match logo */
@@ -270,26 +270,26 @@ p {
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) and (min-width: 768px) {
     .container {
-        padding: 8px 8px 18px;
+        padding: 20px; /* Balanced padding for tablet */
         margin: 0;
         max-width: 600px;
     }
     .animation-container {
         max-width: 324px;
         height: 97.2px;
-        margin: 6px 0;
+        margin: 8px 0;
     }
     .logo img {
         max-width: 324px;
     }
     .header {
-        margin: 6px 0;
+        margin: 8px 0;
     }
     .login-button {
-        margin: 6px 0;
+        margin: 8px 0;
     }
     .contact-info {
-        margin-top: 6px;
+        margin-top: 8px;
     }
     h1 {
         font-size: 1.5rem;
@@ -314,30 +314,24 @@ p {
     }
 }
 
-/* Mobile optimization: Emulate desktop design with overflow fix and fixed centering */
+/* Mobile optimization: Emulate desktop design with overflow fix and centered content */
 @media (max-width: 767px) {
     body {
         background: #FFFFFF; /* Ensure white background on mobile */
-        display: block; /* Override flex to allow fixed positioning */
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-        overflow-y: auto; /* Allow vertical scrolling if needed */
     }
     .container {
         background: #FFFFFF; /* Force white background on mobile */
-        padding: 15px 15px 25px; /* Slightly reduced from 30px 30px 50px to fit better */
+        padding: 20px; /* Balanced padding for mobile */
         margin: 0;
-        width: 100%; /* Fit the mobile viewport */
-        max-width: 100%; /* Prevent overflow */
         min-height: calc(100vh - 40px); /* Fallback for older browsers */
         min-height: calc(100dvh - 40px); /* Use dynamic viewport height for mobile */
         height: fit-content; /* Allow container to expand if needed */
+        width: 90%;
+        max-width: 100%; /* Prevent overflow */
         border-radius: 20px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         border: 3px solid #5DADE2;
-        position: fixed; /* Fix the container in place */
-        top: 50%; /* Center vertically */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Adjust for true centering */
+        position: relative;
         z-index: 1;
         display: flex;
         flex-direction: column;
@@ -352,7 +346,7 @@ p {
         max-width: 100%; /* Prevent overflow */
         height: auto; /* Adjust height to maintain aspect ratio */
         aspect-ratio: 10 / 3; /* Maintain 10:3 aspect ratio */
-        margin: 12px 0; /* Same as desktop */
+        margin: 8px 0; /* Slightly reduced for mobile */
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -366,7 +360,7 @@ p {
         border: 2px solid #5DADE2; /* Blue border to match theme */
     }
     .header {
-        margin: 12px 0; /* Same as desktop */
+        margin: 8px 0; /* Slightly reduced for mobile */
     }
     h1 {
         font-size: 2rem; /* Same as desktop */
@@ -388,7 +382,7 @@ p {
         text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
     }
     .login-button {
-        margin: 12px 0; /* Same as desktop */
+        margin: 8px 0; /* Slightly reduced for mobile */
         position: relative;
     }
     #loginBtn {
@@ -421,7 +415,7 @@ p {
         background: linear-gradient(to bottom, #DAA520, #FFD700);
     }
     .contact-info {
-        margin-top: 12px; /* Same as desktop */
+        margin-top: 8px; /* Slightly reduced for mobile */
         font-family: 'Open Sans', sans-serif;
         font-size: 0.9rem; /* Same as desktop */
     }
