@@ -24,6 +24,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Preconnect for Google Tag Manager -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W94WD56X3"></script>
     <script>
@@ -32,6 +34,14 @@
         gtag('js', new Date());
         gtag('config', 'G-0W94WD56X3');
     </script>
+    <!-- Preload and load CSS -->
+    <link rel="preload" href="style.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.min.css?v=1.0"></noscript>
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"></noscript>
     <!-- Schema markup for SEO -->
     <script type="application/ld+json">
     {
@@ -48,11 +58,7 @@
         }
     }
     </script>
-    <link rel="stylesheet" href="style.css?v=1.0">
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <title>APGCC Construction | Coming Soon</title>
 </head>
 <body>
@@ -65,8 +71,9 @@
         </div>
         <section class="animation-container" aria-label="Construction Animation">
             <figure>
-                <video autoplay muted loop playsinline loading="lazy" poster="/images/video-poster.jpg">
-                    <source src="/video/optimized_americanflag_apgcc.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline loading="lazy" poster="/images/video-poster.jpg" title="American flag animation for APGCC Construction">
+                    <source src="/video/americanflag_apgcc_optimized.mp4" type="video/mp4">
+                    <source src="/video/optimized_americanflag_apgcc.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
                 <figcaption>American flag animation for APGCC Construction</figcaption>
@@ -78,6 +85,9 @@
         </section>
         <div class="login-button">
             <button id="loginBtn" aria-label="Open Client Login Modal">Client Login</button>
+            <noscript>
+                <p style="color: red; font-size: 0.9rem; margin-top: 5px;">JavaScript is required to access the login modal. Please enable JavaScript in your browser settings.</p>
+            </noscript>
         </div>
         <div class="login-modal" id="loginModal" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
             <div class="login-content">
@@ -94,6 +104,6 @@
             <p><strong>Contact Webmaster:</strong> <a href="mailto:jaspervdz@me.com" aria-label="Email the Webmaster">jaspervdz@me.com</a></p>
         </footer>
     </main>
-    <script src="script.js"></script>
+    <script defer src="script.min.js"></script>
 </body>
 </html>
