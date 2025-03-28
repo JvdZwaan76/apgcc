@@ -64,8 +64,8 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: #FFFFFF !important; /* Force white background */
-    padding: 20px 20px 40px;
+    background: linear-gradient(to bottom, #FFFFFF, #F5F9FF); /* Subtle gradient for depth */
+    padding: 25px 25px 45px; /* Increased for spacious feel */
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 3px solid #5DADE2; /* Blue border to match logo */
@@ -93,7 +93,7 @@ body::after {
 
 /* Animation container with video */
 .animation-container {
-    margin: 10px 0;
+    margin: 12px 0; /* Increased for balance */
     width: 100%;
     max-width: 486px;
     height: 145.8px; /* Maintain aspect ratio (486/145.8 = 10/3) */
@@ -138,7 +138,7 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 10px 0;
+    margin: 12px 0; /* Increased for balance */
 }
 
 h1 {
@@ -149,7 +149,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3); /* Subtle yellow shadow */
 }
 
 p {
@@ -159,19 +159,20 @@ p {
     color: #444;
     line-height: 1.2;
     white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3); /* Subtle yellow shadow */
 }
 
 /* Login button */
 .login-button {
-    margin: 10px 0;
+    margin: 12px 0; /* Increased for balance */
     position: relative;
 }
 
 #loginBtn {
     position: relative;
-    padding: 18px 42px 18px 60px; /* Increased for prominence */
+    padding: 18px 42px 18px 60px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem; /* Increased from 1.3rem */
+    font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient */
@@ -179,7 +180,7 @@ p {
     border: 1px solid #DAA520; /* Gold border */
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease; /* Added background transition */
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
@@ -190,7 +191,7 @@ p {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.4rem; /* Match font-size increase */
+    font-size: 1.4rem;
     color: #000;
 }
 
@@ -275,7 +276,7 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 10px;
+    margin-top: 12px; /* Increased for balance */
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
@@ -283,9 +284,11 @@ p {
 .contact-info a {
     color: #5DADE2;
     text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .contact-info a:hover {
+    color: #1A2526; /* Darker shade for hover, matching construction tape */
     text-decoration: underline;
 }
 
@@ -304,70 +307,70 @@ p {
         white-space: nowrap;
     }
     .container {
-        background: #FFFFFF !important; /* Force white background on mobile */
-        padding: 2px 2px 4px;
+        background: linear-gradient(to bottom, #FFFFFF, #F5F9FF); /* Subtle gradient for depth */
+        padding: 3px 3px 5px; /* Adjusted for balance */
         margin: 0;
         max-height: calc(100vh - 40px); /* Ensure container fits within viewport height */
     }
     .logo img {
-        max-width: 54px;
+        max-width: 60px; /* Increased for better visibility */
     }
     .animation-container {
-        max-width: 54px;
-        height: 16.2px;
-        margin: 0.8px 0;
+        max-width: 60px; /* Increased for better visibility */
+        height: 18px; /* Maintain aspect ratio (60/18 = 10/3) */
+        margin: 1px 0; /* Adjusted for balance */
     }
     #loginBtn {
-        padding: 6px 14px 6px 22px; /* Increased for prominence */
-        font-size: 0.7rem; /* Increased from 0.65rem */
+        padding: 8px 16px 8px 24px; /* Adjusted for proportionality */
+        font-size: 0.75rem; /* Increased from 0.7rem */
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
     }
     #loginBtn::before {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         left: 5px;
     }
     #loginBtn:hover {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); /* Adjusted shadow on hover */
     }
     .header {
-        margin: 0.8px 0;
+        margin: 1px 0; /* Adjusted for balance */
     }
     .login-button {
-        margin: 0.8px 0;
+        margin: 1px 0; /* Adjusted for balance */
     }
     .contact-info {
-        margin-top: 0.8px;
+        margin-top: 1px;
         font-size: 0.4rem;
     }
     .login-content button {
-        padding: 6px 14px 6px 22px; /* Match #loginBtn padding */
-        font-size: 0.7rem; /* Match #loginBtn font-size */
+        padding: 8px 16px 8px 24px; /* Match #loginBtn padding */
+        font-size: 0.75rem; /* Match #loginBtn font-size */
     }
 }
 
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 5px 5px 15px;
+        padding: 8px 8px 18px; /* Adjusted for balance */
         margin: 0;
         max-width: 600px;
     }
     .animation-container {
         max-width: 324px;
         height: 97.2px;
-        margin: 5px 0;
+        margin: 6px 0; /* Adjusted for balance */
     }
     .logo img {
         max-width: 324px;
     }
     .header {
-        margin: 5px 0;
+        margin: 6px 0; /* Adjusted for balance */
     }
     .login-button {
-        margin: 5px 0;
+        margin: 6px 0; /* Adjusted for balance */
     }
     .contact-info {
-        margin-top: 5px;
+        margin-top: 6px;
     }
     h1 {
         font-size: 1.5rem;
