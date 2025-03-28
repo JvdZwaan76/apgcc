@@ -27,7 +27,7 @@ body {
     max-width: 1400px;
     width: 100%;
     height: 100vh; /* Full viewport height */
-    padding: 40px 20px; /* Added top/bottom padding, kept left/right */
+    padding: 40px 20px; /* Top/bottom padding for balance */
     text-align: center;
     background: #fff;
     border-radius: 12px;
@@ -39,76 +39,11 @@ body {
     overflow: hidden;
 }
 
-/* Construction tape effect at top */
-.container::before {
-    content: "CAUTION - UNDER CONSTRUCTION - CAUTION - UNDER CONSTRUCTION";
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 200%;
-    height: 40px;
-    background: repeating-linear-gradient(
-        45deg,
-        #ffcc00,
-        #ffcc00 20px,
-        #000 20px,
-        #000 40px
-    );
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    line-height: 40px;
-    animation: slideTape 20s linear infinite;
-    transform: translateX(-50%);
-    z-index: -1;
-    will-change: transform;
-}
-
-/* Construction tape effect at bottom (reversed) */
-.container::after {
-    content: "CAUTION - UNDER CONSTRUCTION - CAUTION - UNDER CONSTRUCTION";
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 200%;
-    height: 40px;
-    background: repeating-linear-gradient(
-        45deg,
-        #ffcc00,
-        #ffcc00 20px,
-        #000 20px,
-        #000 40px
-    );
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    line-height: 40px;
-    animation: slideTapeReverse 20s linear infinite;
-    transform: translateX(-50%);
-    z-index: -1;
-    will-change: transform;
-}
-
-/* Animations */
-@keyframes slideTape {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-}
-
-@keyframes slideTapeReverse {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
 /* Logo styling */
 .logo img {
     max-width: 250px;
     height: auto;
-    margin: 15px auto; /* Reduced to fit with padding */
+    margin: 15px auto;
     display: block;
 }
 
@@ -124,14 +59,14 @@ body {
 
 .animation-container video {
     width: 100%;
-    max-height: 250px; /* Reduced further to accommodate padding */
+    max-height: 250px; /* Fits with padding */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Header styling */
 .header {
-    margin: 15px 0; /* Reduced to fit */
+    margin: 15px 0;
 }
 
 .header h1 {
@@ -139,7 +74,7 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 8px; /* Slightly reduced */
+    margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
@@ -153,7 +88,7 @@ body {
 
 /* Login button */
 .login-button {
-    margin: 15px 0; /* Reduced to fit */
+    margin: 15px 0;
 }
 
 #loginBtn {
@@ -273,7 +208,7 @@ body {
 
 /* Footer */
 .contact-info {
-    margin: 15px 0; /* Reduced to fit */
+    margin: 15px 0;
     font-size: 1rem;
     color: #666;
 }
@@ -290,13 +225,13 @@ body {
 /* Desktop adjustments (min-width: 1024px) */
 @media (min-width: 1024px) {
     .container {
-        padding: 40px; /* Consistent top/bottom padding */
+        padding: 40px; /* Consistent padding */
     }
     .logo img {
         max-width: 300px;
     }
     .animation-container video {
-        max-height: 300px; /* Adjusted to fit with padding */
+        max-height: 300px;
     }
     .header h1 {
         font-size: 3rem;
@@ -313,13 +248,13 @@ body {
 /* Smaller screens */
 @media (max-width: 768px) {
     .container {
-        padding: 30px 15px; /* Reduced padding for balance */
+        padding: 30px 15px;
     }
     .logo img {
         max-width: 200px;
     }
     .animation-container video {
-        max-height: 180px; /* Further reduced */
+        max-height: 180px;
     }
     .header h1 {
         font-size: 2rem;
@@ -327,38 +262,22 @@ body {
     .header p {
         font-size: 1rem;
     }
-    .container::before,
-    .container::after {
-        font-size: 1rem;
-        height: 30px;
-        line-height: 30px;
-        top: -30px;
-        bottom: -30px;
-    }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 20px 10px; /* Minimal padding for small screens */
+        padding: 20px 10px;
     }
     .logo img {
         max-width: 150px;
     }
     .animation-container video {
-        max-height: 120px; /* Minimal height */
+        max-height: 120px;
     }
     .header h1 {
         font-size: 1.5rem;
     }
     .header p {
         font-size: 0.9rem;
-    }
-    .container::before,
-    .container::after {
-        font-size: 0.8rem;
-        height: 25px;
-        line-height: 25px;
-        top: -25px;
-        bottom: -25px;
     }
 }
