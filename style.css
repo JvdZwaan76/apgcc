@@ -173,7 +173,7 @@ p {
 /* Hover effect for login button */
 #loginBtn:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     background: linear-gradient(to bottom, #DAA520, #FFD700);
 }
 
@@ -314,14 +314,14 @@ p {
     }
 }
 
-/* Mobile optimization: Scaled-down desktop design */
+/* Mobile optimization: Scaled-down desktop design with improved readability */
 @media (max-width: 767px) {
     body {
         background: #FFFFFF; /* Ensure white background on mobile */
     }
     .container {
         background: #FFFFFF; /* Force white background on mobile */
-        padding: 5px 5px 10px; /* Scaled down from 30px 30px 50px */
+        padding: 10px 10px 15px; /* Scaled down from 30px 30px 50px, more spacious for readability */
         margin: 0;
         min-height: calc(100vh - 40px); /* Fallback for older browsers */
         min-height: calc(100dvh - 40px); /* Use dynamic viewport height for mobile */
@@ -339,13 +339,13 @@ p {
         align-items: center;
     }
     .logo img {
-        max-width: 100px; /* Scaled down from 500px */
+        max-width: 150px; /* Scaled down from 500px, larger for better visibility */
         border-radius: 20px;
     }
     .animation-container {
-        max-width: 100px; /* Scaled down from 500px */
-        height: 30px; /* Maintain aspect ratio (100/30 = 10/3) */
-        margin: 5px 0; /* Scaled down from 12px 0 */
+        max-width: 150px; /* Scaled down from 500px, larger for better visibility */
+        height: 45px; /* Maintain aspect ratio (150/45 = 10/3) */
+        margin: 8px 0; /* Scaled down from 12px 0 */
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -359,10 +359,10 @@ p {
         border: 2px solid #5DADE2; /* Blue border to match theme */
     }
     .header {
-        margin: 5px 0; /* Scaled down from 12px 0 */
+        margin: 8px 0; /* Scaled down from 12px 0 */
     }
     h1 {
-        font-size: 0.8rem; /* Scaled down from 2rem */
+        font-size: 1rem; /* Scaled down from 2rem, larger for readability */
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         color: #000;
@@ -372,7 +372,7 @@ p {
         text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
     }
     p {
-        font-size: 0.6rem; /* Scaled down from 1.1rem */
+        font-size: 0.8rem; /* Scaled down from 1.1rem, larger for readability */
         font-family: 'Open Sans', sans-serif;
         font-weight: 600;
         color: #444;
@@ -381,12 +381,12 @@ p {
         text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
     }
     .login-button {
-        margin: 5px 0; /* Scaled down from 12px 0 */
+        margin: 8px 0; /* Scaled down from 12px 0 */
         position: relative;
     }
     #loginBtn {
-        padding: 6px 12px 6px 20px; /* Scaled down from 20px 45px 20px 65px */
-        font-size: 0.7rem; /* Scaled down from 1.4rem */
+        padding: 8px 16px 8px 24px; /* Scaled down from 20px 45px 20px 65px */
+        font-size: 0.9rem; /* Scaled down from 1.4rem, larger for readability */
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
@@ -405,7 +405,7 @@ p {
         left: 5px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
     #loginBtn:hover {
         transform: scale(1.05);
@@ -413,9 +413,9 @@ p {
         background: linear-gradient(to bottom, #DAA520, #FFD700);
     }
     .contact-info {
-        margin-top: 5px; /* Scaled down from 12px 0 */
+        margin-top: 8px; /* Scaled down from 12px 0 */
         font-family: 'Open Sans', sans-serif;
-        font-size: 0.5rem; /* Scaled down from 0.9rem */
+        font-size: 0.7rem; /* Scaled down from 0.9rem, larger for readability */
     }
     .contact-info a {
         color: #5DADE2;
@@ -427,8 +427,8 @@ p {
         text-decoration: underline;
     }
     .login-content button {
-        padding: 6px 12px 6px 20px; /* Match #loginBtn padding */
-        font-size: 0.7rem; /* Match #loginBtn font-size */
+        padding: 8px 16px 8px 24px; /* Match #loginBtn padding */
+        font-size: 0.9rem; /* Match #loginBtn font-size */
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         background: linear-gradient(to bottom, #FFD700, #DAA520);
