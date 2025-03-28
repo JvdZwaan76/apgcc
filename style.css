@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensure full viewport height */
+    min-height: 100vh; /* Ensure full viewport height */
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -21,7 +21,7 @@ body {
     padding: 20px 0; /* Offset for top and bottom tapes */
 }
 
-/* Add a construction tape effect at the top */
+/* Construction tape effect at the top */
 body::before {
     content: '';
     position: fixed;
@@ -41,7 +41,7 @@ body::before {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Add a construction tape effect at the bottom (reversed direction) */
+/* Construction tape effect at the bottom (reversed direction) */
 body::after {
     content: '';
     position: fixed;
@@ -64,8 +64,8 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: linear-gradient(to bottom, #FFFFFF, #F5F9FF); /* Subtle gradient for depth */
-    padding: 30px 30px 50px; /* Increased for spacious feel */
+    background: #FFFFFF; /* Force white background */
+    padding: 30px 30px 50px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 3px solid #5DADE2; /* Blue border to match logo */
@@ -87,51 +87,20 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 500px; /* Increased for better proportion */
+    max-width: 500px;
     height: auto;
-    border-radius: 20px; /* Match video's rounded corners */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.logo img:hover {
-    transform: scale(1.02); /* Subtle scale on hover */
+    border-radius: 20px;
 }
 
 /* Animation container with video */
 .animation-container {
     margin: 12px 0;
     width: 100%;
-    max-width: 500px; /* Increased for better proportion */
+    max-width: 500px;
     height: 150px; /* Maintain aspect ratio (500/150 = 10/3) */
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-}
-
-.animation-container::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    border: 3px solid #DAA520;
-    border-top: 3px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    display: none; /* Hidden by default */
-}
-
-.animation-container video:not([poster]) + .animation-container::before,
-.animation-container video[poster][style*="none"] + .animation-container::before {
-    display: block; /* Show spinner if video is loading */
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .animation-container video {
@@ -139,7 +108,7 @@ body::after {
     height: 100%;
     object-fit: contain;
     border-radius: 20px;
-    border: 2px solid #FFD700; /* Yellow border matching CTA button */
+    border: 2px solid #5DADE2; /* Blue border to match theme */
 }
 
 /* Header styling */
@@ -176,7 +145,7 @@ p {
 
 #loginBtn {
     position: relative;
-    padding: 20px 45px 20px 65px; /* Adjusted for proportion */
+    padding: 20px 45px 20px 65px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
@@ -187,7 +156,7 @@ p {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Lock icon for login button */
@@ -204,8 +173,8 @@ p {
 /* Hover effect for login button */
 #loginBtn:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
-    background: linear-gradient(to bottom, #DAA520, #FFD700); /* Gold gradient on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, #DAA520, #FFD700);
 }
 
 /* Login modal */
@@ -290,12 +259,47 @@ p {
 .contact-info a {
     color: #5DADE2;
     text-decoration: none;
-    transition: color 0.3s ease; /* Smooth color transition */
+    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #1A2526; /* Darker shade for hover, matching construction tape */
+    color: #1A2526;
     text-decoration: underline;
+}
+
+/* Tablet and smaller desktop screens */
+@media (max-width: 1024px) {
+    .container {
+        padding: 8px 8px 18px;
+        margin: 0;
+        max-width: 600px;
+    }
+    .animation-container {
+        max-width: 324px;
+        height: 97.2px;
+        margin: 6px 0;
+    }
+    .logo img {
+        max-width: 324px;
+    }
+    .header {
+        margin: 6px 0;
+    }
+    .login-button {
+        margin: 6px 0;
+    }
+    .contact-info {
+        margin-top: 6px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.7rem;
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
 }
 
 /* Mobile optimization: Adjust layout for smaller screens */
@@ -313,8 +317,8 @@ p {
         white-space: nowrap;
     }
     .container {
-        background: linear-gradient(to bottom, #FFFFFF, #F5F9FF); /* Subtle gradient for depth */
-        padding: 3px 3px 5px; /* Adjusted for balance */
+        background: #FFFFFF; /* Force white background on mobile */
+        padding: 3px 3px 5px;
         margin: 0;
         max-height: calc(100vh - 40px); /* Ensure container fits within viewport height */
     }
@@ -324,67 +328,32 @@ p {
     .animation-container {
         max-width: 60px;
         height: 18px;
-        margin: 1px 0; /* Adjusted for balance */
+        margin: 1px 0;
     }
     #loginBtn {
-        padding: 8px 16px 8px 24px; /* Adjusted for proportionality */
-        font-size: 0.75rem; /* Increased from 0.7rem */
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+        padding: 8px 16px 8px 24px;
+        font-size: 0.75rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     }
     #loginBtn::before {
         font-size: 0.75rem;
         left: 5px;
     }
     #loginBtn:hover {
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); /* Adjusted shadow on hover */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
     }
     .header {
-        margin: 1px 0; /* Adjusted for balance */
+        margin: 1px 0;
     }
     .login-button {
-        margin: 1px 0; /* Adjusted for balance */
+        margin: 1px 0;
     }
     .contact-info {
         margin-top: 1px;
         font-size: 0.4rem;
     }
     .login-content button {
-        padding: 8px 16px 8px 24px; /* Match #loginBtn padding */
-        font-size: 0.75rem; /* Match #loginBtn font-size */
-    }
-}
-
-/* Tablet and smaller desktop screens */
-@media (max-width: 1024px) {
-    .container {
-        padding: 8px 8px 18px; /* Adjusted for balance */
-        margin: 0;
-        max-width: 600px;
-    }
-    .animation-container {
-        max-width: 324px;
-        height: 97.2px;
-        margin: 6px 0; /* Adjusted for balance */
-    }
-    .logo img {
-        max-width: 324px;
-    }
-    .header {
-        margin: 6px 0; /* Adjusted for balance */
-    }
-    .login-button {
-        margin: 6px 0; /* Adjusted for balance */
-    }
-    .contact-info {
-        margin-top: 6px;
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
-    p {
-        font-size: 0.7rem;
-        font-weight: 600;
-        line-height: 1.2;
-        white-space: nowrap;
+        padding: 8px 16px 8px 24px;
+        font-size: 0.75rem;
     }
 }
