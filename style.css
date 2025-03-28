@@ -302,59 +302,59 @@ p {
     }
 }
 
-/* Mobile optimization: Adjust layout for smaller screens */
+/* Mobile optimization: Adjust layout to match screenshot */
 @media (max-width: 768px) {
     body {
         background: #FFFFFF; /* Ensure white background on mobile */
     }
     h1 {
-        font-size: 0.75rem; /* Slightly larger for readability */
+        font-size: 0.65rem; /* Match screenshot */
     }
     p {
-        font-size: 0.55rem;
+        font-size: 0.5rem; /* Match screenshot */
         font-weight: 600;
         line-height: 1.2;
         white-space: nowrap;
     }
     .container {
         background: #FFFFFF; /* Force white background on mobile */
-        padding: 10px 10px 15px; /* Increased for more space */
+        padding: 3px 3px 5px; /* Match screenshot */
         margin: 0;
         min-height: calc(100vh - 40px); /* Ensure container takes up at least viewport height minus tapes */
         height: fit-content; /* Allow container to expand if needed */
     }
     .logo img {
-        max-width: 80px; /* Increased for better visibility */
+        max-width: 60px; /* Match screenshot */
     }
     .animation-container {
-        max-width: 80px; /* Increased for better visibility */
-        height: 24px; /* Maintain aspect ratio (80/24 = 10/3) */
-        margin: 3px 0; /* Adjusted for balance */
+        max-width: 60px; /* Match screenshot */
+        height: 18px; /* Maintain aspect ratio (60/18 = 10/3) */
+        margin: 1px 0; /* Match screenshot */
     }
     #loginBtn {
-        padding: 10px 20px 10px 30px; /* Adjusted for proportionality */
-        font-size: 0.85rem; /* Increased for readability */
+        padding: 4px 10px 4px 18px; /* Match screenshot */
+        font-size: 0.6rem; /* Match screenshot */
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     }
     #loginBtn::before {
-        font-size: 0.85rem;
+        font-size: 0.6rem;
         left: 5px;
     }
     #loginBtn:hover {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
     }
     .header {
-        margin: 3px 0; /* Adjusted for balance */
+        margin: 1px 0; /* Match screenshot */
     }
     .login-button {
-        margin: 3px 0; /* Adjusted for balance */
+        margin: 1px 0; /* Match screenshot */
     }
     .contact-info {
-        margin-top: 3px;
-        font-size: 0.45rem; /* Slightly larger for readability */
+        margin-top: 1px;
+        font-size: 0.4rem; /* Match screenshot */
     }
     .login-content button {
-        padding: 10px 20px 10px 30px; /* Match #loginBtn padding */
-        font-size: 0.85rem; /* Match #loginBtn font-size */
+        padding: 4px 10px 4px 18px; /* Match #loginBtn padding */
+        font-size: 0.6rem; /* Match #loginBtn font-size */
     }
 }
