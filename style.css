@@ -65,11 +65,11 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: #FFFFFF;
+    background: #FFFFFF; /* Ensure white background */
     padding: 20px 20px 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Simplified shadow */
-    border: 3px solid #DAA520; /* Solid gold border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid #DAA520;
     position: relative;
     z-index: 1;
     display: flex;
@@ -101,16 +101,16 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 600px;
+    max-width: 540px; /* Reduced by 10% from 600px */
     height: auto;
 }
 
 /* Animation container with video */
 .animation-container {
-    margin: 5px 0;
+    margin: 8px 0; /* Adjusted for balance */
     width: 100%;
-    max-width: 600px;
-    height: 180px; /* Maintain aspect ratio (600/180 = 10/3) */
+    max-width: 540px; /* Match logo size */
+    height: 162px; /* Maintain aspect ratio (540/162 = 10/3) */
     position: relative;
     overflow: hidden;
     border-radius: 20px;
@@ -125,7 +125,7 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 10px 0;
+    margin: 8px 0; /* Adjusted for balance */
 }
 
 h1 {
@@ -150,7 +150,7 @@ p {
 
 /* Login button */
 .login-button {
-    margin: 10px 0;
+    margin: 8px 0; /* Adjusted for balance */
     position: relative;
 }
 
@@ -185,7 +185,7 @@ p {
 #loginBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(to bottom, #DAA520, #FFD700); /* Simplified hover effect */
+    background: linear-gradient(to bottom, #DAA520, #FFD700);
 }
 
 /* Login modal */
@@ -262,7 +262,7 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 10px;
+    margin-top: 8px; /* Adjusted for balance */
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
@@ -279,33 +279,33 @@ p {
 /* Mobile optimization: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 0.7rem; /* Further reduced to fit */
+        font-size: 0.6rem;
     }
     p {
-        font-size: 0.55rem; /* Further reduced to fit */
+        font-size: 0.5rem;
         font-weight: 600;
         line-height: 1.2;
         white-space: nowrap;
     }
     .container {
-        padding: 2px 2px 5px; /* Reduced to fit */
+        padding: 1px 1px 3px;
         margin: 0;
     }
     .logo img {
-        max-width: 100px; /* Further reduced to fit */
+        max-width: 72px; /* Reduced by 10% from 80px */
     }
     .animation-container {
-        max-width: 100px; /* Match logo size */
-        height: 30px; /* Maintain aspect ratio (100/30 = 10/3) */
+        max-width: 72px; /* Match logo size */
+        height: 21.6px; /* Maintain aspect ratio (72/21.6 = 10/3) */
         margin: 0.5px 0;
     }
     #loginBtn {
-        padding: 5px 12px 5px 20px; /* Adjusted to fit */
-        font-size: 0.7rem; /* Adjusted to fit */
+        padding: 4px 10px 4px 18px;
+        font-size: 0.6rem;
     }
     #loginBtn::before {
-        font-size: 0.7rem;
-        left: 6px; /* Adjusted for smaller button */
+        font-size: 0.6rem;
+        left: 5px;
     }
     .header {
         margin: 0.5px 0;
@@ -315,24 +315,24 @@ p {
     }
     .contact-info {
         margin-top: 0.5px;
-        font-size: 0.45rem; /* Further reduced to fit */
+        font-size: 0.4rem;
     }
 }
 
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 5px 5px 10px; /* Adjusted to fit */
+        padding: 5px 5px 8px;
         margin: 0;
         max-width: 600px;
     }
     .animation-container {
-        max-width: 400px;
-        height: 120px;
+        max-width: 360px; /* Reduced by 10% from 400px */
+        height: 108px; /* Maintain aspect ratio (360/108 = 10/3) */
         margin: 5px 0;
     }
     .logo img {
-        max-width: 400px;
+        max-width: 360px; /* Reduced by 10% from 400px */
     }
     .header {
         margin: 5px 0;
