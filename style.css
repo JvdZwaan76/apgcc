@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 /* Main container */
@@ -28,14 +28,14 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow-x: hidden; /* Ensure no horizontal scroll within container */
+    overflow-x: hidden;
 }
 
 /* Construction tape effect at top */
 .container::before {
     content: "CAUTION - UNDER CONSTRUCTION - CAUTION - UNDER CONSTRUCTION";
     position: absolute;
-    top: -40px;
+    top: -50px; /* Increased spacing */
     left: 0;
     width: 200%;
     height: 40px;
@@ -54,13 +54,15 @@ body {
     line-height: 40px;
     animation: slideTape 20s linear infinite;
     transform: translateX(-50%);
+    z-index: -1; /* Stay behind content */
+    will-change: transform; /* Performance optimization */
 }
 
 /* Construction tape effect at bottom (reversed) */
 .container::after {
     content: "CAUTION - UNDER CONSTRUCTION - CAUTION - UNDER CONSTRUCTION";
     position: absolute;
-    bottom: -40px;
+    bottom: -50px; /* Increased spacing */
     left: 0;
     width: 200%;
     height: 40px;
@@ -79,6 +81,8 @@ body {
     line-height: 40px;
     animation: slideTapeReverse 20s linear infinite;
     transform: translateX(-50%);
+    z-index: -1; /* Stay behind content */
+    will-change: transform; /* Performance optimization */
 }
 
 /* Animation for top tape */
@@ -97,7 +101,7 @@ body {
 .logo img {
     max-width: 200px;
     height: auto;
-    margin: 40px auto 20px; /* Adjusted margin to avoid overlap with tape */
+    margin: 40px auto 20px;
     display: block;
 }
 
@@ -111,12 +115,6 @@ body {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.animation-container figcaption {
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 5px;
 }
 
 /* Header styling */
@@ -141,7 +139,7 @@ body {
 
 /* Login button */
 .login-button {
-    margin: 20px 0 40px; /* Adjusted margin to avoid overlap with bottom tape */
+    margin: 20px 0 40px;
 }
 
 #loginBtn {
@@ -155,11 +153,11 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    padding-left: 40px; /* Space for lock icon */
+    padding-left: 40px;
 }
 
 #loginBtn::before {
-    content: "🔒"; /* Lock icon (Unicode emoji) */
+    content: "🔒";
     position: absolute;
     left: 15px;
     top: 50%;
@@ -169,8 +167,8 @@ body {
 
 #loginBtn:hover {
     background-color: #c0392b;
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Login modal */
@@ -184,7 +182,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    overflow-x: hidden; /* Prevent horizontal scroll in modal */
+    overflow-x: hidden;
 }
 
 .login-content {
@@ -195,7 +193,7 @@ body {
     width: 90%;
     max-width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #e74c3c; /* Theme accent */
+    border-top: 4px solid #e74c3c;
 }
 
 .close {
@@ -206,10 +204,11 @@ body {
     cursor: pointer;
     color: #666;
     transition: color 0.3s ease;
+    padding: 5px; /* Larger hit area */
 }
 
 .close:hover {
-    color: #e74c3c; /* Matches theme */
+    color: #e74c3c;
 }
 
 .login-content h2 {
@@ -237,7 +236,7 @@ body {
 }
 
 .login-content input:focus {
-    border-color: #e74c3c; /* Matches theme */
+    border-color: #e74c3c;
 }
 
 .login-content button {
@@ -254,7 +253,7 @@ body {
 
 .login-content button:hover {
     background-color: #c0392b;
-    transform: translateY(-2px); /* Matches login button hover */
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -279,25 +278,41 @@ body {
     .header h1 {
         font-size: 2rem;
     }
-
     .header p {
         font-size: 1rem;
     }
-
     .logo img {
         max-width: 150px;
     }
-
     .login-content {
         padding: 20px;
     }
-
     .container::before,
     .container::after {
         font-size: 1rem;
         height: 30px;
         line-height: 30px;
-        top: -30px; /* Adjust for smaller screens */
+        top: -30px;
         bottom: -30px;
+    }
+    .animation-container video {
+        max-height: 200px; /* Prevent cramped video */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .header p {
+        font-size: 0.9rem;
+    }
+    .container::before,
+    .container::after {
+        font-size: 0.8rem;
+        height: 25px;
+        line-height: 25px;
+        top: -25px;
+        bottom: -25px;
     }
 }
