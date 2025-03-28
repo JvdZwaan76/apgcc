@@ -270,91 +270,91 @@ p {
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 8px 8px 18px;
-        margin: 0;
-        max-width: 600px;
+        padding: 8px 8px 18px !important;
+        margin: 0 !important;
+        max-width: 600px !important;
     }
     .animation-container {
-        max-width: 324px;
-        height: 97.2px;
-        margin: 6px 0;
+        max-width: 324px !important;
+        height: 97.2px !important;
+        margin: 6px 0 !important;
     }
     .logo img {
-        max-width: 324px;
+        max-width: 324px !important;
     }
     .header {
-        margin: 6px 0;
+        margin: 6px 0 !important;
     }
     .login-button {
-        margin: 6px 0;
+        margin: 6px 0 !important;
     }
     .contact-info {
-        margin-top: 6px;
+        margin-top: 6px !important;
     }
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
     p {
-        font-size: 0.7rem;
-        font-weight: 600;
-        line-height: 1.2;
-        white-space: nowrap;
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
     }
 }
 
 /* Mobile optimization: Adjust layout to match screenshot */
 @media (max-width: 768px) {
     body {
-        background: #FFFFFF; /* Ensure white background on mobile */
+        background: #FFFFFF !important; /* Ensure white background on mobile */
     }
     h1 {
-        font-size: 0.65rem; /* Match screenshot */
+        font-size: 0.65rem !important; /* Match screenshot */
     }
     p {
-        font-size: 0.5rem; /* Match screenshot */
-        font-weight: 600;
-        line-height: 1.2;
-        white-space: nowrap;
+        font-size: 0.5rem !important; /* Match screenshot */
+        font-weight: 600 !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
     }
     .container {
-        background: #FFFFFF; /* Force white background on mobile */
-        padding: 3px 3px 5px; /* Match screenshot */
-        margin: 0;
-        min-height: calc(100vh - 40px); /* Ensure container takes up at least viewport height minus tapes */
-        height: fit-content; /* Allow container to expand if needed */
+        background: #FFFFFF !important; /* Force white background on mobile */
+        padding: 1px 1px 3px !important; /* Match screenshot */
+        margin: 0 !important;
+        min-height: calc(100vh - 40px) !important; /* Ensure container takes up at least viewport height minus tapes */
+        height: fit-content !important; /* Allow container to expand if needed */
     }
     .logo img {
-        max-width: 60px; /* Match screenshot */
+        max-width: 60px !important; /* Match screenshot */
     }
     .animation-container {
-        max-width: 60px; /* Match screenshot */
-        height: 18px; /* Maintain aspect ratio (60/18 = 10/3) */
-        margin: 1px 0; /* Match screenshot */
+        max-width: 60px !important; /* Match screenshot */
+        height: 18px !important; /* Maintain aspect ratio (60/18 = 10/3) */
+        margin: 0.5px 0 !important; /* Match screenshot */
     }
     #loginBtn {
-        padding: 4px 10px 4px 18px; /* Match screenshot */
-        font-size: 0.6rem; /* Match screenshot */
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        padding: 4px 10px 4px 18px !important; /* Match screenshot */
+        font-size: 0.6rem !important; /* Match screenshot */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
     }
     #loginBtn::before {
-        font-size: 0.6rem;
-        left: 5px;
+        font-size: 0.6rem !important;
+        left: 5px !important;
     }
     #loginBtn:hover {
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4) !important;
     }
     .header {
-        margin: 1px 0; /* Match screenshot */
+        margin: 0.5px 0 !important; /* Match screenshot */
     }
     .login-button {
-        margin: 1px 0; /* Match screenshot */
+        margin: 0.5px 0 !important; /* Match screenshot */
     }
     .contact-info {
-        margin-top: 1px;
-        font-size: 0.4rem; /* Match screenshot */
+        margin-top: 0.5px !important;
+        font-size: 0.4rem !important; /* Match screenshot */
     }
     .login-content button {
-        padding: 4px 10px 4px 18px; /* Match #loginBtn padding */
-        font-size: 0.6rem; /* Match #loginBtn font-size */
+        padding: 4px 10px 4px 18px !important; /* Match #loginBtn padding */
+        font-size: 0.6rem !important; /* Match #loginBtn font-size */
     }
 }
