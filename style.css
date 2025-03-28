@@ -17,7 +17,7 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: auto; /* Allow vertical scrolling if needed */
+    overflow-y: auto; /* Allow vertical scrolling if needed on desktop */
     padding: 20px 0; /* Offset for top and bottom tapes */
 }
 
@@ -314,10 +314,11 @@ p {
     }
 }
 
-/* Mobile optimization: Emulate desktop design with overflow fix and centered content */
+/* Mobile optimization: Emulate desktop design with overflow fix, centered content, and non-scrollable */
 @media (max-width: 767px) {
     body {
         background: #FFFFFF; /* Ensure white background on mobile */
+        overflow-y: hidden; /* Prevent vertical scrolling */
     }
     .container {
         background: #FFFFFF; /* Force white background on mobile */
@@ -346,7 +347,7 @@ p {
         max-width: 100%; /* Prevent overflow */
         height: auto; /* Adjust height to maintain aspect ratio */
         aspect-ratio: 10 / 3; /* Maintain 10:3 aspect ratio */
-        margin: 8px 0; /* Slightly reduced for mobile */
+        margin: 6px 0; /* Reduced for mobile to fit content */
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -360,10 +361,10 @@ p {
         border: 2px solid #5DADE2; /* Blue border to match theme */
     }
     .header {
-        margin: 8px 0; /* Slightly reduced for mobile */
+        margin: 6px 0; /* Reduced for mobile to fit content */
     }
     h1 {
-        font-size: 2rem; /* Same as desktop */
+        font-size: 1.5rem; /* Scaled down from 2rem to fit container */
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         color: #000;
@@ -373,7 +374,7 @@ p {
         text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
     }
     p {
-        font-size: 1.1rem; /* Same as desktop */
+        font-size: 0.9rem; /* Scaled down from 1.1rem to fit container */
         font-family: 'Open Sans', sans-serif;
         font-weight: 600;
         color: #444;
@@ -382,12 +383,12 @@ p {
         text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
     }
     .login-button {
-        margin: 8px 0; /* Slightly reduced for mobile */
+        margin: 6px 0; /* Reduced for mobile to fit content */
         position: relative;
     }
     #loginBtn {
-        padding: 20px 45px 20px 65px; /* Same as desktop */
-        font-size: 1.4rem; /* Same as desktop */
+        padding: 10px 20px 10px 30px; /* Scaled down from 20px 45px 20px 65px to fit container */
+        font-size: 1rem; /* Scaled down from 1.4rem to fit container */
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
@@ -403,10 +404,10 @@ p {
     #loginBtn::before {
         content: '🔒';
         position: absolute;
-        left: 15px;
+        left: 5px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 1.4rem;
+        font-size: 1rem;
         color: #000;
     }
     #loginBtn:hover {
@@ -415,9 +416,9 @@ p {
         background: linear-gradient(to bottom, #DAA520, #FFD700);
     }
     .contact-info {
-        margin-top: 8px; /* Slightly reduced for mobile */
+        margin-top: 6px; /* Reduced for mobile to fit content */
         font-family: 'Open Sans', sans-serif;
-        font-size: 0.9rem; /* Same as desktop */
+        font-size: 0.7rem; /* Scaled down from 0.9rem to fit container */
     }
     .contact-info a {
         color: #5DADE2;
@@ -429,8 +430,8 @@ p {
         text-decoration: underline;
     }
     .login-content button {
-        padding: 20px 45px 20px 65px; /* Match #loginBtn padding */
-        font-size: 1.4rem; /* Match #loginBtn font-size */
+        padding: 10px 20px 10px 30px; /* Match #loginBtn padding */
+        font-size: 1rem; /* Match #loginBtn font-size */
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         background: linear-gradient(to bottom, #FFD700, #DAA520);
