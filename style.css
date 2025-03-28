@@ -8,8 +8,7 @@
 /* Body with construction theme */
 body {
     font-family: 'Open Sans', sans-serif;
-    background: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png') repeat;
-    background-color: #d3d3d3; /* Light gray background as fallback */
+    background: #FFFFFF; /* Force white background on all viewports */
     color: #333;
     display: flex;
     justify-content: center;
@@ -32,8 +31,8 @@ body::before {
     height: 20px;
     background: repeating-linear-gradient(
         45deg,
-        #DAA520,
-        #DAA520 20px,
+        #5DADE2, /* Match blue border color */
+        #5DADE2 20px,
         #1A2526 20px,
         #1A2526 40px
     );
@@ -54,8 +53,8 @@ body::after {
         -45deg,
         #1A2526,
         #1A2526 20px,
-        #DAA520 20px,
-        #DAA520 40px
+        #5DADE2 20px, /* Match blue border color */
+        #5DADE2 40px
     );
     opacity: 0.7;
     z-index: 2;
@@ -65,11 +64,11 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: #FFFFFF !important; /* Ensure white background with high specificity */
+    background: #FFFFFF !important; /* Force white background */
     padding: 20px 20px 40px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border: 3px solid #DAA520;
+    border: 3px solid #5DADE2; /* Blue border to match logo */
     position: relative;
     z-index: 1;
     display: flex;
@@ -81,19 +80,6 @@ body::after {
     max-width: 800px;
     height: fit-content;
     max-height: calc(100vh - 40px); /* Ensure container fits within viewport height minus tapes */
-}
-
-/* Pseudo-element for gold border depth */
-.container::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    border-radius: 20px;
-    background: linear-gradient(to bottom, #FFD700, #DAA520);
-    z-index: -1;
 }
 
 /* Logo styling */
@@ -161,9 +147,9 @@ p {
     font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
-    background: linear-gradient(to bottom, #FFD700, #DAA520);
+    background: linear-gradient(to bottom, #5DADE2, #4682B4); /* Blue gradient to match border */
     color: #000;
-    border: 1px solid #DAA520;
+    border: 1px solid #5DADE2;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
@@ -185,7 +171,7 @@ p {
 #loginBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(to bottom, #DAA520, #FFD700);
+    background: linear-gradient(to bottom, #4682B4, #5DADE2);
 }
 
 /* Login modal */
@@ -248,7 +234,7 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
-    background: linear-gradient(to bottom, #FFD700, #DAA520);
+    background: linear-gradient(to bottom, #5DADE2, #4682B4);
     color: #000;
     border: none;
     border-radius: 5px;
@@ -257,7 +243,7 @@ p {
 }
 
 .login-content button:hover {
-    background: linear-gradient(to bottom, #DAA520, #FFD700);
+    background: linear-gradient(to bottom, #4682B4, #5DADE2);
 }
 
 /* Contact info */
@@ -279,7 +265,7 @@ p {
 /* Mobile optimization: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     body {
-        background: #FFFFFF; /* Set body background to white on mobile */
+        background: #FFFFFF; /* Ensure white background on mobile */
     }
     h1 {
         font-size: 0.6rem;
@@ -291,7 +277,7 @@ p {
         white-space: nowrap;
     }
     .container {
-        background: #FFFFFF !important; /* Ensure white background on mobile */
+        background: #FFFFFF !important; /* Force white background on mobile */
         padding: 1px 1px 5px;
         margin: 0;
     }
