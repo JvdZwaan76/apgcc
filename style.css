@@ -65,8 +65,8 @@ body::after {
 /* Container for content */
 .container {
     text-align: center;
-    background: #FFFFFF; /* Ensure white background */
-    padding: 20px 20px 30px;
+    background: #FFFFFF !important; /* Ensure white background with high specificity */
+    padding: 20px 20px 40px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 3px solid #DAA520;
@@ -291,7 +291,8 @@ p {
         white-space: nowrap;
     }
     .container {
-        padding: 1px 1px 3px;
+        background: #FFFFFF !important; /* Ensure white background on mobile */
+        padding: 1px 1px 5px;
         margin: 0;
     }
     .logo img {
@@ -325,7 +326,7 @@ p {
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 5px 5px 8px;
+        padding: 5px 5px 15px;
         margin: 0;
         max-width: 600px;
     }
