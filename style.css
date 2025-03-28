@@ -31,8 +31,8 @@ body::before {
     height: 20px;
     background: repeating-linear-gradient(
         45deg,
-        #5DADE2, /* Match blue border color */
-        #5DADE2 20px,
+        #DAA520, /* Reverted to yellow */
+        #DAA520 20px,
         #1A2526 20px,
         #1A2526 40px
     );
@@ -53,8 +53,8 @@ body::after {
         -45deg,
         #1A2526,
         #1A2526 20px,
-        #5DADE2 20px, /* Match blue border color */
-        #5DADE2 40px
+        #DAA520 20px, /* Reverted to yellow */
+        #DAA520 40px
     );
     opacity: 0.7;
     z-index: 2;
@@ -147,7 +147,7 @@ p {
     font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
-    background: linear-gradient(to bottom, #5DADE2, #4682B4); /* Blue gradient to match border */
+    background: linear-gradient(to bottom, #5DADE2, #4682B4);
     color: #000;
     border: 1px solid #5DADE2;
     border-radius: 5px;
@@ -268,17 +268,17 @@ p {
         background: #FFFFFF; /* Ensure white background on mobile */
     }
     h1 {
-        font-size: 0.6rem;
+        font-size: 0.7rem; /* Increased for readability */
     }
     p {
-        font-size: 0.5rem;
+        font-size: 0.55rem; /* Increased for readability */
         font-weight: 600;
         line-height: 1.2;
         white-space: nowrap;
     }
     .container {
         background: #FFFFFF !important; /* Force white background on mobile */
-        padding: 1px 1px 5px;
+        padding: 2px 2px 6px; /* Adjusted for balance */
         margin: 0;
     }
     .logo img {
@@ -287,25 +287,25 @@ p {
     .animation-container {
         max-width: 72px;
         height: 21.6px;
-        margin: 0.5px 0;
+        margin: 1px 0; /* Adjusted for balance */
     }
     #loginBtn {
-        padding: 4px 10px 4px 18px;
-        font-size: 0.6rem;
+        padding: 5px 12px 5px 20px; /* Adjusted for balance */
+        font-size: 0.7rem; /* Increased for readability */
     }
     #loginBtn::before {
-        font-size: 0.6rem;
-        left: 5px;
+        font-size: 0.7rem;
+        left: 6px;
     }
     .header {
-        margin: 0.5px 0;
+        margin: 1px 0; /* Adjusted for balance */
     }
     .login-button {
-        margin: 0.5px 0;
+        margin: 1px 0; /* Adjusted for balance */
     }
     .contact-info {
-        margin-top: 0.5px;
-        font-size: 0.4rem;
+        margin-top: 1px;
+        font-size: 0.45rem; /* Increased for readability */
     }
 }
 
