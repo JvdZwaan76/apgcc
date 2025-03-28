@@ -86,7 +86,7 @@ body {
     margin: 0 auto;
 }
 
-/* Login button */
+/* Login button (webpage) */
 .login-button {
     margin: 15px 0;
 }
@@ -95,31 +95,31 @@ body {
     background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 16px 35px 16px 50px; /* Adjusted padding: top, right, bottom, left */
+    padding: 16px 35px 16px 50px;
     font-size: 1.2rem;
     font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    display: inline-flex; /* Flex for better icon/text alignment */
+    display: inline-flex;
     align-items: center;
-    animation: pulse 2s infinite ease-in-out; /* Subtle pulse animation */
+    animation: pulse 2s infinite ease-in-out;
 }
 
 #loginBtn::before {
     content: "🔒";
     position: absolute;
-    left: 15px; /* Fixed distance from left edge */
+    left: 15px;
     font-size: 1.3rem;
-    margin-right: 10px; /* Space between lock and text */
+    margin-right: 10px;
 }
 
 #loginBtn:hover {
     background-color: #c0392b;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    animation-play-state: paused; /* Pause animation on hover */
+    animation-play-state: paused;
 }
 
 /* Pulse animation for CTA */
@@ -128,7 +128,7 @@ body {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05); /* Slight scale up */
+        transform: scale(1.05);
     }
     100% {
         transform: scale(1);
@@ -144,8 +144,9 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Changed to flex for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     overflow: hidden;
 }
 
@@ -158,6 +159,7 @@ body {
     max-width: 450px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-top: 4px solid #e74c3c;
+    text-align: center; /* Ensure content inside is centered */
 }
 
 .close {
@@ -204,21 +206,34 @@ body {
 }
 
 .login-content button {
-    background-color: #e74c3c;
+    background-color: #e74c3c; /* Matched to webpage button */
     color: white;
     border: none;
-    padding: 14px;
-    font-size: 1.1rem;
+    padding: 16px 35px 16px 50px; /* Matched padding */
+    font-size: 1.2rem; /* Matched font size */
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    display: inline-flex; /* Matched flex alignment */
+    align-items: center;
+    animation: pulse 2s infinite ease-in-out; /* Matched animation */
+}
+
+.login-content button::before {
+    content: "🔒"; /* Added lock icon */
+    position: absolute;
+    left: 15px;
+    font-size: 1.3rem;
+    margin-right: 10px;
 }
 
 .login-content button:hover {
     background-color: #c0392b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    animation-play-state: paused; /* Matched hover behavior */
 }
 
 /* Footer */
@@ -255,11 +270,19 @@ body {
         font-size: 1.2rem;
     }
     #loginBtn {
-        padding: 14px 30px 14px 45px; /* Adjusted for smaller size */
+        padding: 14px 30px 14px 45px;
         font-size: 1.1rem;
     }
     #loginBtn::before {
-        left: 12px; /* Slightly closer for smaller button */
+        left: 12px;
+        font-size: 1.2rem;
+    }
+    .login-content button {
+        padding: 14px 30px 14px 45px; /* Matched mobile scaling */
+        font-size: 1.1rem;
+    }
+    .login-content button::before {
+        left: 12px; /* Matched mobile scaling */
         font-size: 1.2rem;
     }
 }
@@ -281,11 +304,19 @@ body {
         font-size: 1rem;
     }
     #loginBtn {
-        padding: 12px 25px 12px 40px; /* Adjusted for smallest size */
+        padding: 12px 25px 12px 40px;
         font-size: 1rem;
     }
     #loginBtn::before {
-        left: 10px; /* Adjusted for smallest button */
+        left: 10px;
+        font-size: 1.1rem;
+    }
+    .login-content button {
+        padding: 12px 25px 12px 40px; /* Matched mobile scaling */
+        font-size: 1rem;
+    }
+    .login-content button::before {
+        left: 10px; /* Matched mobile scaling */
         font-size: 1.1rem;
     }
 }
