@@ -115,20 +115,19 @@ body {
     margin-right: 10px;
 }
 
-#loginBtn:hover:not(.disabled) { /* Only apply hover when not disabled */
+#loginBtn:hover:not(.disabled) {
     background-color: #c0392b;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     animation-play-state: paused;
 }
 
-/* Disabled state for login button */
 #loginBtn.disabled {
-    background-color: #ccc; /* Greyed out */
+    background-color: #ccc;
     color: #666;
     cursor: not-allowed;
-    animation: none; /* Stop pulse */
-    pointer-events: none; /* Disable clicking */
+    animation: none;
+    pointer-events: none;
 }
 
 /* Pulse animation for CTA */
@@ -146,17 +145,21 @@ body {
 
 /* Login modal */
 .login-modal {
-    display: none;
+    display: none; /* Starts hidden */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+/* Show modal class */
+.login-modal.active {
+    display: flex; /* Only applied via JS */
 }
 
 .login-content {
