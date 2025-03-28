@@ -16,7 +16,7 @@ body {
     min-height: 100vh; /* Ensure full viewport height */
     margin: 0;
     position: relative;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     overflow-y: hidden; /* Prevent vertical scrolling */
     padding: 20px 0; /* Offset for top and bottom tapes */
 }
@@ -314,24 +314,30 @@ p {
     }
 }
 
-/* Mobile optimization: Emulate desktop design */
+/* Mobile optimization: Emulate desktop design with overflow fix and fixed centering */
 @media (max-width: 767px) {
     body {
         background: #FFFFFF; /* Ensure white background on mobile */
+        display: block; /* Override flex to allow fixed positioning */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-y: auto; /* Allow vertical scrolling if needed */
     }
     .container {
         background: #FFFFFF; /* Force white background on mobile */
-        padding: 30px 30px 50px; /* Same as desktop */
+        padding: 15px 15px 25px; /* Slightly reduced from 30px 30px 50px to fit better */
         margin: 0;
+        width: 100%; /* Fit the mobile viewport */
+        max-width: 100%; /* Prevent overflow */
         min-height: calc(100vh - 40px); /* Fallback for older browsers */
         min-height: calc(100dvh - 40px); /* Use dynamic viewport height for mobile */
         height: fit-content; /* Allow container to expand if needed */
-        width: 100%; /* Fit the mobile viewport */
-        max-width: 500px; /* Cap at largest element size to prevent overflow */
         border-radius: 20px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         border: 3px solid #5DADE2;
-        position: relative;
+        position: fixed; /* Fix the container in place */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust for true centering */
         z-index: 1;
         display: flex;
         flex-direction: column;
@@ -339,12 +345,13 @@ p {
         align-items: center;
     }
     .logo img {
-        max-width: 500px; /* Same as desktop */
+        max-width: 100%; /* Prevent overflow */
         border-radius: 20px;
     }
     .animation-container {
-        max-width: 500px; /* Same as desktop */
-        height: 150px; /* Same as desktop */
+        max-width: 100%; /* Prevent overflow */
+        height: auto; /* Adjust height to maintain aspect ratio */
+        aspect-ratio: 10 / 3; /* Maintain 10:3 aspect ratio */
         margin: 12px 0; /* Same as desktop */
         width: 100%;
         position: relative;
