@@ -73,7 +73,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: #000; /* Changed to black for readability */
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -145,7 +145,7 @@ body {
 
 /* Login modal */
 .login-modal {
-    display: none; /* Starts hidden */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -157,9 +157,8 @@ body {
     overflow: hidden;
 }
 
-/* Show modal class */
 .login-modal.active {
-    display: flex; /* Only applied via JS */
+    display: flex;
 }
 
 .login-content {
@@ -280,6 +279,11 @@ body {
     }
     .header p {
         font-size: 1.2rem;
+        display: block; /* Ensure block behavior */
+    }
+    .header p::before {
+        content: "\A"; /* Line break before "Stay tuned" */
+        white-space: pre; /* Preserve the line break */
     }
     #loginBtn {
         padding: 14px 30px 14px 45px;
@@ -314,6 +318,11 @@ body {
     }
     .header p {
         font-size: 1rem;
+        display: block;
+    }
+    .header p::before {
+        content: "\A";
+        white-space: pre;
     }
     #loginBtn {
         padding: 12px 25px 12px 40px;
