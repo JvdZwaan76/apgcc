@@ -96,15 +96,17 @@ body::after {
 .animation-container {
     margin: 20px 0;
     width: 100%;
-    max-width: 350px;
-    height: 120px;
+    max-width: 450px; /* Match logo size */
+    height: 135px; /* Maintain aspect ratio (450/135 = 10/3) */
     position: relative;
+    overflow: hidden; /* Ensure rounded corners clip the video */
 }
 
 .animation-container video {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Ensure video is not cropped, maintaining aspect ratio */
+    border-radius: 20px; /* Match container's border-radius */
 }
 
 /* Header styling */
@@ -139,9 +141,9 @@ p {
 
 #loginBtn {
     position: relative;
-    padding: 12px 30px 12px 40px;
+    padding: 14px 35px 14px 50px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #FFD700, #DAA520);
@@ -154,6 +156,18 @@ p {
     overflow: hidden;
 }
 
+/* Lock icon for login button */
+#loginBtn::before {
+    content: '🔒';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #000;
+}
+
+/* Hover effect for login button */
 #loginBtn::after {
     content: '';
     position: absolute;
@@ -174,17 +188,6 @@ p {
 #loginBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* Lock icon for login button */
-#loginBtn::before {
-    content: '🔒';
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.1rem;
-    color: #000;
 }
 
 /* Login modal */
@@ -278,64 +281,64 @@ p {
 /* Mobile optimization: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     p {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
     }
     .container {
-        padding: 3px;
+        padding: 2px;
         margin: 0;
     }
     .logo img {
-        max-width: 150px;
+        max-width: 120px;
     }
     .animation-container {
-        max-width: 150px;
-        height: 45px;
-        margin: 2px 0;
+        max-width: 120px; /* Match logo size */
+        height: 36px; /* Maintain aspect ratio (120/36 = 10/3) */
+        margin: 1px 0;
     }
     #loginBtn {
-        padding: 4px 12px 4px 20px;
-        font-size: 0.7rem;
+        padding: 6px 16px 6px 28px;
+        font-size: 0.8rem;
     }
     #loginBtn::before {
-        font-size: 0.7rem;
-        left: 6px;
+        font-size: 0.8rem;
+        left: 8px;
     }
     .header {
-        margin: 2px 0;
+        margin: 1px 0;
     }
     .login-button {
-        margin: 2px 0;
+        margin: 1px 0;
     }
     .contact-info {
-        margin-top: 2px;
-        font-size: 0.6rem;
+        margin-top: 1px;
+        font-size: 0.55rem;
     }
 }
 
 /* Tablet and smaller desktop screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 15px;
+        padding: 10px;
         margin: 0;
         max-width: 600px;
     }
     .animation-container {
-        max-width: 300px;
-        height: 90px;
+        max-width: 300px; /* Match logo size */
+        height: 90px; /* Maintain aspect ratio (300/90 = 10/3) */
     }
     .logo img {
         max-width: 300px;
     }
     .header {
-        margin: 10px 0;
+        margin: 8px 0;
     }
     .login-button {
-        margin: 10px 0;
+        margin: 8px 0;
     }
     .contact-info {
-        margin-top: 10px;
+        margin-top: 8px;
     }
 }
