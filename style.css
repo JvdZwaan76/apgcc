@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh; /* Ensure full viewport height */
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -65,7 +65,7 @@ body::after {
 .container {
     text-align: center;
     background: linear-gradient(to bottom, #FFFFFF, #F5F9FF); /* Subtle gradient for depth */
-    padding: 25px 25px 45px; /* Increased for spacious feel */
+    padding: 30px 30px 50px; /* Increased for spacious feel */
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 3px solid #5DADE2; /* Blue border to match logo */
@@ -87,16 +87,22 @@ body::after {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 486px; /* Match video container size */
+    max-width: 500px; /* Increased for better proportion */
     height: auto;
+    border-radius: 20px; /* Match video's rounded corners */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.logo img:hover {
+    transform: scale(1.02); /* Subtle scale on hover */
 }
 
 /* Animation container with video */
 .animation-container {
-    margin: 12px 0; /* Increased for balance */
+    margin: 12px 0;
     width: 100%;
-    max-width: 486px;
-    height: 145.8px; /* Maintain aspect ratio (486/145.8 = 10/3) */
+    max-width: 500px; /* Increased for better proportion */
+    height: 150px; /* Maintain aspect ratio (500/150 = 10/3) */
     position: relative;
     overflow: hidden;
     border-radius: 20px;
@@ -138,7 +144,7 @@ body::after {
 
 /* Header styling */
 .header {
-    margin: 12px 0; /* Increased for balance */
+    margin: 12px 0;
 }
 
 h1 {
@@ -164,13 +170,13 @@ p {
 
 /* Login button */
 .login-button {
-    margin: 12px 0; /* Increased for balance */
+    margin: 12px 0;
     position: relative;
 }
 
 #loginBtn {
     position: relative;
-    padding: 18px 42px 18px 60px;
+    padding: 20px 45px 20px 65px; /* Adjusted for proportion */
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
@@ -180,7 +186,7 @@ p {
     border: 1px solid #DAA520; /* Gold border */
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease; /* Added background transition */
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
@@ -258,7 +264,7 @@ p {
 }
 
 .login-content button {
-    padding: 18px 42px 18px 60px; /* Match #loginBtn padding */
+    padding: 20px 45px 20px 65px; /* Match #loginBtn padding */
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem; /* Match #loginBtn font-size */
     text-transform: uppercase;
@@ -276,7 +282,7 @@ p {
 
 /* Contact info */
 .contact-info {
-    margin-top: 12px; /* Increased for balance */
+    margin-top: 12px;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
 }
@@ -313,11 +319,11 @@ p {
         max-height: calc(100vh - 40px); /* Ensure container fits within viewport height */
     }
     .logo img {
-        max-width: 60px; /* Increased for better visibility */
+        max-width: 60px;
     }
     .animation-container {
-        max-width: 60px; /* Increased for better visibility */
-        height: 18px; /* Maintain aspect ratio (60/18 = 10/3) */
+        max-width: 60px;
+        height: 18px;
         margin: 1px 0; /* Adjusted for balance */
     }
     #loginBtn {
