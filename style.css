@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -80,6 +80,7 @@ body::after {
     align-items: center;
     margin: 0;
     height: fit-content;
+    max-height: calc(100vh - 40px); /* Ensure container fits within viewport height minus tapes */
 }
 
 /* Logo styling */
@@ -103,7 +104,7 @@ body::after {
 .animation-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure video fills the container while maintaining aspect ratio */
+    object-fit: contain; /* Ensure video is not cropped, maintaining aspect ratio */
 }
 
 /* Header styling */
