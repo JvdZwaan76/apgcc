@@ -79,7 +79,9 @@ body::after {
     justify-content: center;
     align-items: center;
     margin: 0; /* Remove margin to allow true centering */
+    max-height: calc(100vh - 40px); /* Constrain height to viewport minus body padding */
     height: fit-content; /* Let content determine height */
+    overflow: hidden; /* Prevent internal overflow */
 }
 
 /* Logo styling */
